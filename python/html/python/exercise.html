@@ -1,0 +1,361 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Pycharm" href="../ide/pycharm.html" /><link rel="prev" title="Python" href="python.html" />
+
+    <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
+        <title>Python &amp; Pandas Fundamentals Exercise - Python Prework</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../track_python.html"><div class="brand">Python Prework</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand" href="../track_python.html">
+  
+  
+  <span class="sidebar-brand-text">Python Prework</span>
+  
+</a><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../git/git.html">Git</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/exam.html">Git Exam</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/basics.html">Unix basics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../docker/docker.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../docker/exam.html">Docker Exam</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/kubernetes.html">Kubernetes and Helm</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="python.html">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Python &amp; Pandas Fundamentals Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ide/pycharm.html">Pycharm</a></li>
+</ul>
+
+</div></div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <div class="tex2jax_ignore mathjax_ignore section" id="python-pandas-fundamentals-exercise">
+<h1>Python &amp; Pandas Fundamentals Exercise<a class="headerlink" href="#python-pandas-fundamentals-exercise" title="Permalink to this heading">#</a></h1>
+<div class="section" id="bank-transactions-simulator">
+<h2>Bank Transactions Simulator<a class="headerlink" href="#bank-transactions-simulator" title="Permalink to this heading">#</a></h2>
+<p>For this exercise, you will build a bank transactions simulator. Users can create accounts, make deposits, withdrawals, and view transaction history.
+While you should practice building a small project, it may be useful to experiment with the code in a jupyter notebook first.
+You may use google / ChatGPT / any other resources to help if a concept is unfamiliar for you.</p>
+</div>
+<div class="section" id="python-basics">
+<h2>Python Basics<a class="headerlink" href="#python-basics" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Create some datamodels to model the bank accounts and transactions, using <code class="docutils literal notranslate"><span class="pre">&#64;dataclass</span></code>. You will need</p>
+<ul class="simple">
+<li><p>Account (Needs to have an <code class="docutils literal notranslate"><span class="pre">account_holder</span></code>, <code class="docutils literal notranslate"><span class="pre">account_number</span></code>, <code class="docutils literal notranslate"><span class="pre">balance</span></code> and a list of <code class="docutils literal notranslate"><span class="pre">transactions</span></code> (see next line). What datatypes are best to represent each field)?</p></li>
+<li><p>Transaction (these will populate the list held in each account). What types of transaction are there? What fields are needed to represent them and can any be optional?</p></li>
+<li><p>e.g. think about transfers, which move money to or from another account, and deposits/withdrawals.</p></li>
+</ul>
+</li>
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">CurrentAccount</span></code> and <code class="docutils literal notranslate"><span class="pre">SavingsAccount</span></code> classes that inherit from the <code class="docutils literal notranslate"><span class="pre">Account</span></code> class with additional properties if needed. (e.g. daily limits)</p></li>
+<li><p>Overload the “less than” operator for <code class="docutils literal notranslate"><span class="pre">Account</span></code> class to compare the balance of two accounts.</p>
+<ul class="simple">
+<li><p>Hint: which dunder methods are used for comparison operators?</p></li>
+</ul>
+</li>
+<li><p>What is printed when you pass an <code class="docutils literal notranslate"><span class="pre">account</span></code> object to <code class="docutils literal notranslate"><span class="pre">print</span></code>? Add an override to the Account class so that this instead prints a nicely formatted account statement.</p>
+<ul class="simple">
+<li><p>Hint: which dunder method defines how an object is converted to a string?</p></li>
+<li><p>Multiline f-strings</p></li>
+</ul>
+</li>
+<li><p>Implement a <code class="docutils literal notranslate"><span class="pre">Bank</span></code> class which holds accounts.</p>
+<ul class="simple">
+<li><p>What would be a good datastructure use to model this? Consider which fields of an <code class="docutils literal notranslate"><span class="pre">account</span></code> are guaranteed to be unique for each account</p></li>
+<li><p>Pull account(s) information for a given <code class="docutils literal notranslate"><span class="pre">account_holder</span></code>.</p></li>
+<li><p>Add a method which create new accounts for a list of new <code class="docutils literal notranslate"><span class="pre">account_holders</span></code>. First implement this with a loop, then try changing it to a comprehension.</p></li>
+<li><p>Add methods to deposit/withdraw money into an account.</p></li>
+<li><p>Add a method which can transfer money from one account to another, creating the relevant <code class="docutils literal notranslate"><span class="pre">Transactions</span></code> and updating the accounts.</p></li>
+<li><p>What should happen when someone tries to transfer or withdraw more money than they have?</p></li>
+</ul>
+</li>
+<li><p>When a transaction occurs, write the transaction to a csv file.</p>
+<ul class="simple">
+<li><p>This should be a single new file each time you create the <code class="docutils literal notranslate"><span class="pre">Bank</span></code>. Try using the <code class="docutils literal notranslate"><span class="pre">datetime</span></code> library to put the current time in the filename.</p></li>
+<li><p>You can use the <code class="docutils literal notranslate"><span class="pre">open</span></code> keyword as a context manager</p></li>
+<li><p>Consider what columns the csv file should have and write these as the first line, when the <code class="docutils literal notranslate"><span class="pre">Bank</span></code> is initialised.</p></li>
+<li><p>Append each transaction to this file as they occur.</p></li>
+<li><p>Hint: You can use <code class="docutils literal notranslate"><span class="pre">&quot;,&quot;.join(...)</span></code> to construct the line.</p></li>
+</ul>
+</li>
+<li><p>Write a script which can</p>
+<ul class="simple">
+<li><p>Generate 100 account names (random strings are fine) and initialise the bank with an account for each.</p></li>
+<li><p>Deposit some money into each of them,</p></li>
+<li><p>Simulate 1000 random transactions between accounts. Choose two accounts at random and pick a random amount. What bounds might make this sensible?</p></li>
+<li><p>Check your log file is the expected length. Make sure you create a new log file each time you run the simulation!</p></li>
+</ul>
+</li>
+<li><p>The bank wants to find inactive accounts. Use <code class="docutils literal notranslate"><span class="pre">filter</span></code> with a lambda function to find accounts with less than 10 transactions.</p></li>
+</ol>
+<div class="section" id="pandas">
+<h3>Pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Set up your project within a virtual environment, and <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pandas</span></code></p></li>
+<li><p>After running the simulation and generating the CSV file with transaction data, perform the following tasks in a notebook, using pandas:</p></li>
+<li><p>Load your CSV file of transactions into a DataFrame.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">group_by</span></code> and <code class="docutils literal notranslate"><span class="pre">concat</span></code> to construct a new dataframe with <code class="docutils literal notranslate"><span class="pre">account_number</span></code> as the index and the following columns</p>
+<ul class="simple">
+<li><p>number of transactions</p></li>
+<li><p>current balance</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_balance</span></code> and <code class="docutils literal notranslate"><span class="pre">max_balance</span></code> over the whole simulation</p></li>
+</ul>
+</li>
+<li><p>Reproduce the list of <code class="docutils literal notranslate"><span class="pre">inactive_accounts</span></code> from the first part, using Pandas operations on the transactions dataframe. Is the list of transactions enough
+information to guarantee we find them all?</p></li>
+<li><p>If your bank implementation allows negative balance, find out which accounts went into overdraft at any point. If not, check if anyone’s balance dipped below a threshold.</p></li>
+<li><p>Find which account made the most transactions and plot the balance of this account over time.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../ide/pycharm.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Pycharm</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="python.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Python</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, IMC
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Python &amp; Pandas Fundamentals Exercise</a><ul>
+<li><a class="reference internal" href="#bank-transactions-simulator">Bank Transactions Simulator</a></li>
+<li><a class="reference internal" href="#python-basics">Python Basics</a><ul>
+<li><a class="reference internal" href="#pandas">Pandas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    </body>
+</html>

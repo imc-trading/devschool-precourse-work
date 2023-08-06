@@ -1,0 +1,22 @@
+```{toctree}
+:maxdepth: 1
+
+git/git
+unix/basics
+docker/docker
+kubernetes/kubernetes
+jetbrains/jetbrains
+python/basics
+
+java/java
+maven/maven
+ide/intellij
+java/testing
+
+cpp/cpp
+bazel/bazel
+ide/clion
+cpp/testing
+
+python/python
+```

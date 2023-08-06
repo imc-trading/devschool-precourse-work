@@ -1,0 +1,91 @@
+# Kubernetes and Helm
+
+Kubernetes is a powerful tool for orchestrating containerized applications, offering automated management, scaling, and
+updating of applications across multiple hosts. 
+
+Helm is a package manager for Kubernetes that simplifies deployment of applications. It uses a packaging format called
+Charts, which are collections of files that describe a related set of Kubernetes resources. Helm provides a way to
+manage and maintain complex applications through a simple, declarative approach, making deployments repeatable and more
+manageable.
+
+The next generation of IMC's deployment tools are built on top of
+Kubernetes and Helm, so it is valuable to have a basic understanding of how these tools work and how to work
+with them.
+
+Note: Kubernetes is a complex topic with a lot of depth, most of which you
+don't need. Just make sure you know the K8s and Helm concepts listed in
+the [checklist below](#checklist). The recommended readings and tutorials 
+are good places to start.
+
+## Resources
+### Recommended Reading
+
+* [Introduction to Kubernetes](https://www.jeremyjordan.me/kubernetes/)
+* [Config Maps](https://matthewpalmer.net/kubernetes-app-developer/articles/ultimate-configmap-guide-kubernetes.html)
+
+### Recommended Tutorials
+
+* [Hello Minikube](https://kubernetes.io/docs/tutorials/hello-minikube/)
+* [Helm Chart Tutorial](https://devopscube.com/create-helm-chart/)
+
+### Alternatives
+
+* [Youtube - Kubernetes Crash Course](https://www.youtube.com/watch?v=s_o8dwzRlu4)
+
+### Reference documentation
+  * [Kubernetes Documentation](https://kubernetes.io/docs/home/)
+  * [Helm Documentation](https://helm.sh/docs/)
+
+## Checklist
+
+### Essential Concepts
+
+You should have a solid understanding of the following concepts. We've included some follow-up questions and related
+concepts under each point.
+
+* Kubernetes Basics
+  * What is Kubernetes?
+  * What are the benefits to using Kubernetes?
+* Kubernetes Clusters
+  * Nodes
+* Kubernetes Components
+  * Pods
+  * Deployments
+  * Services
+* Helm 
+  * What is Helm and why use it?
+  * Charts
+    * Chart Structure
+    * Chart Dependencies
+  * Repositories
+  * Releases
+
+### Useful Concepts
+
+You should have a general familiarity with the following concepts, but deep understanding is not necessary.
+
+* Services
+* Storage
+  * Volumes
+  * Persistent Volumes
+  * Persistent Volume Claims
+* Configuration
+  * ConfigMaps
+
+### Practical Skills
+
+You must be able to do the following:
+
+* Kubernetes Basics:
+  * Deploy a containerized application on a cluster.
+  * Update the containerized application with a new software version.
+  * Debug the containerized application.
+* Basic Kubectl Commands
+  * Get info about nodes, pods, deployments, services
+  * Create and delete resources
+  * Get logs
+  * Open an interactive shell on a running pod for debugging
+* Helm Basics
+  * Read simple Helm Charts
+  * Create a simple Helm Chart from scratch
+  * Deploy a Helm Chart

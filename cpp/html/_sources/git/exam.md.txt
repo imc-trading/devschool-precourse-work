@@ -1,0 +1,83 @@
+# Git Exam
+
+## Theory
+
+1. What does it mean when Git commits are described as immutable? How is 
+   that reconciled with the ability to amend or delete commits?
+2. What does it mean to merge branches A into branch B?
+3. What does it mean to rebase branch A on top of branch B?
+4. What is a "fast-forward merge"?
+5. How does a tag differ from a branch?
+6. What are the most common use cases for tags?
+7. What is a "commit-ish"?
+8. What is the difference between `HEAD` and a "head"?
+9. What is the `origin`?
+10. What is the different between `git fetch` and `git pull`?
+11. What is a merge conflict? How do you resolve a merge conflict?
+12. How would you find the commit where a bug was introduced?
+13. How do you check out the code for a previous commit so that you can 
+    debug it?
+14. What is "Detached HEAD mode"? How do you get into detached HEAD mode? How
+   do you get out of detached HEAD mode?
+15. What does rewriting history mean? When might you do it? When should you 
+    not rewrite history? What can go wrong when you modify history?
+16. When should you delete a commit vs revert it?
+17. What is the difference between `git reset 29f5e54` and `git checkout 
+    31f5e54`?
+18. What is the difference between a soft, hard, and mixed reset?
+19. When would you use `git reset`?
+20. Is it possible to lose a commit? Or to lose your changes? Under what 
+    circumstances?
+21. What is the `reflog`? When would you use it?
+
+## Practical
+
+Please clone [`https://github.com/imc-trading/devschool-git-exam`](https://github.com/imc-trading/devschool-git-exam).
+
+1. Check out the branch `resume`. Change the commit message from "Add Wok Experience" to
+   "Add Work Experience". What commands did you run?
+
+2. Add this "Work Experience" item in "Resume.md":
+
+```
+### The Normal Brand
+
+- Web Developer -- 2019-2021
+  - Implemented OAuth login process to support Social Login.
+  - Added web analytics
+```
+
+Commit it on the branch `resume` with the message "Add Normal Brand item". What command(s) did you run?
+
+3. The commit on the branch `resume` with the message "fill edu" has some issues. Fix it like this: 1. Change the
+   message to "Add content for Education section". 2. The commit has introduced some whitespaces at the end of two lines.
+   Remove those. What command(s) did you run? Explain your actions.
+
+4. The commit with the message "Add empty lines" is not useful. Remove it from the history. What command(s) did you run?
+
+5. There is a branch called `skills`. How can you show the content of the `Resume.md` file on that branch without
+   switching to the branch?
+
+6. On the branch `skills` there is a commit called "Add skills". Add that commit on top of the branch `resume` without
+   switching branches away from `resume`. That should create a conflict. Fix it by incorporating both the previous and
+   the new changes. What commands and actions did you do?
+
+7. In `Resume.md` there is a line `### Illinois State University`. How can you find out what is the last commit that
+   changed/introduced that line? What is the message of that commit? What commands did you run?
+
+8. Create a branch called `letter_of_intent` forking off from the branch `job_applications`. Create a file there called
+   `letter.txt` with the content `I need this job, please!`. Commit this file on the `letter_of_intent` branch with
+   the commit message `Add letter of intent`. Add another commit that adds this line to `letter.txt`: 
+   `Sincerely yours, Norman`. Commit it with the message `Sign letter`. What commands did you run?
+
+9. Rebase the `letter_of_intent` onto the `resume` branch without including the commits on the
+   `job_applications` branch. Basically add the commits `Add letter of intent` and `Sign letter` on top of `resume`
+   without changing `resume` and point `letter_of_intent` to the last commit. Do not use `cherry-pick`.
+   What command did you run?
+
+10. Merge the branch `letter_of_intent` into the branch `resume`. What commands did you run? Explain the merge strategy
+    taken.
+
+11. Merge the `job_applications` branch into the branch `resume`. What commands did you run? What merge strategy was
+    taken? What happened to the git history of the `resume` branch?
+

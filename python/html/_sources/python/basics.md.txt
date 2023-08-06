@@ -1,0 +1,45 @@
+# Python Basics
+
+Python is the industry standard programming language for data analytics and IMC is no exception. No matter what your
+primary role is, you will be well served in being comfortable reading and writing basic Python code, and working with data analysis libraries like Pandas.
+
+## Recommended Reading Material
+
+- [Python 3 Tutorial](https://docs.python.org/3/tutorial/)
+- [Pandas Getting Started Tutorials](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html) - These three chapters:
+  - [Data Type Handled by Pandas](https://pandas.pydata.org/docs/getting_started/intro_tutorials/01_table_oriented.html)
+  - [Reading/Writing Tabular Data](https://pandas.pydata.org/docs/getting_started/intro_tutorials/02_read_write.html)
+  - [Selecting and Filtering](https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html)
+  - We recommend the rest of the chapters only if your work will involve data analysis on a regular basis.
+
+## Checklist
+
+### Python Language Basics
+
+You should be familiar with the syntax for programming in Python,  especially following:
+
+* Syntax and Fundamentals
+  * Defining variables and functions
+  * Defining classes
+  * Operators, control flow
+  * `range` and `enumerate`
+  * Standard library data structures
+  * Comprehensions
+* Concepts
+  * Higher order functions
+  * Generators
+
+### Pandas
+
+You should be able to do the following using Pandas
+
+* Data Frames
+  * Data Selection and Filtering
+  * Data Grouping and Aggregation - optional
+  * Data Reshaping and Pivot tables - optional
+  * Combine data from multiple tables - optional
+  * Query time series - optional
+* Data Input and Output
+  * Read data from external sources such as CSV, Excel, databases, etc.
+* Visualizations
+  * Generate Charts and Tables - optional

@@ -1,0 +1,65 @@
+# Java Testing
+
+## Tools
+
+These are the preferred testing libraries for the majority of Java development teams at IMC, and what we will be using
+during Development School. There are alternative libraries for most of these, but they are sufficiently similar that
+there's no need to learn the other ones.
+
+- Unit Testing Framework: [JUnit 5](https://junit.org/junit5/)
+- Mocking: [Mockito](https://site.mockito.org)
+- Assertions: [AssertJ](https://assertj.github.io/doc/)
+- Maven Runner: [Surefire](https://maven.apache.org/surefire/maven-surefire-plugin/)/[Failsafe](https://maven.apache.org/surefire/maven-failsafe-plugin/)
+
+## Recommended Reading Material
+
+The above documentation websites have relatively high quality examples and tutorials, so we recommend starting with
+those.
+
+## Checklist
+
+### Concepts
+
+Understand these concepts
+
+* Unit tests vs Integration or End-to-end testing
+* Mocks vs Fakes vs Spys
+
+### Practical Skills
+
+Know how to do the following:
+
+* JUnit
+  * Test Fixtures
+    * Run simple unit tests
+    * Ignore tests
+    * Setup/tear down test state
+      * `@Before`, `@After`
+      * `@BeforeClass`, `@AfterClass`
+  * IDE integration
+    * Run tests in IntelliJ
+* Mockito
+  * Mocking
+    * Create mocks
+    * Stub method calls
+    * Verify interactions
+    * Argument captors
+    * Use Spys
+    * Mock Fluent APIs
+    * Use `@InjectMocks` and `MockitoJUnitRunner`
+* AssertJ
+  * AssertJ Core functionality
+* Surefire/Failsafe
+  * Run tests with Maven
+  * Run a specific tests
+  * Skip tests
+  * Debug tests run with Maven
+
+### Advanced Features
+
+We won't be using these in dev school, but they are useful and used in some places at IMC.
+
+* Advanced JUnit Features
+  * Rules
+  * Parameterized Tests
+  * Theories

@@ -1,0 +1,49 @@
+# Bazel
+
+Bazel is a powerful new build system that offers some significant benefits over alternatives like Maven. Its advanced
+caching features enable faster builds even for large code bases. Furthermore, Bazel's support for multiple languages and
+technologies makes it a versatile tool for polyglot development systems.
+
+At IMC, we use Bazel for our next-generation execution codebases, and intend to migrate more projects to Bazel in the
+future.
+
+## Recommended Reading
+
+- [Intro to Bazel](https://bazel.build/about/intro)
+- [Bazel: Getting Started](https://bazel.build/start)
+- [Bazel Tutorial: Build a C++ Project](https://bazel.build/start/cpp)
+
+## Checklist
+
+### Concepts
+
+You should understand generally the following concepts:
+
+- Build Tool Basics
+  - The purpose and benefits of build automation tools
+- Bazel's Vision and Philosophy
+- Basic Concepts
+  - Workspaces, packages, targets
+  - Labels
+  - Build files and rules
+  - Dependencies
+  - Target/Load Visibility
+  - Hermeticity
+- Bazel extensions
+- Remote Caching
+- Remote Execution
+
+### Practical Skills
+
+Know how to do the following:
+
+- Set up and configure a basic Workspace
+- Read and write simple Starlark code
+- Bazel CLI
+  - `build`, `test`, `run`, etc.
+- Bazel queries
+  - List all labels in a workspace
+  - Find the versions of all dependencies of a target
+  - Find all of the targets that depend on a target
+  - Find which direct dependency pulls in a specific transitive dependency
+- Add a new dependency to a Bazel project

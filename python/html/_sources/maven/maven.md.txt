@@ -1,0 +1,86 @@
+# Maven 
+
+Maven is a widely adopted build tool and dependency management system that simplifies and automates the building,
+testing, and packaging of Java projects. With its convention-over-configuration approach, extensive plugin ecosystem,
+and robust dependency resolution, Maven enhances project development by promoting standardized project structures,
+ensuring consistent builds, and facilitating seamless collaboration among developers.
+
+Historically, Java projects at IMC were built were Maven. Some newer projects are being migrated to Bazel, but a vast majority of projects are still on Maven with no near-term plans to migrate.
+
+## Recommended Reading Material
+
+- [Apache: Maven in 5 Minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
+- [Apache: Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/index.html)
+- [Baeldung: Apache Maven Tutorial](https://www.baeldung.com/maven)
+- [Baedung: Various Maven Tutorials](https://www.baeldung.com/category/maven/tag/maven-basics)
+
+## Checklist
+
+### Concepts
+
+You should understand the following concepts:
+
+- Build Tool Basics
+  - The purpose and benefits of build automation tools
+- Maven's Design Philosophy
+  - "Convention over Configuration"
+- Maven Project Structure
+  - Standard directory layout
+  - Projects and Modules
+  - Project Object Model (POM)
+  - Parent POMs
+- Maven Build Lifecycle
+  - Build Phases
+    - compile vs package
+    - install vs deploy
+    - test vs verify
+  - Plugin Goals
+  - Default Lifecycle
+  - Default Plugin Bindings
+- Dependencies
+  - Project Dependencies
+  - Transitive Dependencies
+  - Dependency Scopes
+  - Dependency Management
+  - Bill of Materials (BOM)
+- Version Management
+  - Maven version conventions
+  - SNAPSHOT versions
+  - Version Ranges
+- Multi-module Projects
+  - What is the rationale for multi-module projects?
+- Build Profiles
+
+### Practical Skills
+
+Know how to do the following:
+
+- Navigate a Maven project
+  - Find the pom file and source, test, and resources directories.
+  - Read a POM file
+- Create a simple Maven project
+  - Define a POM with
+    - Project metadata
+    - Dependencies
+    - Child modules
+  - Specify dependencies
+    - Use build properties to specify versions
+    - Use Dependency Management
+    - Use BOMs
+- Maven Build Commands
+  - Build a project with and without running tests
+  - Build a project on multiple cores
+  - Run a specific test
+  - Build one module only
+- Maven Plugins
+  - Know the functionality of the core Maven plugins
+  - Know how to search for plugin configuration
+  - Run a plugin goal instead of a lifecycle phase
+  - Configure plugins in a POM
+- Build Profiles
+  - Create and use profiles
+  - Activate and deactivate profiles
+    - Automatically and manually
+- Query a project
+  - Find the versions of all dependencies of a project
+  - Find which dependency pulls in a specific transitive dependency

@@ -1,0 +1,39 @@
+# Pycharm
+
+An IDE is essential to improving your productivity as a Software Engineer.
+PyCharm is the preferred Python IDE for the vast majority of Python teams at
+IMC, and the IDE with the most internal support.
+
+## Recommended Reading
+
+- [PyCharm - Getting Started](https://www.jetbrains.com/help/pycharm/getting-started.html)
+
+## Recommended Viewing
+
+- [Youtube - Be More Productive With IntelliJ IDEA](https://www.youtube.com/watch?v=CmPJzEqFS4s)
+- [Youtube - IntelliJ IDEA Debugger Essentials](https://www.youtube.com/watch?v=59RC8gVPlvk)
+
+## Practical skills
+
+Be able to use the following features:
+
+* Reading Code
+  * Code Navigation
+  * Find Usages
+* Writing Code
+  * Inspections
+  * Live Templates
+  * Local History
+  * Code Style and Formatting
+* Refactoring
+  * Renaming
+  * Change Signature
+  * Extract/Introduce refactorings
+  * Inline
+  * Safe Delete
+  * Migrate
+* Running
+  * Running a Python application
+  * Running tests
+* Debugging
+* Venv Integration

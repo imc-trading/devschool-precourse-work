@@ -1,0 +1,77 @@
+# Docker
+
+Containers streamlines the process of deploying production services by enabling developers to package an application
+with all its dependencies into a standardized unit for software development. This approach, known as containerization,
+ensures that the application will run uniformly, regardless of any customized settings that machines might have that
+could differ from the machine used for writing and testing the code.
+
+Docker is IMC's containerization tool of choice. Docker's lightweight, scalable, and consistent
+environment is particularly beneficial for creating, deploying, and running applications in a variety of environments,
+from local development machines to production servers, thereby increasing productivity and reducing overhead.
+
+## Recommended Tutorial
+
+* [Docker - Getting Started](https://docs.docker.com/get-started/)
+  - Parts 1-9
+
+## Checklist
+
+### Essential Concepts
+
+You should have a solid understanding of the following concepts. We've included some follow-up questions and related
+concepts under each point.
+
+* Containers
+  * What is a container?
+  * Difference between virtual machines and containers
+  * Advantages of containerization
+  * What is Docker?
+* Docker Images
+  * What is a Docker image?
+  * Dockerfile structure and commands
+    * FROM, RUN, CMD, ENTRYPOINT, ENV, COPY, ADD, etc
+  * Docker image layers
+  * Image tags
+* Docker Containers
+
+### Useful Concepts
+
+You should have a general familiarity with the following concepts, but deep understanding is not necessary.
+
+* Docker Volumes and Bind Mounts
+  * Persistent data and Docker storage options
+  * Docker volumes
+  * Bind mounts
+* Docker Networking
+  * Host networking
+  * Port binding
+* Docker Best Practices
+  * Dockerfile best practices
+  * Docker development best practices
+
+### Practical Skills
+
+You must be able to do the following:
+
+* Build images using a Dockerfile
+* Manage and delete images
+* Create, start, stop, and remove containers
+* Interact with running containers
+* Read container logs
+* Execute commands in a running container
+* Inspect and monitor Docker containers
+* Manage and delete containers
+* Mount a local directory into a docker container
+* Bind ports
+
+## Exam
+
+The [Docker Exam](exam.md) can be used to evaluate your understanding of git.
+
+This exam is not graded - you should it to identify weaknesses in your
+understanding.
+
+:::{toctree}
+:hidden:
+exam
+:::

@@ -1,0 +1,460 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+
+    <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
+        <title>Java - Python Prework</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../track_python.html"><div class="brand">Python Prework</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand" href="../track_python.html">
+  
+  
+  <span class="sidebar-brand-text">Python Prework</span>
+  
+</a><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../git/git.html">Git</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/exam.html">Git Exam</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/basics.html">Unix basics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../docker/docker.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../docker/exam.html">Docker Exam</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/kubernetes.html">Kubernetes and Helm</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../python/python.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/exercise.html">Python &amp; Pandas Fundamentals Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ide/pycharm.html">Pycharm</a></li>
+</ul>
+
+</div></div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <div class="tex2jax_ignore mathjax_ignore section" id="java">
+<h1>Java<a class="headerlink" href="#java" title="Permalink to this heading">#</a></h1>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h2>
+<div class="section" id="recommended-exercises">
+<h3>Recommended Exercises<a class="headerlink" href="#recommended-exercises" title="Permalink to this heading">#</a></h3>
+<p>Write code! The best way to get better at a programming language is by writing
+code.</p>
+<p>One way to do this is through Code Katas. There are many lists of Code Katas
+online. Here is one:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://codekata.com/">Code Katas</a></p></li>
+</ul>
+</div>
+<div class="section" id="recommended-reading-material">
+<h3>Recommended Reading Material<a class="headerlink" href="#recommended-reading-material" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/index.html">Trail: Learning the Java Language</a></p>
+<ul>
+<li><p>Please read this if you are not familiar with the Java language or if you
+want to refresh your Java knowledge.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/">Effective Java (3rd edition)</a> <a class="reference external" href="https://github.com/GunterMueller/Books-3/blob/master/Effective%20Java%20(3rd%20Edition).pdf">[PDF]</a></p>
+<ul>
+<li><p>This is essential reading for all Java developers, and we <strong>highly</strong>
+recommend you read this before you join a development team. That said,
+we don’t want you to spend the entire pre-work time reading a book, so
+the entire book is not required reading.</p></li>
+<li><p>The following sections are going to be the most useful for Dev School.</p>
+<ul>
+<li><p>Item 5: Prefer dependency injection to hardwiring resources</p></li>
+<li><p>Item 10: Obey the general contract when overriding equals</p></li>
+<li><p>Item 11: Always override hashCode when you override equals</p></li>
+<li><p>Item 12: Always override toString</p></li>
+<li><p>Item 14: Consider implementing Comparable</p></li>
+<li><p>Chapter 4: Classes and Interfaces</p></li>
+<li><p>Chapter 5: Generics</p></li>
+<li><p>Chapter 7: Lambdas</p></li>
+<li><p>Item 58: Prefer for-each loops to traditional for loops</p></li>
+<li><p>Item 59: Know and use the libraries</p></li>
+<li><p>Item 51: Design method signatures carefully</p></li>
+<li><p>Item 62: Avoid string where other types are more appropriate</p></li>
+<li><p>Item 64: Refer to objects by their interfaces</p></li>
+<li><p>Item 67: Optimize judiciously</p></li>
+<li><p>Item 85: Prefer alternatives to Java serialization</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="other-useful-resources">
+<h3>Other Useful Resources<a class="headerlink" href="#other-useful-resources" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.angelikalanger.com/GenericsFAQ/JavaGenericsFAQ.html">Java Generics FAQs</a></p>
+<ul>
+<li><p>Good if you are not comfortable</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="checklist">
+<h2>Checklist<a class="headerlink" href="#checklist" title="Permalink to this heading">#</a></h2>
+<div class="section" id="language-syntax">
+<h3>Language Syntax<a class="headerlink" href="#language-syntax" title="Permalink to this heading">#</a></h3>
+<p>You should be very familiar with the syntax for programming in Java, including but not limited to:</p>
+<ul class="simple">
+<li><p>Syntax and Fundamentals</p>
+<ul>
+<li><p>Defining enums, classes, methods, variables</p></li>
+<li><p>Operators, control flow</p></li>
+<li><p>Instantiating objects</p></li>
+<li><p>Calling methods</p></li>
+<li><p>Generics/Type Parameters</p></li>
+<li><p>Exception handling</p></li>
+<li><p>Javadocs</p></li>
+</ul>
+</li>
+<li><p>“Modern” (since Java 8) Syntax</p>
+<ul>
+<li><p>Lambdas, method references</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var</span></code></p></li>
+<li><p>Records</p></li>
+<li><p>Switch expressions</p></li>
+<li><p>Pattern matching</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="essential-language-concepts">
+<h3>Essential Language Concepts<a class="headerlink" href="#essential-language-concepts" title="Permalink to this heading">#</a></h3>
+<p>You should have a solid understanding of the following concepts. We’ve included some follow-up questions and related
+concepts under each point.</p>
+<ul class="simple">
+<li><p>Object-Oriented Programming</p>
+<ul>
+<li><p>Objects vs Primitives</p></li>
+<li><p>Classes and Objects</p></li>
+<li><p>Inheritance and Polymorphism</p></li>
+<li><p>Interfaces</p></li>
+<li><p>Access Modifiers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">static</span></code></p></li>
+<li><p>Inner classes</p></li>
+</ul>
+</li>
+<li><p>Collections and Data Structures</p>
+<ul>
+<li><p>Java Standard Library Collections</p>
+<ul>
+<li><p>Collection, List, Set, Queue, Map, NavigableMap, Iterator</p></li>
+<li><p>ArrayList, LinkedList, HashMap, TreeMap, HashSet, TreeSet, PriorityQueue</p></li>
+<li><p>What is a <code class="docutils literal notranslate"><span class="pre">ConcurrentModificationException</span></code>?</p></li>
+</ul>
+</li>
+<li><p>Generics and Type Parameters</p></li>
+</ul>
+</li>
+<li><p>Exceptions</p>
+<ul>
+<li><p>Throwables, Errors, and Exceptions</p></li>
+<li><p>Checked vs Unchecked Exceptions</p></li>
+</ul>
+</li>
+<li><p>Functional Programming</p>
+<ul>
+<li><p>Functional Interfaces</p></li>
+<li><p>Lambdas and Method References</p></li>
+<li><p>Java Stream API</p></li>
+<li><p>Anonymous Classes</p></li>
+</ul>
+</li>
+<li><p>Concurrency and Thread-Safety</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">volatile</span></code> and <code class="docutils literal notranslate"><span class="pre">synchronized</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">java.util.concurrent</span></code> Standard Library</p></li>
+</ul>
+</li>
+<li><p>Other Language Features and Best Practices</p>
+<ul>
+<li><p>Equals/hashCode contract</p></li>
+<li><p>Comparable</p></li>
+<li><p>Optional</p></li>
+<li><p>Records</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="useful-language-features">
+<h3>Useful Language Features<a class="headerlink" href="#useful-language-features" title="Permalink to this heading">#</a></h3>
+<p>You should have a general familiarity with the following language features, but deep understanding is not necessary. We
+will not be using them during Dev School.</p>
+<ul class="simple">
+<li><p>Annotations</p></li>
+<li><p>Java Serialization - know that you should never use it</p></li>
+<li><p>Finalizers</p></li>
+<li><p>Soft/weak references</p></li>
+</ul>
+</div>
+<div class="section" id="design-patterns">
+<h3>Design Patterns<a class="headerlink" href="#design-patterns" title="Permalink to this heading">#</a></h3>
+<p>You should be familiar with the following common design patterns.</p>
+<ul class="simple">
+<li><p>Common Design Patterns</p>
+<ul>
+<li><p>Singleton</p></li>
+<li><p>Factory</p></li>
+<li><p>Builder</p></li>
+<li><p>Visitor</p></li>
+<li><p>Decorator</p></li>
+<li><p>Strategy</p></li>
+<li><p>Command</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="exam">
+<h2>Exam<a class="headerlink" href="#exam" title="Permalink to this heading">#</a></h2>
+<p>The <a class="reference internal" href="exam.html"><span class="std std-doc">Java Exam</span></a> can be used to evaluate your understanding of Java
+concepts.</p>
+<p>This exam is not graded - you should it to identify weaknesses in your
+understanding.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, IMC
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Java</a><ul>
+<li><a class="reference internal" href="#resources">Resources</a><ul>
+<li><a class="reference internal" href="#recommended-exercises">Recommended Exercises</a></li>
+<li><a class="reference internal" href="#recommended-reading-material">Recommended Reading Material</a></li>
+<li><a class="reference internal" href="#other-useful-resources">Other Useful Resources</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#checklist">Checklist</a><ul>
+<li><a class="reference internal" href="#language-syntax">Language Syntax</a></li>
+<li><a class="reference internal" href="#essential-language-concepts">Essential Language Concepts</a></li>
+<li><a class="reference internal" href="#useful-language-features">Useful Language Features</a></li>
+<li><a class="reference internal" href="#design-patterns">Design Patterns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exam">Exam</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    </body>
+</html>

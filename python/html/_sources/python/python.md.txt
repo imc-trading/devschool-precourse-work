@@ -1,0 +1,67 @@
+# Python
+
+You will need a solid grasp of the fundamentals of Python before starting Dev
+School. We will work through more advanced features of the language but expect
+you to be able to code to a basic level already. If you can complete the
+attached exercise then you will be at a comfortable level to begin the school.
+
+## Resources
+### Recommended Exercises
+
+Write code! The best way to get better at a programming language is by writing
+code.
+
+One way to do this is through Code Katas. There are many lists of Code Katas
+online. Here is one:
+* [Code Katas](http://codekata.com/)
+
+### Recommended Reading Material
+
+- [Python 3 Tutorial](https://docs.python.org/3/tutorial/)
+- [Alternative Tutorial](https://www.learnpython.org/)
+
+## Exercise
+
+[Exercise](exercise.md)
+
+## Checklist
+### Python Language Basics
+
+You should be familiar with the syntax for programming in Python,  especially following:
+
+* Essential Syntax and Fundamentals
+  * Defining variables and functions
+  * Defining classes and inheritance
+    * Operator overloading
+  * Type hinting (especially if you have not worked with a statically typed language)
+  * Operators, control flow
+  * `range` and `enumerate`
+  * `iter` and `next`
+  * Standard library data structures (lists, dicts, sets, tuples) and unpacking syntax
+  * f-strings
+  * Comprehensions
+
+* Useful items
+  * Decorators
+  * Dataclasses
+  * Context Managers
+  * File handling
+  * Modules and packages
+
+* Optional
+  * Multithreading and multiprocessing
+  * Higher order functions (eg passing a function to `map` a collection)
+    * lambda functions
+    * closures
+  * Generators
+  * Async python
+  * 'Modern' python (3.11) features such as `match case`
+
+* Environments
+  * Setting up a `venv` or a conda `env`
+  * Jupyter notebooks (try installing and running one locally)
+
+:::{toctree}
+:hidden:
+exercise
+:::

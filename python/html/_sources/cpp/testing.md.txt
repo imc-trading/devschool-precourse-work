@@ -1,0 +1,51 @@
+# GoogleTest
+
+## Tools
+
+[GoogleTest](https://google.github.io/googletest/)
+and [gMock](https://google.github.io/googletest/gmock_for_dummies.html) are the preferred testing and mocking library
+for the majority of C++ development teams at IMC, and what we will be using
+during Development School.
+
+## Recommended Reading Material
+
+- [GoogleTest Primer](https://google.github.io/googletest/primer.html)
+- [gMock](https://google.github.io/googletest/gmock_for_dummies.html)
+
+## Checklist
+
+### Concepts
+
+Understand these concepts:
+
+* Unit tests vs Integration or End-to-end testing
+* Mocks vs Fakes
+
+### Practical Skills
+
+Know how to do the following:
+
+* GoogleTest
+  * Test Fixtures
+    * Run simple unit tests
+    * Write assertions
+    * Ignore tests
+    * Test setup/teardown test state
+      * `SetUp`, `TearDown`
+      * Suite/Global-level SetUp/TearDown
+    * Test exceptions and failures
+  * CLion integration
+    * Run tests within CLion
+* gMock
+  * Mocking
+    * Create mocks
+    * Stub method calls
+* Bazel
+  * Run GoogleTest with Bazel
+
+### Advanced Features
+
+We won't be using these in dev school, but they are useful and used in some places at IMC.
+
+* Parameterized tests
+* Typed tests

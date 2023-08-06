@@ -1,0 +1,27 @@
+# Docker Exam
+
+1. What command(s) do you use to run [MariaDB](https://hub.docker.com/_/mariadb)
+   in Docker on your machine and map its port to the port `12345` on your
+   machine? It should contain a database called `prework`.
+
+2. What command(s) do you use on your local machine to open a prompt into the
+   MariaDB server from step 1? You can use any Mysql client.
+
+4. Clone [`https://github.com/imc-trading/devschool-docker-exam`](https://github.com/imc-trading/devschool-docker-exam)
+
+5. How do you run step 1 but use `init.sql` to
+   initialize the database?
+
+6. What command do you use to open bash console in your running MariaDB
+   container?
+
+7. What commands do you use to list containers, list images, stop a container,
+   start a container, remove a container?
+
+8. In `server.py` you have a small Python server
+   implementation. Please create a custom Docker image around it and a Docker
+   compose that starts up this server and the MariaDB container from the steps
+   above. The server should connect to the MariaDB container and it should
+   expose its HTTP port to localhost's port 8082. How do you check that
+   the server works? Note that the server has requirements that must be 
+   installed with `pip install -r requirements.txt`

@@ -1,0 +1,637 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+
+    <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
+        <title>Java Exam - C++ Prework</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../track_cpp.html"><div class="brand">C++ Prework</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand" href="../track_cpp.html">
+  
+  
+  <span class="sidebar-brand-text">C++ Prework</span>
+  
+</a><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../git/git.html">Git</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/exam.html">Git Exam</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/basics.html">Unix basics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../docker/docker.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../docker/exam.html">Docker Exam</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/kubernetes.html">Kubernetes and Helm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/basics.html">Python Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/cpp.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bazel/bazel.html">Bazel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ide/clion.html">CLion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/testing.html">GoogleTest</a></li>
+</ul>
+
+</div></div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <div class="tex2jax_ignore mathjax_ignore section" id="java-exam">
+<h1>Java Exam<a class="headerlink" href="#java-exam" title="Permalink to this heading">#</a></h1>
+<div class="section" id="basic-java-concepts">
+<h2>Basic Java Concepts<a class="headerlink" href="#basic-java-concepts" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Which of the following best describes a class?</p>
+<ul class="simple">
+<li><p>A way to group related functions and data</p></li>
+<li><p>A blueprint for creating objects, containing data members and methods that define the state and behavior of objects</p></li>
+<li><p>An instance of a blueprint, containing specific values for its data members</p></li>
+<li><p>A mechanism for organizing code into reusable components</p></li>
+</ul>
+</li>
+<li><p>What is the primary purpose of interfaces?</p>
+<ul class="simple">
+<li><p>To define a contract or blueprint for implementing classes</p></li>
+<li><p>To encapsulate data and behavior</p></li>
+<li><p>To create a class hierarchy</p></li>
+<li><p>To share code between classes</p></li>
+</ul>
+</li>
+<li><p>Which of the following best describes an object?</p>
+<ul class="simple">
+<li><p>A collection of related data and functions in a single unit</p></li>
+<li><p>A blueprint that defines the structure and behavior of other objects</p></li>
+<li><p>A specific instance of a class that contains state and behavior defined by the class</p></li>
+<li><p>A mechanism for organizing and reusing code</p></li>
+</ul>
+</li>
+<li><p>What are the key properties of interfaces? Select all that apply</p>
+<ul class="simple">
+<li><p>Interfaces can have mutable static variables</p></li>
+<li><p>Interfaces can have concrete methods</p></li>
+<li><p>Interfaces can have abstract methods</p></li>
+<li><p>A class can implement multiple interfaces</p></li>
+<li><p>Interfaces can have instance variables</p></li>
+<li><p>Interfaces can have constructors</p></li>
+</ul>
+</li>
+<li><p>What are the key properties of abstract classes? Select all that apply</p>
+<ul class="simple">
+<li><p>Abstract classes can have abstract methods</p></li>
+<li><p>Abstract classes can have constructors</p></li>
+<li><p>Abstract classes can have concrete methods</p></li>
+<li><p>Abstract classes can have mutable static variables</p></li>
+<li><p>A class can extend multiple abstract classes</p></li>
+<li><p>Abstract classes can have instance variables</p></li>
+</ul>
+</li>
+<li><p>Which of the following best describes the purpose of a constructor?</p>
+<ul class="simple">
+<li><p>To create a new object instance of a class</p></li>
+<li><p>To initialize an object’s state when it is created</p></li>
+<li><p>To compare two objects for equality</p></li>
+<li><p>To define the structure and behavior of a class</p></li>
+</ul>
+</li>
+<li><p>What is method overloading?</p>
+<ul class="simple">
+<li><p>Calling a method from a parent class in a derived class</p></li>
+<li><p>Redefining a method from a parent class in a derived class</p></li>
+<li><p>Defining a method with the same name but different parameters in the same class</p></li>
+<li><p>Defining a method with the same name and parameters in two different classes</p></li>
+</ul>
+</li>
+<li><p>What is the primary role of the Java heap?</p>
+<ul class="simple">
+<li><p>To store static variables and methods</p></li>
+<li><p>To allocate memory for object instances during runtime</p></li>
+<li><p>To store local variables and method call information</p></li>
+<li><p>To store the source code of a Java program</p></li>
+</ul>
+</li>
+<li><p>What is the purpose of the ‘static’ keyword?</p>
+<ul class="simple">
+<li><p>To make a variable or method available without creating an object</p></li>
+<li><p>To make a variable or method available only within a method</p></li>
+<li><p>To make a variable or method unchangeable</p></li>
+<li><p>To make a variable or method available only within a class</p></li>
+</ul>
+</li>
+<li><p>What is the difference between a static inner class instead of a non-static one?</p>
+<ul class="simple">
+<li><p>There is only one global instance of a static inner class</p></li>
+<li><p>A static inner class is not tightly coupled to the enclosing class.</p></li>
+<li><p>A static inner class can be instantiated without an instance of the enclosing class	- A static inner class can access the instance variables and methods of the enclosing class</p></li>
+</ul>
+</li>
+<li><p>What is the purpose of the ‘final’ keyword?</p>
+<ul class="simple">
+<li><p>All of the above</p></li>
+<li><p>Prevents a class from being inherited</p></li>
+<li><p>Prevents a variable from being reassigned</p></li>
+<li><p>Indicates that a method cannot be overridden</p></li>
+</ul>
+</li>
+<li><p>Is a field with a <code class="docutils literal notranslate"><span class="pre">final</span></code> field always immutable?</p>
+<ul class="simple">
+<li><p>Yes, a <code class="docutils literal notranslate"><span class="pre">final</span></code> field is always immutable</p></li>
+<li><p>No, a <code class="docutils literal notranslate"><span class="pre">final</span></code> field is only immutable if the containing class is also <code class="docutils literal notranslate"><span class="pre">final</span></code></p></li>
+<li><p>No, a <code class="docutils literal notranslate"><span class="pre">final</span></code> field can be mutable if it is a reference to a mutable object</p></li>
+<li><p>None of the above</p></li>
+</ul>
+</li>
+<li><p>How do you indicate that a class is immutable?</p>
+<ul class="simple">
+<li><p>By declaring all its instance variables as final</p></li>
+<li><p>By declaring all its instance variables as static</p></li>
+<li><p>By implementing the Immutable interface</p></li>
+<li><p>By declaring all its methods as final</p></li>
+<li><p>None of the above</p></li>
+</ul>
+</li>
+<li><p>What is the main difference between primitive types and objects (reference types)?</p>
+<ul class="simple">
+<li><p>Primitive types are passed by value, while objects are passed by reference</p></li>
+<li><p>Primitive types have methods and attributes, while objects do not</p></li>
+<li><p>Primitive types are user-defined, while objects are built-in types</p></li>
+<li><p>Primitive types are immutable, while objects are mutable</p></li>
+</ul>
+</li>
+<li><p>Which of the following is true about Java’s autoboxing and unboxing feature?</p>
+<ul class="simple">
+<li><p>It automatically converts primitives to their corresponding wrapper classes and vice versa</p></li>
+<li><p>It automatically converts arrays to ArrayLists and vice versa</p></li>
+<li><p>It automatically casts objects to a more specific type</p></li>
+<li><p>It automatically detects type mismatches</p></li>
+</ul>
+</li>
+<li><p>When passing arguments to a method, which of the following statements is true?</p>
+<ul class="simple">
+<li><p>Primitive types are passed by value, and objects are passed by reference</p></li>
+<li><p>Primitive types are passed by reference, and objects are passed by value</p></li>
+<li><p>Both primitive types and objects are passed by value</p></li>
+<li><p>Both primitive types and objects are passed by reference</p></li>
+</ul>
+</li>
+<li><p>What are varargs?</p>
+<ul class="simple">
+<li><p>A way to pass multiple arguments of different types to a method</p></li>
+<li><p>A shorthand syntax for creating an array</p></li>
+<li><p>A way to declare a variable number of arguments in a method</p></li>
+<li><p>A way to declare optional method arguments</p></li>
+</ul>
+</li>
+<li><p>Which of the following best describes the ‘Throwable’ class?</p>
+<ul class="simple">
+<li><p>A class that represents an error or exception that can be caught and handled</p></li>
+<li><p>A class that represents exceptions that can be caught and handled by the programmer</p></li>
+<li><p>A class that represents errors that occur during the execution of a program</p></li>
+<li><p>A class that represents exceptions that occur due to programming errors</p></li>
+</ul>
+</li>
+<li><p>What is the main difference between the ‘Error’ and ‘Exception’ classes?</p>
+<ul class="simple">
+<li><p>‘Error’ represents errors that occur during the execution of a program, while ‘Exception’ represents exceptions that occur due to programming errors</p></li>
+<li><p>‘Error’ represents errors that occur during the execution of a program, while ‘Exception’ represents exceptions that can be caught and handled by the programmer</p></li>
+<li><p>‘Error’ represents exceptions that can be caught and handled by the programmer, while ‘Exception’ represents errors that occur during the execution of a program</p></li>
+<li><p>‘Error’ represents exceptions that occur due to programming errors, while ‘Exception’ represents errors that occur during the execution of a program</p></li>
+</ul>
+</li>
+<li><p>Which of the following statements best describes unchecked exceptions?</p>
+<ul class="simple">
+<li><p>Unchecked exceptions are exceptions that the Java compiler requires to be caught or declared in a method’s ‘throws’ clause</p></li>
+<li><p>Unchecked exceptions are exceptions that occur due to external factors, such as invalid user input or file I/O errors</p></li>
+<li><p>Unchecked exceptions are exceptions that are automatically caught and handled by the Java Virtual Machine (JVM)</p></li>
+<li><p>Unchecked exceptions are exceptions that are subclasses of the ‘RuntimeException’ class</p></li>
+</ul>
+</li>
+<li><p>In which of the following scenarios should a checked exception be used?</p>
+<ul class="simple">
+<li><p>When the exception occurs due to programming errors and needs to be caught during development</p></li>
+<li><p>When the exception occurs and may be propagated up the call stack without being caught or declared</p></li>
+<li><p>When the exception should be automatically caught and handled by the Java Virtual Machine (JVM)</p></li>
+<li><p>When the exception is caused by external factors, such as invalid user input or file I/O errors, and the programmer must be aware of and handle the exception</p></li>
+</ul>
+</li>
+<li><p>Which of the following is true about Java’s garbage collection?</p>
+<ul class="simple">
+<li><p>It must be manually invoked by the programmer</p></li>
+<li><p>It is a part of the Java standard library</p></li>
+<li><p>It is a feature exclusive to Java</p></li>
+<li><p>It automatically deallocates memory for objects that are no longer needed</p></li>
+</ul>
+</li>
+<li><p>What is the equals() and hashCode() contract?</p>
+<ul class="simple">
+<li><p>A requirement that if two objects are considered equal by the equals() method, their hash codes must also be equal</p></li>
+<li><p>A requirement that if two objects have the same hash code, they must also be considered equal by the equals() method</p></li>
+<li><p>A guarantee that two objects of the same class will always be considered equal by the equals() method</p></li>
+<li><p>A guarantee that two objects of the same class will always have different hash codes</p></li>
+</ul>
+</li>
+<li><p>What happens if the equals() and hashCode() contract is broken for a class?</p>
+<ul class="simple">
+<li><p>The JVM will automatically fix the issue and repair the broken contract</p></li>
+<li><p>The behavior of some standard library collections may be undefined or incorrect</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">equals()</span></code> method may not be used to compare instances of this class</p></li>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">IllegalContractException</span></code> will be thrown if the class is used in a <code class="docutils literal notranslate"><span class="pre">HashMap</span></code> or <code class="docutils literal notranslate"><span class="pre">HashSet</span></code></p></li>
+</ul>
+</li>
+<li><p>What is the difference between Comparable and Comparator?</p>
+<ul class="simple">
+<li><p>Comparable and Comparator are both interfaces used to define different ways of ordering objects</p></li>
+<li><p>Comparable is an interface used to define a natural ordering of objects, while Comparator is a separate class used to define an external ordering of objects</p></li>
+<li><p>Comparable is a separate class used to define an external ordering of objects, while Comparator is an interface used to define a natural ordering of objects</p></li>
+<li><p>There is no difference between Comparable and Comparator</p></li>
+</ul>
+</li>
+<li><p>What is necessary in order to use a class with sorted collections?</p>
+<ul class="simple">
+<li><p>The class implements Comparable</p></li>
+<li><p>The class implements Comparator</p></li>
+<li><p>The class implements both Comparable and Comparator</p></li>
+<li><p>A Comparable for the class is provided to the collection</p></li>
+<li><p>A Comparator for the class is provided to the collection</p></li>
+</ul>
+</li>
+<li><p>Which of the following statements about the toString() method are true?</p>
+<ul class="simple">
+<li><p>An ideal toString() includes all of the interesting information in an object</p></li>
+<li><p>Programmatic access to the information returned by toString should always be provided</p></li>
+<li><p>The toString() method is used to provide a string representation of an object</p></li>
+<li><p>The toString() method should always include private fields in the output</p></li>
+<li><p>Overriding the toString() method can improve the debugging experience</p></li>
+<li><p>The toString() method is automatically called when an object is used as a string</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="intermediate-java-concepts">
+<h2>Intermediate Java Concepts<a class="headerlink" href="#intermediate-java-concepts" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>What is the main purpose of generics?</p>
+<ul class="simple">
+<li><p>To reduce the amount of code needed to implement collections and algorithms</p></li>
+<li><p>To improve the performance of Java programs by reducing the need for casting</p></li>
+<li><p>To enables a class, interface, or method to work with different types without a need for casting</p></li>
+<li><p>To enable a class, interface, or method to work only with a specific type</p></li>
+<li><p>To allow a variable to be declared with no specific type</p></li>
+<li><p>To make Java more compatible with other programming languages</p></li>
+</ul>
+</li>
+<li><p>If you have a <code class="docutils literal notranslate"><span class="pre">List&lt;Number&gt;</span> <span class="pre">numbers</span></code>, which of the following are allowed?</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Object</span> <span class="pre">o</span> <span class="pre">=</span> <span class="pre">numbers.get(0);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Number</span> <span class="pre">n</span> <span class="pre">=</span> <span class="pre">numbers.get(0);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Integer</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">numbers.get(0);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">numbers.get(0);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numbers.add(x);</span> <span class="pre">//</span> <span class="pre">x</span> <span class="pre">is</span> <span class="pre">type</span> <span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numbers.add(i);</span> <span class="pre">//</span> <span class="pre">i</span> <span class="pre">is</span> <span class="pre">type</span> <span class="pre">Integer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numbers.add(n);</span> <span class="pre">//</span> <span class="pre">n</span> <span class="pre">is</span> <span class="pre">type</span> <span class="pre">Number</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numbers.add(o);</span> <span class="pre">//</span> <span class="pre">o</span> <span class="pre">is</span> <span class="pre">type</span> <span class="pre">Object</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numbers.add(null);</span></code></p></li>
+</ul>
+</li>
+<li><p>If you have a <code class="docutils literal notranslate"><span class="pre">List&lt;?</span> <span class="pre">extends</span> <span class="pre">Number&gt;</span> <span class="pre">numbers</span></code>, which of the following are allowed?</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Object</span> <span class="pre">o</span> <span class="pre">=</span> <span class="pre">numbers.get(0);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Number</span> <span class="pre">n</span> <span class="pre">=</span> <span class="pre">numbers.get(0);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Integer</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">numbers.get(0);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">numbers.get(0);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numbers.add(x);</span> <span class="pre">//</span> <span class="pre">x</span> <span class="pre">is</span> <span class="pre">type</span> <span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numbers.add(i);</span> <span class="pre">//</span> <span class="pre">i</span> <span class="pre">is</span> <span class="pre">type</span> <span class="pre">Integer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numbers.add(n);</span> <span class="pre">//</span> <span class="pre">n</span> <span class="pre">is</span> <span class="pre">type</span> <span class="pre">Number</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numbers.add(o);</span> <span class="pre">//</span> <span class="pre">o</span> <span class="pre">is</span> <span class="pre">type</span> <span class="pre">Object</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numbers.add(null);</span></code></p></li>
+</ul>
+</li>
+<li><p>If you have a <code class="docutils literal notranslate"><span class="pre">List&lt;?</span> <span class="pre">super</span> <span class="pre">Number&gt;</span> <span class="pre">numbers</span></code>, which of the following are allowed?</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Object</span> <span class="pre">o</span> <span class="pre">=</span> <span class="pre">numbers.get(0);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Number</span> <span class="pre">n</span> <span class="pre">=</span> <span class="pre">numbers.get(0);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Integer</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">numbers.get(0);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">numbers.get(0);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numbers.add(x);</span> <span class="pre">//</span> <span class="pre">x</span> <span class="pre">is</span> <span class="pre">type</span> <span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numbers.add(i);</span> <span class="pre">//</span> <span class="pre">i</span> <span class="pre">is</span> <span class="pre">type</span> <span class="pre">Integer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numbers.add(n);</span> <span class="pre">//</span> <span class="pre">n</span> <span class="pre">is</span> <span class="pre">type</span> <span class="pre">Number</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numbers.add(o);</span> <span class="pre">//</span> <span class="pre">o</span> <span class="pre">is</span> <span class="pre">type</span> <span class="pre">Object</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numbers.add(null);</span></code></p></li>
+</ul>
+</li>
+<li><p>Which of the following can cause a <code class="docutils literal notranslate"><span class="pre">ConcurrentModificationException</span></code>?</p>
+<ul class="simple">
+<li><p>Multiple threads are assigning to a variable concurrently.</p></li>
+<li><p>Multiple threads are calling modifying a non-thread-safe Collection concurrently.</p></li>
+<li><p>One thread is modifying a <code class="docutils literal notranslate"><span class="pre">HashMap</span></code> while another thread is reading from it.</p></li>
+<li><p>One thread is modifying a <code class="docutils literal notranslate"><span class="pre">HashMap</span></code> while another thread is iterating over it.</p></li>
+<li><p>One thread is modifying a <code class="docutils literal notranslate"><span class="pre">ConcurrentHashMap</span></code> while another thread is iterating over it.</p></li>
+<li><p>A single thread is modifying a <code class="docutils literal notranslate"><span class="pre">HashMap</span></code> while it is iterating over it.</p></li>
+<li><p>A single thread is modifying a <code class="docutils literal notranslate"><span class="pre">ConcurrentHashMap</span></code> while it is iterating over it.</p></li>
+</ul>
+</li>
+<li><p>Which of the following are true about writing thread-safe code.</p>
+<ul class="simple">
+<li><p>Writing thread-safe code is hard</p></li>
+<li><p>Synchronizing all methods of a class ensures thread-safety</p></li>
+<li><p>It is safe to use a <code class="docutils literal notranslate"><span class="pre">HashMap</span></code> from multiple threads as long as the threads are only reading</p></li>
+<li><p>It is safe to use a <code class="docutils literal notranslate"><span class="pre">HashMap</span></code> from multiple threads as long as no more than one thread is writing</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">volatile</span></code> field can be accessed from multiple threads without thread-safety concerns	- A write to a <code class="docutils literal notranslate"><span class="pre">volatile</span></code> field is always visible to other threads</p></li>
+<li><p>Using a thread-safe collection such as <code class="docutils literal notranslate"><span class="pre">CopyOnWriteArrayList</span></code> ensures thread-safety for all operations on that collection</p></li>
+</ul>
+</li>
+<li><p>Which of the following is true of using the Java Stream API?</p>
+<ul class="simple">
+<li><p>It provides a functional programming approach to work with collections</p></li>
+<li><p>It allows for parallelizable operations</p></li>
+<li><p>It supports lazy evaluation of intermediate operations</p></li>
+<li><p>It can reduce code complexity and improve readibility in some cases</p></li>
+<li><p>It is always an improvement over imperative code</p></li>
+</ul>
+</li>
+<li><p>What is an anonymous class?</p>
+<ul class="simple">
+<li><p>A class that is used to define an unnamed tuple object</p></li>
+<li><p>A class that is defined inside another class and can access its enclosing class’s variables and methods</p></li>
+<li><p>A class that is defined with no name and can be used to implement an interface or extend a class inline</p></li>
+<li><p>A class that is used to define a custom data type in an anonymous context</p></li>
+</ul>
+</li>
+<li><p>What is a lambda expression?</p>
+<ul class="simple">
+<li><p>An anonymous function that can be used as a method parameter or a variable assignment</p></li>
+<li><p>A shorthand way of defining a class</p></li>
+<li><p>A way to create an anonymous object</p></li>
+<li><p>A way to declare a constant variable</p></li>
+</ul>
+</li>
+<li><p>What is a method reference?</p>
+<ul class="simple">
+<li><p>A type of anonymous class that can be used to define functions inline</p></li>
+<li><p>A way to invoke a method on an object using a shorthand syntax</p></li>
+<li><p>A reference to a method that can be stored or passed as a value</p></li>
+<li><p>A way to create new instances of a class using a factory method</p></li>
+</ul>
+</li>
+<li><p>What is a functional interface?</p>
+<ul class="simple">
+<li><p>An interface that defines a single abstract method and can be used as a lambda expression or method reference</p></li>
+<li><p>An interface that defines multiple abstract methods and can be used as a lambda expression or method reference</p></li>
+<li><p>An interface that can only be implemented by classes in the java.util.function package</p></li>
+<li><p>An interface that is used to define a natural ordering of objects</p></li>
+</ul>
+</li>
+<li><p>What is a Java annotation?</p>
+<ul class="simple">
+<li><p>A comment in the code</p></li>
+<li><p>A way to attach metadata to code elements such as classes, methods, and fields</p></li>
+<li><p>A way to define a class, interface, or method</p></li>
+<li><p>A shorthand syntax for creating an object</p></li>
+</ul>
+</li>
+<li><p>Which of the following statements are true about records?</p>
+<ul class="simple">
+<li><p>Records are a new feature introduced in Java 16</p></li>
+<li><p>Records can be used to define simple data-holding classes with a concise syntax</p></li>
+<li><p>Records are always immutable</p></li>
+<li><p>Record fields are <code class="docutils literal notranslate"><span class="pre">final</span></code> by default, but can be made non-<code class="docutils literal notranslate"><span class="pre">final</span></code></p></li>
+<li><p>Record fields are always private</p></li>
+<li><p>Records automatically generate equals(), hashCode(), and toString() methods based on their state</p></li>
+<li><p>Records can be subclassed like regular classes</p></li>
+<li><p>Records cannot have non-default constructors</p></li>
+<li><p>Records support all of the same features as regular classes, but with a different syntax</p></li>
+</ul>
+</li>
+<li><p>Which of the following statements are true about serialization?</p>
+<ul class="simple">
+<li><p>Java provides built-in serialization by implementing the <code class="docutils literal notranslate"><span class="pre">Serializable</span></code> interface</p></li>
+<li><p>It is recommended to use Java Serialization instead of a third-party serialization library</p></li>
+<li><p>Supporting serialization can increase the maintenance cost of a software system due to compatibility concerns</p></li>
+<li><p>JSON is the best serialization format</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Jackson</span></code>, <code class="docutils literal notranslate"><span class="pre">Avro</span></code>, and <code class="docutils literal notranslate"><span class="pre">Protocol</span> <span class="pre">Buffers</span></code> are commonly used serialization libraries</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, IMC
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Java Exam</a><ul>
+<li><a class="reference internal" href="#basic-java-concepts">Basic Java Concepts</a></li>
+<li><a class="reference internal" href="#intermediate-java-concepts">Intermediate Java Concepts</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+# Python & Pandas Fundamentals Exercise
+
+## Bank Transactions Simulator
+
+For this exercise, you will build a bank transactions simulator. Users can create accounts, make deposits, withdrawals, and view transaction history. 
+While you should practice building a small project, it may be useful to experiment with the code in a jupyter notebook first. 
+You may use google / ChatGPT / any other resources to help if a concept is unfamiliar for you.
+
+## Python Basics
+
+1. Create some datamodels to model the bank accounts and transactions, using `@dataclass`. You will need
+    * Account (Needs to have an `account_holder`, `account_number`, `balance` and a list of `transactions` (see next line). What datatypes are best to represent each field)?
+    * Transaction (these will populate the list held in each account). What types of transaction are there? What fields are needed to represent them and can any be optional?
+    * e.g. think about transfers, which move money to or from another account, and deposits/withdrawals.
+
+1. Create `CurrentAccount` and `SavingsAccount` classes that inherit from the `Account` class with additional properties if needed. (e.g. daily limits)
+
+1. Overload the "less than" operator for `Account` class to compare the balance of two accounts. 
+    * Hint: which dunder methods are used for comparison operators?
+
+1. What is printed when you pass an `account` object to `print`? Add an override to the Account class so that this instead prints a nicely formatted account statement.
+    * Hint: which dunder method defines how an object is converted to a string?
+    * Multiline f-strings
+
+1. Implement a `Bank` class which holds accounts. 
+    * What would be a good datastructure use to model this? Consider which fields of an `account` are guaranteed to be unique for each account
+    * Pull account(s) information for a given `account_holder`.
+    * Add a method which create new accounts for a list of new `account_holders`. First implement this with a loop, then try changing it to a comprehension.
+    * Add methods to deposit/withdraw money into an account.
+    * Add a method which can transfer money from one account to another, creating the relevant `Transactions` and updating the accounts.
+    * What should happen when someone tries to transfer or withdraw more money than they have?
+
+1. When a transaction occurs, write the transaction to a csv file.
+    * This should be a single new file each time you create the `Bank`. Try using the `datetime` library to put the current time in the filename.
+    * You can use the `open` keyword as a context manager
+    * Consider what columns the csv file should have and write these as the first line, when the `Bank` is initialised.
+    * Append each transaction to this file as they occur.
+    * Hint: You can use `",".join(...)` to construct the line.
+
+1. Write a script which can
+    * Generate 100 account names (random strings are fine) and initialise the bank with an account for each. 
+    * Deposit some money into each of them, 
+    * Simulate 1000 random transactions between accounts. Choose two accounts at random and pick a random amount. What bounds might make this sensible? 
+    * Check your log file is the expected length. Make sure you create a new log file each time you run the simulation!
+
+1. The bank wants to find inactive accounts. Use `filter` with a lambda function to find accounts with less than 10 transactions.
+
+### Pandas
+
+1. Set up your project within a virtual environment, and `pip install pandas`
+
+1. After running the simulation and generating the CSV file with transaction data, perform the following tasks in a notebook, using pandas:
+
+1. Load your CSV file of transactions into a DataFrame.
+
+1. Use `group_by` and `concat` to construct a new dataframe with `account_number` as the index and the following columns
+   * number of transactions
+   * current balance
+   * `min_balance` and `max_balance` over the whole simulation
+
+1. Reproduce the list of `inactive_accounts` from the first part, using Pandas operations on the transactions dataframe. Is the list of transactions enough
+information to guarantee we find them all?
+
+1. If your bank implementation allows negative balance, find out which accounts went into overdraft at any point. If not, check if anyone's balance dipped below a threshold.
+
+1. Find which account made the most transactions and plot the balance of this account over time.
+

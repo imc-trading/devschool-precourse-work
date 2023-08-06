@@ -1,0 +1,41 @@
+# IntelliJ
+
+An IDE is essential to improving your productivity as a Software Engineer.
+IntelliJ is the preferred Java IDE for the vast majority of Java teams at IMC,
+and the IDE with the most internal support.
+
+## Recommended Reading
+
+- [IntelliJ - Getting Started](https://www.jetbrains.com/help/idea/getting-started.html)
+- [IntelliJ - Feature Trainer](https://www.jetbrains.com/help/idea/feature-trainer.html)
+
+## Recommended Viewing
+
+- [Youtube - Be More Productive With IntelliJ IDEA](https://www.youtube.com/watch?v=CmPJzEqFS4s)
+- [Youtube - IntelliJ IDEA Debugger Essentials](https://www.youtube.com/watch?v=59RC8gVPlvk)
+
+## Practical skills
+
+Be able to use the following features:
+
+* Reading Code
+  * Code Navigation
+  * Find Usages
+* Writing Code
+  * Inspections
+  * Live Templates
+  * Nullability Analysis and Annotations
+  * Local History
+  * Code Style and Formatting
+* Refactoring
+  * Renaming
+  * Change Signature
+  * Extract/Introduce refactorings
+  * Inline
+  * Safe Delete
+  * Migrate
+* Running
+  * Running a Java application
+  * Running tests
+* Debugging
+* Maven Integration

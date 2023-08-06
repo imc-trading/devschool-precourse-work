@@ -1,0 +1,38 @@
+# Introduction
+
+I hope you are as excited as we are about you joining IMC, and we're looking
+forward to having you in our Software Engineering Global Traineeship
+(colloquially known as Dev School).
+
+Before we start the traineeship together, we want to ensure that you have a
+solid understanding of certain widely used open-source technologies. We have a
+limited amount of time available for the traineeship, so we want to be able to
+use that time for working directly with instructors to learn advanced topics and
+IMC-specific tooling. Therefore, it is essential that you spend time
+familiarizing yourself with these technologies prior to the start of the
+program. The attached documents describe the contents that you should focus on.
+
+While we will provide you with recommended learning resources as a starting
+point, please note that independent research and exploration are expected from
+each of you. Self-directed learning is a crucial skill for success at IMC, and
+this is an opportunity to practice that!
+
+For each technology, we have compiled a set of recommended learning resources
+that will serve as a great starting point for your studies. We have found these
+to be good introductory resources for covering fundamental concepts and
+providing practical examples to help grasp the essentials. If they do not fit
+your learning style, you are encouraged to find your own resources on Google,
+YouTube, or elsewhere. If you are already familiar with any material, feel 
+free to skip the specific content.
+
+Additionally, we are providing you with a checklist of concepts for each
+technology. This checklist will serve as a valuable tool to ensure that you
+cover the most important topics within each technology. It is highly recommended
+that you use this checklist as a guideline to gauge your progress and track your
+learning.
+
+It is very important that you are completely comfortable with these basics, as
+they are mostly taken for granted in the training.
+
+If you have any questions or need further clarification, please don't hesitate
+to reach out to us. We are more than happy to assist you.

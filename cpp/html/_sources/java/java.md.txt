@@ -1,0 +1,136 @@
+# Java
+
+## Resources
+
+### Recommended Exercises
+
+Write code! The best way to get better at a programming language is by writing 
+code. 
+
+One way to do this is through Code Katas. There are many lists of Code Katas 
+online. Here is one:
+* [Code Katas](http://codekata.com/)
+
+### Recommended Reading Material
+
+* [Trail: Learning the Java Language](https://docs.oracle.com/javase/tutorial/java/index.html) 
+  - Please read this if you are not familiar with the Java language or if you
+    want to refresh your Java knowledge.
+* [Effective Java (3rd edition)](https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/) [[PDF]](https://github.com/GunterMueller/Books-3/blob/master/Effective%20Java%20(3rd%20Edition).pdf)
+  - This is essential reading for all Java developers, and we **highly** 
+    recommend you read this before you join a development team. That said, 
+    we don't want you to spend the entire pre-work time reading a book, so 
+    the entire book is not required reading.
+  - The following sections are going to be the most useful for Dev School.
+    - Item 5: Prefer dependency injection to hardwiring resources
+    - Item 10: Obey the general contract when overriding equals
+    - Item 11: Always override hashCode when you override equals
+    - Item 12: Always override toString
+    - Item 14: Consider implementing Comparable
+    - Chapter 4: Classes and Interfaces
+    - Chapter 5: Generics
+    - Chapter 7: Lambdas
+    - Item 58: Prefer for-each loops to traditional for loops
+    - Item 59: Know and use the libraries
+    - Item 51: Design method signatures carefully
+    - Item 62: Avoid string where other types are more appropriate
+    - Item 64: Refer to objects by their interfaces
+    - Item 67: Optimize judiciously
+    - Item 85: Prefer alternatives to Java serialization
+
+### Other Useful Resources
+
+* [Java Generics FAQs](http://www.angelikalanger.com/GenericsFAQ/JavaGenericsFAQ.html)
+  * Good if you are not comfortable 
+## Checklist
+
+### Language Syntax
+
+You should be very familiar with the syntax for programming in Java, including but not limited to:
+
+* Syntax and Fundamentals
+  * Defining enums, classes, methods, variables
+  * Operators, control flow
+  * Instantiating objects
+  * Calling methods
+  * Generics/Type Parameters
+  * Exception handling
+  * Javadocs
+* "Modern" (since Java 8) Syntax
+  * Lambdas, method references
+  * `var`
+  * Records
+  * Switch expressions
+  * Pattern matching
+
+### Essential Language Concepts
+
+You should have a solid understanding of the following concepts. We've included some follow-up questions and related
+concepts under each point.
+
+* Object-Oriented Programming
+  * Objects vs Primitives
+  * Classes and Objects
+  * Inheritance and Polymorphism
+  * Interfaces
+  * Access Modifiers
+  * `static`
+  * Inner classes
+* Collections and Data Structures
+  * Java Standard Library Collections
+    * Collection, List, Set, Queue, Map, NavigableMap, Iterator
+    * ArrayList, LinkedList, HashMap, TreeMap, HashSet, TreeSet, PriorityQueue
+    * What is a `ConcurrentModificationException`?
+  * Generics and Type Parameters
+* Exceptions
+  * Throwables, Errors, and Exceptions
+  * Checked vs Unchecked Exceptions
+* Functional Programming
+  * Functional Interfaces
+  * Lambdas and Method References
+  * Java Stream API
+  * Anonymous Classes
+* Concurrency and Thread-Safety
+  * `volatile` and `synchronized`
+  * `java.util.concurrent` Standard Library
+* Other Language Features and Best Practices
+  * Equals/hashCode contract
+  * Comparable
+  * Optional
+  * Records
+
+### Useful Language Features
+
+You should have a general familiarity with the following language features, but deep understanding is not necessary. We
+will not be using them during Dev School.
+
+* Annotations
+* Java Serialization - know that you should never use it
+* Finalizers
+* Soft/weak references
+
+### Design Patterns
+
+You should be familiar with the following common design patterns.
+
+* Common Design Patterns
+  * Singleton
+  * Factory
+  * Builder
+  * Visitor
+  * Decorator
+  * Strategy
+  * Command
+
+## Exam
+
+The [Java Exam](exam.md) can be used to evaluate your understanding of Java 
+concepts.
+
+This exam is not graded - you should it to identify weaknesses in your
+understanding.
+
+:::{toctree}
+:hidden:
+exam
+:::

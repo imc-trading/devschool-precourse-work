@@ -1,0 +1,123 @@
+# Git
+
+Git is the dominant VCS in the tech community, and is used by all development teams at IMC.
+
+Additionally, most teams use the [Gerrit](https://www.gerritcodereview.com) code review tool, which heavily relies on
+advanced Git features around rewriting history.
+
+## Recommended Reading Material
+
+### [Pro Git](https://git-scm.com/book/en/v2)
+
+The following chapters contain the most useful material about using Git.
+
+* 1\. Getting Started
+* 2\. Git Basics
+* 3\. Git Branching
+* 7\. Git Tools
+    * 7.1 Revision Selection
+    * 7.2 Interactive Staging
+    * 7.3 Stashing and Cleaning
+    * 7.5 Searching
+    * 7.6 Rewriting history
+    * 7.7 Reset Demystified
+    * 7.10 Debugging with Git
+
+Chapters 4-6 cover Git Servers and Workflows that are applicable to working in
+open source and on Github, but not
+immediately relevant to work at IMC.
+
+The other sections of Chapter 7 cover more advanced Git tools that are useful,
+but will not be used in Dev School.
+
+## Recommended Exercises
+
+[Learn Git Branching](https://learngitbranching.js.org/) is a good practical 
+exercise for learning about the most useful Git commands.
+
+## Checklist
+
+### Essential Concepts
+
+You should have a solid understanding of the following concepts.
+
+* Git Fundamental Elements
+  * Commits
+  * Branches
+  * Tags
+  * References
+  * Remotes
+  * Repositories
+* Commit Workflow
+  * Working Directory
+  * Stage/Index
+  * Stash
+* Checking out history
+* Rewriting history
+* `git reset`
+
+### Practical Skills
+
+You must be able to do the following:
+
+* Git commit workflow
+  * Stage change and create commits
+  * See your uncommitted or staged changes
+  * Throw away your un-committed changes
+  * Stash and unstash changes, stash multiple changes at a time
+* Exploring Git History
+  * See the history of commits in a repository
+  * See the commit message for any given commit?
+  * See what changes went into any given commit, or what are the differences between two arbitrary commits
+  * Look at the code from a previous state in the repository history
+  * Figure out what commit a bug was introduced in
+* Branching and tagging
+  * Create, switch, merge and delete branches
+  * Copy commits from one branch to another
+  * Create and delete tags
+* Git Remotes
+  * Clone from, pull from, push to a remote
+* Undoing
+  * Undo a `git commit` (without losing your code).
+  * Revert a commit so that the code is in the same state as if the commit wasn't done, but the commit is left in history.
+  * Delete a commit so that it is gone from git history entirely.
+* Rewriting history
+  * Modify the commit message of the most recent commit.
+  * Modify the commit message of a previous commit
+  * Combine two commits into one commit
+  * Split one commit into two commits
+  * Reorder two commits
+  * Delete a commit
+  * Change a branch to point to a completely different commit
+* Fixing mistakes
+  * Undo a `reset`
+  * Recover a "lost" commit
+
+### Advanced Git Concepts and Tools
+
+You are **not** required to know anything about these.
+
+* Submodules / Subtrees
+* Sparse Checkouts
+* Hooks
+* Git internals
+  * Objects: Blobs, Trees, etc. 
+  * Packfiles
+* `git rerere`
+
+## Additional Material
+
+* [An Introduction To Git and Github](https://www.youtube.com/watch?v=MJUJ4wbFm_A) - Introduction to Git, but in video format.
+* [Think Like (a) Git](https://think-like-a-git.net/sections/graphs-and-git.html)
+
+## Exam
+
+The [Git Exam](exam.md) can be used to evaluate your understanding of git.
+
+This exam is not graded - you should it to identify weaknesses in your 
+understanding.
+
+:::{toctree}
+:hidden:
+exam
+:::

@@ -1,0 +1,41 @@
+# Unix basics
+
+All of our deployment servers are UNIX environments and you will need to be able
+to interact with them using the command line in order to effectively deploy and
+manage your apps at IMC.
+
+## Checklist
+
+### Essential skills
+
+You must be able to do the following:
+
+* Be familiar with the UNIX command line interface and its basic
+  functionalities. 
+  * Be able to navigate through a file system, create and remove files and 
+    directories. Use the `cd`, `ls`, `mkdir`, `cp`, `mv` and `rm` commands.
+* View files using `cat` and `less`
+* Edit files using a CLI text editor.
+  * We recommend `vim` but `emacs` and `nano` are also available.
+    * `vimtutor` is a useful tool for learning.
+  * Be able to open, edit and write files from the CLI.
+
+### Useful skills
+
+The following skills are extremely useful, but not critical for Dev School.
+
+* Search through files and directories for text patterns with `find` and `grep`
+* Redirect output to a new command with the `|` operator.
+  * Combine this with `grep`!
+* Redirect output to a file with `>` and `>>`
+* Understand environment variables, `env`, `export`, `echo`
+* Monitor a system with `ps`, `top` and `htop`
+* Manage processes (`kill`)
+
+### Bonus
+
+* Use a CLI editor to create a simple bash script file which prints "Hello
+  World" (`echo`).
+* Make it runnable (`chmod +x`) and run it directly from the command line.
+* If your script file is called `hello.sh` what is the difference between
+  running `bash hello.sh` and `./hello.sh`? What is a shebang?

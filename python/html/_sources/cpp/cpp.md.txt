@@ -1,0 +1,51 @@
+# C++
+
+## Resources
+
+### Recommended Exercises
+
+Write code! The best way to get better at a programming language is by writing
+code.
+
+One way to do this is through Code Katas. There are many lists of Code Katas
+online. Here is one:
+* [Code Katas](http://codekata.com/)
+
+### Recommended Reading
+
+[A Tour of C++, 3rd Edition by Bjarne Stroustrup](https://www.stroustrup.com/tour3.html)
+
+:::{note}
+
+- If you *are not proficient in C++*, please read all the chapters noted below.
+- If you *are proficient in C++* but haven't kept up with modern features of the language (since C++17), please read the
+  relevant chapters to ensure familiarity before the traineeship starts.
+:::
+
+Chapters
+
+- 1\. The Basics
+- 2\. User-Defined Types
+- 3\. Modularity
+- 4\. Error Handling
+- 5\. Classes
+- 6\. Essential Operations
+- 7\. Templates
+- 8\. Concepts
+- 9\. Library Overview
+- 10\. Strings and Regular Expressions - only the following sections:
+  - 10.2 Strings
+  - 10.3 String Views
+  - 10.5 Advice
+- 11\. I/O Streams
+- 12\. Containers
+- 13\. Algorithms
+- 15\. Pointers and Containers
+
+### Recommended Videos
+
+- [Master C++ Value Categories](https://www.youtube.com/watch?v=tH0Z2OvHAd8)
+
+C++ value categories are a topic that many people find difficult to 
+understand, but are essential to professional C++ development. This video 
+does a good job explaining it. Please spend the time to watch it if you can.
