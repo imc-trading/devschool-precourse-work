@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Python &amp; Pandas Fundamentals Exercise - Java Prework</title>
+        <title>Python Fundamentals Exercise - Java Prework</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -159,8 +159,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../docker/exam.html">Docker Exam</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../kubernetes/kubernetes.html">Kubernetes and Helm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basics.html">Python Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/kubernetes.html">Kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/helm.html">Helm</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../java/java.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../java/exam.html">Java Exam</a></li>
 </ul>
@@ -200,13 +200,13 @@
           </label>
         </div>
         <article role="main">
-          <div class="tex2jax_ignore mathjax_ignore section" id="python-pandas-fundamentals-exercise">
-<h1>Python &amp; Pandas Fundamentals Exercise<a class="headerlink" href="#python-pandas-fundamentals-exercise" title="Permalink to this heading">#</a></h1>
+          <div class="tex2jax_ignore mathjax_ignore section" id="python-fundamentals-exercise">
+<h1>Python Fundamentals Exercise<a class="headerlink" href="#python-fundamentals-exercise" title="Permalink to this heading">#</a></h1>
 <div class="section" id="bank-transactions-simulator">
 <h2>Bank Transactions Simulator<a class="headerlink" href="#bank-transactions-simulator" title="Permalink to this heading">#</a></h2>
 <p>For this exercise, you will build a bank transactions simulator. Users can create accounts, make deposits, withdrawals, and view transaction history.
 While you should practice building a small project, it may be useful to experiment with the code in a jupyter notebook first.
-You may use google / ChatGPT / any other resources to help if a concept is unfamiliar for you.</p>
+You may use Google / ChatGPT / any other resources to help if a concept is unfamiliar for you.</p>
 </div>
 <div class="section" id="python-basics">
 <h2>Python Basics<a class="headerlink" href="#python-basics" title="Permalink to this heading">#</a></h2>
@@ -259,25 +259,6 @@ You may use google / ChatGPT / any other resources to help if a concept is unfam
 </li>
 <li><p>The bank wants to find inactive accounts. Use <code class="docutils literal notranslate"><span class="pre">filter</span></code> with a lambda function to find accounts with less than 10 transactions.</p></li>
 </ol>
-<div class="section" id="pandas">
-<h3>Pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Set up your project within a virtual environment, and <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pandas</span></code></p></li>
-<li><p>After running the simulation and generating the CSV file with transaction data, perform the following tasks in a notebook, using pandas:</p></li>
-<li><p>Load your CSV file of transactions into a DataFrame.</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">group_by</span></code> and <code class="docutils literal notranslate"><span class="pre">concat</span></code> to construct a new dataframe with <code class="docutils literal notranslate"><span class="pre">account_number</span></code> as the index and the following columns</p>
-<ul class="simple">
-<li><p>number of transactions</p></li>
-<li><p>current balance</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">min_balance</span></code> and <code class="docutils literal notranslate"><span class="pre">max_balance</span></code> over the whole simulation</p></li>
-</ul>
-</li>
-<li><p>Reproduce the list of <code class="docutils literal notranslate"><span class="pre">inactive_accounts</span></code> from the first part, using Pandas operations on the transactions dataframe. Is the list of transactions enough
-information to guarantee we find them all?</p></li>
-<li><p>If your bank implementation allows negative balance, find out which accounts went into overdraft at any point. If not, check if anyone’s balance dipped below a threshold.</p></li>
-<li><p>Find which account made the most transactions and plot the balance of this account over time.</p></li>
-</ol>
-</div>
 </div>
 </div>
 
@@ -318,12 +299,9 @@ information to guarantee we find them all?</p></li>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Python &amp; Pandas Fundamentals Exercise</a><ul>
+<li><a class="reference internal" href="#">Python Fundamentals Exercise</a><ul>
 <li><a class="reference internal" href="#bank-transactions-simulator">Bank Transactions Simulator</a></li>
-<li><a class="reference internal" href="#python-basics">Python Basics</a><ul>
-<li><a class="reference internal" href="#pandas">Pandas</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#python-basics">Python Basics</a></li>
 </ul>
 </li>
 </ul>

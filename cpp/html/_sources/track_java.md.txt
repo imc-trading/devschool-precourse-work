@@ -8,7 +8,7 @@ git/git
 unix/basics
 docker/docker
 kubernetes/kubernetes
-python/basics
+kubernetes/helm
 java/java
 maven/maven
 ide/intellij

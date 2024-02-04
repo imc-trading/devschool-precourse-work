@@ -11,6 +11,22 @@ there's no need to learn the other ones.
 - Assertions: [AssertJ](https://assertj.github.io/doc/)
 - Maven Runner: [Surefire](https://maven.apache.org/surefire/maven-surefire-plugin/)/[Failsafe](https://maven.apache.org/surefire/maven-failsafe-plugin/)
 
+## Exercise
+
+There is an exercise to complete and submit as part of the pre-work. We
+recommend you go through the recommended reading materials below before
+completing the exercise.
+
+:::{admonition} Instructions
+Clone the repository from
+[GitHub](https://github.com/imc-trading/devschool-junit-exercise) and
+follow the instructions in the README.md file.
+
+Email your completed `OrderEventStoreTest.java` file to
+[Dev School Leads](mailto:Development%20School%20Leads%20%3Cdevschoolleads%40imc%2Ecom%3E?subject=Pre%2Dwork%20JUnit%20exercise%20submission)
+(devschoolleads@imc.com) with the subject "Pre-work JUnit exercise submission".
+:::
+
 ## Recommended Reading Material
 
 The above documentation websites have relatively high quality examples and tutorials, so we recommend starting with

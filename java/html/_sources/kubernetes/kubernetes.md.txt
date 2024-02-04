@@ -1,40 +1,4 @@
-# Kubernetes and Helm
-
-Kubernetes is a powerful tool for orchestrating containerized applications, offering automated management, scaling, and
-updating of applications across multiple hosts. 
-
-Helm is a package manager for Kubernetes that simplifies deployment of applications. It uses a packaging format called
-Charts, which are collections of files that describe a related set of Kubernetes resources. Helm provides a way to
-manage and maintain complex applications through a simple, declarative approach, making deployments repeatable and more
-manageable.
-
-The next generation of IMC's deployment tools are built on top of
-Kubernetes and Helm, so it is valuable to have a basic understanding of how these tools work and how to work
-with them.
-
-Note: Kubernetes is a complex topic with a lot of depth, most of which you
-don't need. Just make sure you know the K8s and Helm concepts listed in
-the [checklist below](#checklist). The recommended readings and tutorials 
-are good places to start.
-
-## Resources
-### Recommended Reading
-
-* [Introduction to Kubernetes](https://www.jeremyjordan.me/kubernetes/)
-* [Config Maps](https://matthewpalmer.net/kubernetes-app-developer/articles/ultimate-configmap-guide-kubernetes.html)
-
-### Recommended Tutorials
-
-* [Hello Minikube](https://kubernetes.io/docs/tutorials/hello-minikube/)
-* [Helm Chart Tutorial](https://devopscube.com/create-helm-chart/)
-
-### Alternatives
-
-* [Youtube - Kubernetes Crash Course](https://www.youtube.com/watch?v=s_o8dwzRlu4)
-
-### Reference documentation
-  * [Kubernetes Documentation](https://kubernetes.io/docs/home/)
-  * [Helm Documentation](https://helm.sh/docs/)
+# Kubernetes
 
 ## Checklist
 
@@ -44,48 +8,835 @@ You should have a solid understanding of the following concepts. We've included 
 concepts under each point.
 
 * Kubernetes Basics
-  * What is Kubernetes?
-  * What are the benefits to using Kubernetes?
+    * What is Kubernetes?
+    * What are the benefits to using Kubernetes?
 * Kubernetes Clusters
-  * Nodes
+    * Nodes
 * Kubernetes Components
-  * Pods
-  * Deployments
-  * Services
-* Helm 
-  * What is Helm and why use it?
-  * Charts
-    * Chart Structure
-    * Chart Dependencies
-  * Repositories
-  * Releases
+    * Pods
+    * Deployments
+    * Services
 
 ### Useful Concepts
 
 You should have a general familiarity with the following concepts, but deep understanding is not necessary.
 
-* Services
 * Storage
-  * Volumes
-  * Persistent Volumes
-  * Persistent Volume Claims
+    * Volumes
+    * Persistent Volumes
 * Configuration
-  * ConfigMaps
+    * ConfigMaps
 
 ### Practical Skills
 
 You must be able to do the following:
 
 * Kubernetes Basics:
-  * Deploy a containerized application on a cluster.
-  * Update the containerized application with a new software version.
-  * Debug the containerized application.
+    * Deploy a containerized application on a cluster.
+    * Update the containerized application with a new software version.
+    * Debug the containerized application.
 * Basic Kubectl Commands
-  * Get info about nodes, pods, deployments, services
-  * Create and delete resources
-  * Get logs
-  * Open an interactive shell on a running pod for debugging
-* Helm Basics
-  * Read simple Helm Charts
-  * Create a simple Helm Chart from scratch
-  * Deploy a Helm Chart
+    * Get info about nodes, pods, deployments, services
+    * Create and delete resources
+    * Get logs
+    * Open an interactive shell on a running pod for debugging
+
+## LinkedIn learning
+
+If you already have an IMC laptop and have access to LinkedIn Learning, watch this course:
+
+* [Learning Kubernetes](https://www.linkedin.com/learning/learning-kubernetes-16086900)
+
+## Tutorial
+
+If you do **not** have access to LinkedIn Learning, read the following K8s tutorial. It is an adaptation of the course
+above.
+
+### Prerequisites
+
+* Basic command line knowledge: cd, mkdir
+* Higher level understanding of Container technology: Docker. Do the Docker pre-work if not ready.
+
+### Introduction
+
+#### What is Kubernetes?
+
+[Kubernetes](https://kubernetes.io/), aka K8s, is one of the most popular orchestration platforms. It was open-sourced
+by Google, inspired from their internal orchestration system.
+
+K8s is a container orchestrator. It decides on where and how containerized applications are launched on a server, when
+to scale them and down the number of application replicas, and what to do when an application stops working.
+
+K8s can run on any kind of server: in an on-premise datacenter, as a cloud service, or a mix of the two. You can install
+it on your own or use a managed service on a public cloud.
+
+#### What are containers?
+
+A container bundles an application's binaries and configuration into one unit. You can run multiple containers on a
+server. An image is a file containing executable code that can be run as a container. A container registry is a
+database that stores container images. One famous registry is Docker Hub, but companies often have an internal
+registry as well.
+
+### Setting up Kubernetes
+
+#### Install Docker
+
+Make sure you have a terminal and a text editor ready for use. Make sure you have the Docker engine installed on your
+machine. If not follow [these instructions](https://docs.docker.com/desktop/). Make sure Docker is running:
+
+```shell
+$ docker
+```
+
+This should show the list of docker commands.
+
+#### Install Minikube
+
+We need a K8s cluster. Normally a K8s cluster is installed on at least three machines running in a datacenter.
+However, for learning purposes we can use a small cluster running entirely on our machine: specifically Minikube.
+Install minikube as described in the [docs](https://minikube.sigs.k8s.io/docs/start/).
+
+Let's start the cluster:
+
+```shell
+$ minikube start
+```
+
+Get the minikube version to see if it matches the latest stable version:
+
+```shell
+$ minikube update-check
+CurrentVersion: v1.32.0
+LatestVersion: v1.32.0
+```
+
+You can stop the cluster by running:
+
+```shell
+$ minikube stop
+```
+
+And you can delete the cluster like this:
+
+```shell
+$ minikube delete
+```
+
+#### Spin up and explore a minikube cluster
+
+If you've deleted the cluster, we'll create a new one:
+
+```shell
+$ minikube start
+```
+
+`minikube` is just one way to create a cluster. If you were to use a cloud provider, you'd use whatever
+alternative tool they provide to create a cluster. No matter how you create a cluster, you will use the K8s CLI tool
+to connect to the cluster: `kubectl`. You can point it to any cluster. `minikube start` has automatically configured
+your `kubectl` to connect to the minikube cluster.
+
+Inspect the cluster:
+
+```shell
+$ kubectl cluster-info
+Kubernetes control plane is running at https://127.0.0.1:32774
+CoreDNS is running at https://127.0.0.1:32774/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+```
+
+That shows the address and port of the cluster control plane. We'll explore this later.
+If you see an error saying that the connection to the server was refused, it means you don't have a minikube cluster
+running. Either wait for it to start up or run `minikube start`.
+
+Get info about the cluster nodes with:
+
+```shell
+$ kubectl get nodes
+NAME       STATUS   ROLES           AGE     VERSION
+minikube   Ready    control-plane   7m10s   v1.28.3
+```
+
+You should see just one node, with the role of `control-plane` and the K8s version it's running. Let's look at all the
+namespaces that get created by default:
+
+```shell
+$ kubectl get namespaces
+NAME              STATUS   AGE
+default           Active   34m
+kube-node-lease   Active   34m
+kube-public       Active   34m
+kube-system       Active   34m
+```
+
+Namespaces are a way to isolate and manage applications and services. Now let's look at the pods that run by default on
+the cluster:
+
+```shell
+$ kubectl get pods -A
+NAMESPACE     NAME                               READY   STATUS    RESTARTS      AGE
+kube-system   coredns-5dd5756b68-pxfzv           1/1     Running   2 (30m ago)   35m
+kube-system   etcd-minikube                      1/1     Running   2 (30m ago)   35m
+kube-system   kube-apiserver-minikube            1/1     Running   2 (29m ago)   35m
+kube-system   kube-controller-manager-minikube   1/1     Running   2 (30m ago)   35m
+kube-system   kube-proxy-2wwf7                   1/1     Running   2 (30m ago)   35m
+kube-system   kube-scheduler-minikube            1/1     Running   2 (30m ago)   35m
+kube-system   storage-provisioner                1/1     Running   4 (28m ago)   35m
+```
+
+The `-A` flag means that we want to see the pods in every namespace. Pods are how containers are run in K8s. The pods
+above are all in the `kube-system` namespace, meaning that these specific pods are required to run a K8s cluster itself.
+
+Finally, let's see the services that run in this cluster:
+
+```shell
+$ kubectl get services -A
+NAMESPACE     NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)                  AGE
+default       kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP                  39m
+kube-system   kube-dns     ClusterIP   10.96.0.10   <none>        53/UDP,53/TCP,9153/TCP   39m
+```
+
+Services act as load balancers within the cluster and direct network traffic to pods.
+Don't worry if these look cryptic. We'll cover all these concepts later.
+
+You can pat yourself on the back. You've just spun up a cluster and used `kubectl` to inspect
+how the cluster is set up by default.
+
+### Application deployment
+
+#### Reading and writing YAML
+
+In the K8s world you will see two big movements being mentioned often: _Infrastructure as Code_ and _GitOps_. This means
+the state of the system can be expressed as code and the changes of that system should be tracked using a code version
+management system like Git.
+
+In K8s, the code is commonly described in a YAML format, which is a data serialization format, like JSON or XML.
+
+Here is an example of a generic YAML file (not K8s specific):
+
+```yaml
+---
+# Description
+name: Bob Doyle
+professions:
+  - software engineer
+  - coder
+  - software developer
+  - programmer
+  - hacker
+previousJobs:
+  IMC: 1 year
+  IMC trading: 2 years
+  titles:
+    - team lead
+    - software engineer
+```
+
+- `---` means that it's the beginning of a document. So you can have multiple documents in one file.
+- `# Description` is a comment
+- `name: Bob Doyle` key value pair
+- `professions` is list or array of items and each item is preceded by one `-`
+- `previousJobs` - is a nested map of key value pairs. On one line you have a `key:` and on the next line
+  you indent and add the next `key: value` pair.
+
+YAML files end with either `.yaml` or `.yml`. It's easy to make mistakes when writing YAML. Luckily you can validate
+your YAML with an online service like: https://yamlchecker.com.
+
+#### Namespaces
+
+Namespaces let you organize and isolate workloads. E.g., if both your prod and dev are running in the same cluster,
+you can separate those two by creating two namespaces. Let's look at the default ones:
+
+```shell
+$ kubectl get namespaces
+NAME              STATUS   AGE
+default           Active   148m
+kube-node-lease   Active   148m
+kube-public       Active   148m
+kube-system       Active   148m
+```
+
+Let's look at a Kubernetes manifest for a namespace:
+
+```yaml
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: development
+```
+
+The only thing you need to worry about is the `name` field, in this case: `development`. Save this code in a
+`namespace.yaml` file and let's create this namespace in our K8s cluster:
+
+```shell
+$ kubectl apply -f namespace.yaml 
+namespace/development created
+```
+
+See the newly created namespace by running:
+
+```shell
+$ kubectl get namespaces
+NAME              STATUS   AGE
+default           Active   5h5m
+development       Active   46s
+kube-node-lease   Active   5h5m
+kube-public       Active   5h5m
+kube-system       Active   5h5m
+```
+
+Since in YAML, we can have multiple documents in a file, we can define multiple K8s resources in a file.
+Add one more namespace called `production`:
+
+```yaml
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: development
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: production
+```
+
+And apply it again:
+
+```shell
+$ kubectl apply -f namespace.yaml 
+namespace/development unchanged
+namespace/production created
+```
+
+As you can see K8s is smart enough to know that it should not create the `development`
+namespace again, only `production`. Inspect the namespaces again:
+
+```shell
+$ kubectl get namespaces
+NAME              STATUS   AGE
+default           Active   5h8m
+development       Active   4m35s
+kube-node-lease   Active   5h8m
+kube-public       Active   5h8m
+kube-system       Active   5h8m
+production        Active   14s
+```
+
+To delete these namespaces, run:
+
+```yaml
+$ kubectl delete -f namespace.yaml
+namespace "development" deleted
+namespace "production" deleted
+```
+
+#### Deploy an application
+
+First, let's create a simple application. Create a file called `app.py` and paste this code in:
+
+```python
+from flask import Flask
+import os
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def print_env_variables():
+    pod_name = os.getenv('POD_NAME', 'Default Pod Name')
+    pod_namespace = os.getenv('POD_NAMESPACE', 'Default Pod Namespace')
+    pod_id = os.getenv('POD_ID', 'Default Pod ID')
+
+    return f'POD_NAME: {pod_name}, POD_NAMESPACE: {pod_namespace}, POD_ID: {pod_id}'
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=3000)
+```
+
+This is a simple Python HTTP server, listening on port 3000, that returns the values of three environment variables:
+`POD_NAME`, `POD_NAMESPACE`, `POD_ID`.
+
+Now let's create a Docker image that packages this application. Create a `Dockerfile` file with this content:
+
+```dockerfile
+FROM python:3.8-slim
+WORKDIR /app
+COPY . /app
+RUN pip install --trusted-host pypi.python.org Flask
+EXPOSE 3000
+ENV POD_NAME=default_pod \
+    POD_NAMESPACE=default_namespace \
+    POD_ID=default_id
+CMD ["python", "app.py"]
+```
+
+This copies our `app.py` into the image, installs the appropriate Python packages, exposes the port 3000,
+specifies the expected environment variables, and specifies how to start tha app.
+
+We'll use this Docker image in our minikube K8s cluster. Minikube has its own Docker registry,
+so before building the image, we need to make sure it gets pushed to the Minikube Docker registry:
+
+```shell
+$ eval $(minikube docker-env)
+```
+
+In the same terminal build the Docker image with the name `pod-info-app`:
+
+```shell
+$ docker build -t pod-info-app .
+```
+
+##### Deploying the app on K8s
+
+K8s is designed to make your applications highly available. It does that
+by creating multiple replicas of your application, so if one fails, the
+others can still serve your clients.
+
+`Pods` are K8s resources that run your applications and microservices.
+One way to make sure that your application is highly available is to
+organize your pods into K8s `deployments`. This is a spec for a K8s deployment (see `kind: Deployment`):
+
+```yaml
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-info-deployment
+  namespace: development
+  labels:
+    app: pod-info
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pod-info
+  template:
+    metadata:
+      labels:
+        app: pod-info
+    spec:
+      containers:
+        - name: pod-info-container
+          image: pod-info-app
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: POD_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+```
+
+The deployment is called `pod-info-deployment` specifying that the pods should be in the
+`development` namespace and labeling all the pods in this group with the key value: `app: pod-info`.
+
+Under `spec` we specify that we want 3 replicas of our container to run at the same time.
+Under `containers` we specify the Docker container we want to run in the pod. Notice that `containers`
+is a list, so we can have _multiple_ containers in a pod.
+
+We define a container called `pod-info-container` which will use the latest version of Docker image we've just created:
+`pod-info-app`. Moreover, we direct the traffic for the container to port `3000`. `imagePullPolicy: IfNotPresent` is
+needed to make Minikube use its own Docker registry instead of going to Docker Hub to fetch the Docker image.
+
+We pass the three environment variables to the Docker container: `POD_NAME`, `POD_NAMESPACE`, and `POD_IP`. These will
+take their values from the K8s pod metadata: `name`, `namespace`, `status.podIP` respectively.
+
+Save the YAML above in a file called `deployment.yaml`. Make sure you create the `development` namespace as we did above
+and deploy this K8s deployment:
+
+```shell
+$ kubectl apply -f namespace.yaml
+$ kubectl apply -f deployment.yaml         
+deployment.apps/pod-info-deployment created
+```
+
+Now see the deployment in the `development` namespace:
+
+```shell
+$ kubectl get deployments -n development
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+pod-info-deployment   3/3     3            3           5m4s
+```
+
+`3/3` means there are three pods ready to be used. Now let's see the pods created:
+
+```shell
+$ kubectl get pods -n development
+NAME                                   READY   STATUS    RESTARTS   AGE
+pod-info-deployment-84b8474657-hbpbg   1/1     Running   0          6m58s
+pod-info-deployment-84b8474657-jgj4z   1/1     Running   0          6m58s
+pod-info-deployment-84b8474657-rt9wn   1/1     Running   0          6m58s
+```
+
+If you want to see how the K8s deployment ensures three pods running at any time, try deleting one of those pods:
+
+```shell
+$ kubectl -n development delete pod pod-info-deployment-84b8474657-hbpbg && kubectl get pods -n development
+pod "pod-info-deployment-84b8474657-hbpbg" deleted
+NAME                                   READY   STATUS    RESTARTS   AGE
+pod-info-deployment-84b8474657-jgj4z   1/1     Running   0          9m25s
+pod-info-deployment-84b8474657-mpmjw   1/1     Running   0          31s
+pod-info-deployment-84b8474657-rt9wn   1/1     Running   0          9m25s
+```
+
+As you can see, it automatically created a new pod instead (the second one).
+
+Great! Now you understand K8s pods and deployments. Yay!
+
+#### Checking the health of a pod
+
+When a pod gets created, it happens often that it fails creating due to a multitude of reasons:
+
+* The Docker image cannot be found (e.g., due to mis-configuration)
+* You could be out of space on your worker node, so the pod cannot be scheduled.
+* Or it starts running, but suddenly stops due to some error in your app.
+
+For this you can look into the event log of the pod:
+
+```shell
+$ kubectl -n development describe pod pod-info-deployment-84b8474657-jgj4z 
+...
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  17m   default-scheduler  Successfully assigned development/pod-info-deployment-84b8474657-jgj4z to minikube
+  Normal  Pulled     17m   kubelet            Container image "pod-info-app" already present on machine
+  Normal  Created    17m   kubelet            Created container pod-info-container
+  Normal  Started    17m   kubelet            Started container pod-info-container
+```
+
+There is a lot of useful information here and the events are at the bottom. If the pod has been running for a long
+time, you'll not see any events, meaning that K8s lets the pod do its own thing because it's healthy.
+
+This is a healthy pod, but let's try with a failing pod. Change your `deployment.yaml` to have a typo in the Docker
+image, delete the deployment, re-apply it, get the pods, notice the failing pods, and check the events of one of those:
+
+```shell
+$ kubectl delete -f deployment.yaml
+$ kubectl apply -f deployment.yaml
+$ kubectl -n development get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+pod-info-deployment-5c7f779b8b-b5wfc   0/1     ImagePullBackOff   0          51s
+pod-info-deployment-5c7f779b8b-csc8j   0/1     ImagePullBackOff   0          51s
+pod-info-deployment-5c7f779b8b-gqpgc   0/1     ImagePullBackOff   0          51s
+$ kubectl -n development describe pod pod-info-deployment-5c7f779b8b-b5wfc
+...
+Events:
+  Type     Reason     Age                From               Message
+  ----     ------     ----               ----               -------
+  Normal   Scheduled  86s                default-scheduler  Successfully assigned development/pod-info-deployment-5c7f779b8b-b5wfc to minikube
+  Normal   Pulling    45s (x2 over 85s)  kubelet            Pulling image "pod-info-app-typo"
+  Warning  Failed     20s (x2 over 56s)  kubelet            Failed to pull image "pod-info-app-typo": Error response from daemon: pull access denied for pod-info-app-typo, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+...
+```
+
+This helps you quickly identify where the misconfiguration is. Most issues with pods occur at the beginning of the
+lifecycle, and now you know exactly how to investigate them.
+
+Now, fix the image in `deployment.yaml` and re-apply.
+
+#### Check that your application is working
+
+Our pod is now exposing an HTTP server on the port 3000. This port is not yet exposed to the outside world.
+It's only exposed internally in the cluster, so other pods can access it. In order to try that
+we'll deploy another pod running a container called `busybox`. Busybox is a minimal Linux docker image that
+has handy tools like: `cat`, `wget`, etc. It's great for troubleshooting.
+Let's define another deployment in a file called `busybox.yaml`:
+
+```yaml
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busybox
+  namespace: default
+  labels:
+    app: busybox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busybox
+  template:
+    metadata:
+      labels:
+        app: busybox
+    spec:
+      containers:
+        - name: busybox-container
+          image: busybox:latest
+          # Keep the container running
+          command: [ "/bin/sh", "-c", "--" ]
+          args: [ "while true; do sleep 30; done;" ]
+```
+
+Unlike for our other deployment, we're going to deploy this in the `default` namespace and run only one replica. Let's
+create it and show the pods:
+
+```shell
+$ kubectl apply -f busybox.yaml
+$ kubectl get pods
+NAME                       READY   STATUS    RESTARTS   AGE
+busybox-7f6c976c4c-p7vhp   1/1     Running   0          39s
+```
+
+The last command didn't specify the namespace, meaning that it used the `default` namespace.
+
+Now, we're going to jump into the `busybox` pod and run an HTTP GET request to one of our app pods. For that we first
+need the IP address of one of our app pods:
+
+```shell
+$ kubectl get pods -n development -o wide
+NAME                                   READY   STATUS    RESTARTS   AGE   IP            NODE       NOMINATED NODE   READINESS GATES
+pod-info-deployment-84b8474657-7wqbv   1/1     Running   0          18m   10.244.0.31   minikube   <none>           <none>
+pod-info-deployment-84b8474657-fm8br   1/1     Running   0          18m   10.244.0.33   minikube   <none>           <none>
+pod-info-deployment-84b8474657-xxwbx   1/1     Running   0          18m   10.244.0.32   minikube   <none>           <none>
+```
+
+This command shows us extra information, including the IP addresses of our pods. Let's take the first IP address:
+`10.244.0.31`.
+
+Now let's jump into the `busybox` pod:
+
+```shell
+$ kubectl exec -it busybox-7f6c976c4c-p7vhp -- /bin/sh
+/ # 
+```
+
+This means we want to run the command `/bin/sh` inside the pod, and we use `-it` to get an interactive terminal.
+Now let's use `wget` to make the HTTP request to our app pod:
+
+```shell
+/ # wget 10.244.0.31:3000
+Connecting to 10.244.0.31:3000 (10.244.0.31:3000)
+saving to 'index.html'
+index.html           100% |*****************************************************************************************************************************************************************************************************|    95  0:00:00 ETA
+'index.html' saved
+/ # cat index.html 
+POD_NAME: pod-info-deployment-84b8474657-7wqbv, POD_NAMESPACE: development, POD_ID: 10.244.0.31
+/ # exit
+```
+
+This got us an `index.html` file, which we displayed. As you can see we get our environment variables printed.
+These match the pod information we got when running `kubectl get pods -n development -o wide`.
+
+Yay! Our app is working!
+
+#### View your application logs
+
+You can also inspect the health of your application by looking at its logs:
+
+```shell
+$ kubectl -n development logs pod-info-deployment-84b8474657-7wqbv
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://10.244.0.31:3000
+Press CTRL+C to quit
+127.0.0.1 - - [02/Feb/2024 10:05:31] "GET / HTTP/1.1" 200 -
+```
+
+This command outputs the `stdout` of the application running inside the container. If your app is also writing
+to some file in the container, you can also use `kubectl exec -it <pod name> -- /bin/sh` to jump to your
+app pod and explore the filesystem.
+
+### Complex Application Deployment
+
+#### Expose your application to the internet with a LoadBalancer
+
+We have the pods accepting traffic from inside the K8s cluster, but how do we make the
+pods accessible from the internet? The answer is: K8s services.
+
+A K8s service is a load balancer that directs traffic from outside the cluster to the pods.
+A load balancer has a public and static IP address. The public part means that anyone can access
+it from the internet. And the static part is important because pods and their IP addresses change frequently,
+but your service IP needs to remain the same. Let's define a service in a `service.yaml` file:
+
+```yaml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-service
+  namespace: development
+spec:
+  selector:
+    app: pod-info
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: LoadBalancer
+```
+
+Notice `kind: Service`. Its name is `demo-service` and it will be deployed in the `development` namespace.
+The `selector` is the important part. It tells it that any traffic should be redirected to pods having the label:
+`app: pod-info`. Looking back at our `deployment.yaml`, we see that all the pods in our deployment had this label:
+
+```yaml
+...
+kind: Deployment
+metadata:
+  name: pod-info-deployment
+  ...
+  labels:
+    app: pod-info
+...
+```
+
+Back to our service, we see that it accepts traffic on the port `80` and it redirects traffic to the port `3000` in
+the pods. Finally, we are specifying the service type to `LoadBalancer`. This is one of the three types supported. The
+other ones are `NodePort` and `ClusterIP`.
+
+Note: In IMC we only use `ClusterIP`. `LoadBalancer` and `NodePort` types are usually used in Cloud providers. There is
+no concept of `EXTERNAL-IP` to internal Kubernetes clusters at IMC. For the sake of this tutorial though, we'll use
+`LoadBalancer`.
+
+Let's create the service. Since we're using Minikube, in a separate tab run this command and let it run:
+
+```shell
+$ minikube tunnel
+```
+
+This makes the Minikube cluster available on the host machine. In the original tab, run:
+
+```shell
+$ kubectl apply -f service.yaml 
+service/demo-service created
+```
+
+Let's find the IP of the service:
+
+```shell
+$ kubectl get service -n development
+NAME           TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+demo-service   LoadBalancer   10.99.155.149   127.0.0.1     80:31717/TCP   2m6s
+```
+
+Our service has an ip for inside the cluster and one external IP. Notice that the external IP is actually the IP
+of our localhost. Because Minikube only runs on our machine, not on an actual cloud (e.g., AWS), we're not actually
+getting an external IP available on the Internet.
+
+Let's try doing an HTTP call to the IP address. You can open it in your browser or from the command line run:
+
+```shell
+$ curl http://127.0.0.1        
+curl: (7) Failed to connect to 127.0.0.1 port 80 after 3 ms: Couldn't connect to server
+```
+
+Oops! It does not work. That is because we are using the port 80, which needs admin rights to open.
+It would work with a port larger than 1024, e.g., 8080. But don't despair. Go to the `minikube tunnel` tab. That is
+asking for your admin password. Type it in and try again:
+
+```shell
+$ curl http://127.0.0.1/
+POD_NAME: pod-info-deployment-84b8474657-fm8br, POD_NAMESPACE: development, POD_ID: 10.244.0.33
+```
+
+Look at that! It works! To see the load balancer in action, run the command above repeatedly. You should get different
+responses, depending on the pod to which the service sends your traffic to.
+
+Yay! You're a service expert. Congrats!
+
+#### Add resource requests and limits to your pod
+
+Well configured containers let K8s know how much memory and CPU to reserve on a worker node. Resources refer to the
+amount of available CPU and memory on the worker node running a pod. If you deploy a pod without specifying the
+set of resource requests, it can be scheduled on a node that does not have enough processing power or memory
+and cause the node to fail. Similarly, if you don't specify resource limits, the pod can start using more and
+more resources till the node runs out of resources and fails. That will affect other pods running on that node, too.
+See [Resource Management for Pods and Containers](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/)
+for more details.
+
+Let's go to our `deployment.yaml` and add resource specification to the pod `spec`:
+
+```yaml
+...
+spec:
+  containers:
+    - name: pod-info-container
+      image: pod-info-app
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "250m"
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+...
+```
+
+`requests` means: do not schedule the pod unless the node has at least 64Mi of memory and 250m of CPU. `limits` means:
+stop running this container if it exceeds 128Mi om memory and 500m of CPU (500m means 500 milliCPU, which means 0.5 CPU
+allocated). But how do you decide what values to put in here?
+There's no standard answer for this. It depends on your application. The `pod-info` app does not do much, so these small
+values are fine. Let's redeploy our deployment, inspect the new pods, and describe a pod to see the new limits:
+
+```yaml
+$ kubectl -n development get pods
+  NAME                                   READY   STATUS             RESTARTS         AGE
+  pod-info-deployment-556c97d5fd-46f2d   1/1     Running            0                111s
+...
+  $ kubectl -n development describe pod pod-info-deployment-556c97d5fd-46f2d
+...
+Limits:
+  cpu: 500m
+  memory: 128Mi
+Requests:
+  cpu: 250m
+  memory: 64Mi
+...
+```
+
+#### Cleaning up
+
+Now that we've reached the end of this tutorial, feel free to delete all the K8s resources and delete the minikube
+cluster if you wish. You can delete by using the yaml files in the command `kubectl delete -f <yaml_file>`.
+Delete `busybox.yaml`, `deployment.yaml`, `quote.yaml`, `service.yaml`, `namespace.yaml`. To delete the minikube
+cluster: `minikube delete`.
+
+### Advanced Topics
+
+#### Ways to manage K8s pods
+
+**Deployments**
+
+The most common way to deploy applications on K8s is by using deployments, which allows you to control the number of
+replicas running. When you are deploying a new version of your application, K8s can keep the old version up and running,
+roll up the new version, ensure the new pods are running and healthy, and then remove the old pods. This is a
+no-downtime upgrade, which is one of the most desirable ways to upgrade.
+
+**DaemonSets**
+
+Another way to deploy apps is using a DaemonSet. It will put one copy of your container on every node running in the
+cluster, so you cannot directly control how many replicas are running. These are usually used to run processes in the
+background, for example to collect metrics about the node and the pods running in the node.
+
+**Jobs**
+
+A job will create one or more pods and run a container inside of them until it has successfully completed its task.
+An example of a job is a script that runs a backup of your database. After it finishes, the pod gets deleted. This is
+used for one-off tasks.
+
+#### Running stateful workloads
+
+Our application above was stateless, i.e., it was fine to restart it at any point and not have to worry about losing
+any data. What if you want to run an application that uses a database? One option is to connect to an external database
+service, e.g., one managed by a cloud provider.
+
+Another option is to use a K8s persistent volume. This is a type of data storage that exists in your cluster and
+remains even after a pod gets deleted. We usually mount it in the filesystem of a pod. For example, we could deploy
+a SQL database as a pod, but mount its data directory on a persistent volume. So even if you restart the SQL pod, the
+data is still there. You can use a K8s object called a stateful set, that makes sure that your updated application can
+communicate with the same volume as the previous pod.

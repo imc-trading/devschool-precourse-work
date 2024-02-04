@@ -1,0 +1,948 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Python" href="../python/python.html" /><link rel="prev" title="Kubernetes" href="kubernetes.html" />
+
+    <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
+        <title>Helm - Python Prework</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../track_python.html"><div class="brand">Python Prework</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand" href="../track_python.html">
+  
+  
+  <span class="sidebar-brand-text">Python Prework</span>
+  
+</a><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../git/git.html">Git</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/exam.html">Git Exam</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/basics.html">Unix basics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../docker/docker.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../docker/exam.html">Docker Exam</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kubernetes.html">Kubernetes</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Helm</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../python/python.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/exercise.html">Python Fundamentals Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../python/pandas.html">Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/pandas_exercise.html">Pandas Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ide/pycharm.html">Pycharm</a></li>
+</ul>
+
+</div></div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <div class="tex2jax_ignore mathjax_ignore section" id="helm">
+<h1>Helm<a class="headerlink" href="#helm" title="Permalink to this heading">#</a></h1>
+<div class="section" id="checklist">
+<h2>Checklist<a class="headerlink" href="#checklist" title="Permalink to this heading">#</a></h2>
+<div class="section" id="essential-concepts">
+<h3>Essential Concepts<a class="headerlink" href="#essential-concepts" title="Permalink to this heading">#</a></h3>
+<p>You should have a solid understanding of the following concepts. We’ve included some follow-up questions and related
+concepts under each point.</p>
+<ul class="simple">
+<li><p>What is Helm and why use it?</p></li>
+<li><p>Charts</p>
+<ul>
+<li><p>Chart Structure</p></li>
+<li><p>Chart Dependencies</p></li>
+</ul>
+</li>
+<li><p>Repositories</p></li>
+<li><p>Releases</p></li>
+</ul>
+</div>
+<div class="section" id="practical-skills">
+<h3>Practical Skills<a class="headerlink" href="#practical-skills" title="Permalink to this heading">#</a></h3>
+<p>You must be able to do the following:</p>
+<ul class="simple">
+<li><p>Read simple Helm Charts</p></li>
+<li><p>Create a simple Helm Chart from scratch</p></li>
+<li><p>Deploy a Helm Chart</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="linkedin-learning">
+<h2>LinkedIn Learning<a class="headerlink" href="#linkedin-learning" title="Permalink to this heading">#</a></h2>
+<p>If you already have an IMC laptop and have access to LinkedIn Learning, watch this course:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.linkedin.com/learning/kubernetes-package-management-with-helm">Kubernetes: Package Management With Helm</a></p></li>
+</ul>
+</div>
+<div class="section" id="tutorial">
+<h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading">#</a></h2>
+<p>If you do <strong>not</strong> have access to LinkedIn Learning, read this K8s tutorial. It is an adaptation of the course above.</p>
+<div class="section" id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>K8s pre-work:</p>
+<ul>
+<li><p>K8s foundations: deployments, services, configmaps, pods.</p></li>
+</ul>
+</li>
+<li><p>Access to a K8s cluster, e.g., minikube</p></li>
+<li><p>Know basic Unix commands: mkdir, cd, mv</p></li>
+<li><p>A text editor</p></li>
+</ul>
+</div>
+<div class="section" id="introduction-to-helm">
+<h3>Introduction to Helm<a class="headerlink" href="#introduction-to-helm" title="Permalink to this heading">#</a></h3>
+<div class="section" id="what-is-helm">
+<h4>What is Helm?<a class="headerlink" href="#what-is-helm" title="Permalink to this heading">#</a></h4>
+<p>Helm is the package management system for K8s, just like npm is for Node.js and apt-get is for Debian.
+Without Helm, deploying an application to K8s means copying and pasting lots of yaml files and
+running <code class="docutils literal notranslate"><span class="pre">kubectl</span> <span class="pre">apply</span> <span class="pre">-f</span></code> over and over again to create deployments, services, pods, etc.</p>
+<p>Helm allows packaging all the K8s objects needed for an application and installing them with one command.
+You can also version charts, upgrade them, debug deployments, roll back as needed. Helm allows you to configure
+a chart, so you can deploy the same application in different environments with different sets of values.</p>
+<p>Many open-source applications, like Mysql or Datadog, have readily available Helm charts that you can customize and
+easily deploy to your K8s cluster.</p>
+</div>
+<div class="section" id="installing-helm">
+<h4>Installing Helm<a class="headerlink" href="#installing-helm" title="Permalink to this heading">#</a></h4>
+<p>Use the <a class="reference external" href="https://helm.sh/docs/intro/install/">Helm documentation</a> to install Helm on your machine.</p>
+</div>
+</div>
+<div class="section" id="install-and-configure-a-chart-from-helm-hub">
+<h3>Install and Configure a Chart from Helm Hub<a class="headerlink" href="#install-and-configure-a-chart-from-helm-hub" title="Permalink to this heading">#</a></h3>
+<div class="section" id="explore-the-helm-hub">
+<h4>Explore the Helm Hub<a class="headerlink" href="#explore-the-helm-hub" title="Permalink to this heading">#</a></h4>
+<p>Go to the <a class="reference external" href="https://artifacthub.io/">Helm Hub</a> and scroll around. Can you recognize any of the apps? For examples, search
+for the <code class="docutils literal notranslate"><span class="pre">nginx-ingress</span></code> <a class="reference external" href="https://artifacthub.io/packages/helm/nginx/nginx-ingress">chart</a>. It deploys the nginx ingress
+controller in your cluster. Open the chart’s webpage and look around. The chart has a list of prerequisites, e.g.,
+requires a K8s version that supports the
+Ingress Controller and at least Helm 3.0. Below we find instructions about how to install and uninstall the chart, and
+a list of values we can use to configure the chart. We can see the chart versions, the maintainers, and the source
+code location for the Helm chart.</p>
+</div>
+<div class="section" id="install-a-third-party-helm-chart">
+<h4>Install a third party Helm chart<a class="headerlink" href="#install-a-third-party-helm-chart" title="Permalink to this heading">#</a></h4>
+<p>A popular chart to install on K8s clusters is: <code class="docutils literal notranslate"><span class="pre">kube-state-metrics</span></code>. It collects data about the K8s objects in that
+cluster (nodes, pods, deployments, etc) and monitors resource usage. Search it up in the Helm Hub and pick the one from
+Bitnami. Bitnami is a company which maintains many high-quality Helm charts for widely used open-source applications.</p>
+<p>In order to install this chart, we first need to add the Bitnami chart repo to our Helm, and fetch all the charts from
+Bitnami. Then we ensure that the repo was properly added.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>bitnami<span class="w"> </span>https://charts.bitnami.com/bitnami
+$<span class="w"> </span>helm<span class="w"> </span>repo<span class="w"> </span>update
+$<span class="w"> </span>helm<span class="w"> </span>repo<span class="w"> </span>list
+NAME<span class="w">    </span>URL<span class="w">                               </span>
+bitnami<span class="w"> </span>https://charts.bitnami.com/bitnami
+</pre></div>
+</div>
+<p>Now we’ll install the chart. Helm will install in the cluster to which your <code class="docutils literal notranslate"><span class="pre">kubectl</span></code> is pointing to. If you started
+Minikube, your <code class="docutils literal notranslate"><span class="pre">kubectl</span></code> is pointing to the Minikube cluster, thus Helm will install there as well.</p>
+<p>First, let’s create a new namespace:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>metrics
+</pre></div>
+</div>
+<p>Let’s install the chart in our new namespace:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>install<span class="w"> </span>kube-state-metrics<span class="w"> </span>bitnami/kube-state-metrics<span class="w"> </span>-n<span class="w"> </span>metrics
+NAME:<span class="w"> </span>kube-state-metrics
+...
+To<span class="w"> </span>access<span class="w"> </span>kube-state-metrics<span class="w"> </span>from<span class="w"> </span>outside<span class="w"> </span>the<span class="w"> </span>cluster<span class="w"> </span>execute<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>commands:
+
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;URL: http://127.0.0.1:9100/&quot;</span>
+<span class="w">    </span>kubectl<span class="w"> </span>port-forward<span class="w"> </span>--namespace<span class="w"> </span>metrics<span class="w"> </span>svc/kube-state-metrics<span class="w"> </span><span class="m">9100</span>:8080
+</pre></div>
+</div>
+<p>An installation of a Helm chart is called a release.
+The command above means: we installed the chart <code class="docutils literal notranslate"><span class="pre">kube-state-metrics</span></code> from the <code class="docutils literal notranslate"><span class="pre">bitnami</span></code> repo under the release name
+<code class="docutils literal notranslate"><span class="pre">kube-state-metrics</span></code>. Now do the port forwarding as suggested in the output above.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>port-forward<span class="w"> </span>--namespace<span class="w"> </span>metrics<span class="w"> </span>svc/kube-state-metrics<span class="w"> </span><span class="m">9100</span>:8080
+</pre></div>
+</div>
+<p>And now open <a class="reference external" href="http://127.0.0.1:9100/">http://127.0.0.1:9100/</a> in the browser. That should show a Web page with links
+to a lot of metrics. These metrics can be sent to a monitoring service, like Prometheus, and get alerts when the
+cluster is not healthy.</p>
+<p>Good stuff! You have deployed a Helm chart.</p>
+</div>
+<div class="section" id="inspect-a-chart-in-your-k8s-cluster">
+<h4>Inspect a chart in your K8s cluster<a class="headerlink" href="#inspect-a-chart-in-your-k8s-cluster" title="Permalink to this heading">#</a></h4>
+<p>Let’s list the installed chart:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>ls<span class="w"> </span>-n<span class="w"> </span>metrics<span class="w">                  </span>
+NAME<span class="w">                    </span>NAMESPACE<span class="w">       </span>REVISION<span class="w">        </span>UPDATED<span class="w">                                 </span>STATUS<span class="w">          </span>CHART<span class="w">                           </span>APP<span class="w"> </span>VERSION
+kube-state-metrics<span class="w">      </span>metrics<span class="w">         </span><span class="m">1</span><span class="w">               </span><span class="m">2024</span>-02-02<span class="w"> </span><span class="m">15</span>:41:37.203101<span class="w"> </span>+0100<span class="w"> </span>CET<span class="w">    </span>deployed<span class="w">        </span>kube-state-metrics-3.11.3<span class="w">       </span><span class="m">2</span>.10.1<span class="w"> </span>
+</pre></div>
+</div>
+<p>Since it’s the first time we install this chart, it has the revision <code class="docutils literal notranslate"><span class="pre">1</span></code>. If you reinstall it, the revision will
+be incremented. Let’s drill deeper and see what K8s objects have been created by this chart. A simple way is to see all
+the objects in the namespace, since this is the only thing installed there:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>all<span class="w"> </span>-n<span class="w"> </span>metrics
+NAME<span class="w">                                      </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+pod/kube-state-metrics-86d5bb5bb7-bvm92<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>8m24s
+
+NAME<span class="w">                         </span>TYPE<span class="w">        </span>CLUSTER-IP<span class="w">      </span>EXTERNAL-IP<span class="w">   </span>PORT<span class="o">(</span>S<span class="o">)</span><span class="w">    </span>AGE
+service/kube-state-metrics<span class="w">   </span>ClusterIP<span class="w">   </span><span class="m">10</span>.100.80.130<span class="w">   </span>&lt;none&gt;<span class="w">        </span><span class="m">8080</span>/TCP<span class="w">   </span>8m24s
+
+NAME<span class="w">                                 </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
+deployment.apps/kube-state-metrics<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>8m24s
+
+NAME<span class="w">                                            </span>DESIRED<span class="w">   </span>CURRENT<span class="w">   </span>READY<span class="w">   </span>AGE
+replicaset.apps/kube-state-metrics-86d5bb5bb7<span class="w">   </span><span class="m">1</span><span class="w">         </span><span class="m">1</span><span class="w">         </span><span class="m">1</span><span class="w">       </span>8m24s
+</pre></div>
+</div>
+<p>It has created a pod, a service, a deployment, and a replica set that determines the number of pods we’re running. Let’s
+look at the pod logs:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>logs<span class="w"> </span>kube-state-metrics-86d5bb5bb7-bvm92<span class="w"> </span>-n<span class="w"> </span>metrics
+I0202<span class="w"> </span><span class="m">14</span>:41:37.380005<span class="w">       </span><span class="m">1</span><span class="w"> </span>wrapper.go:120<span class="o">]</span><span class="w"> </span><span class="s2">&quot;Starting kube-state-metrics&quot;</span>
+...
+</pre></div>
+</div>
+<p>Without Helm, we would’ve had to create all those yaml files for all these K8s objects. Helm makes this process faster
+and more reliable.</p>
+</div>
+<div class="section" id="try-helm-show-commands">
+<h4>Try Helm show commands<a class="headerlink" href="#try-helm-show-commands" title="Permalink to this heading">#</a></h4>
+<p>Normally when installing a Helm chart, you want to customize it. For that you need to inspect it to see what
+configuration there is. You can read the documentation on the Helm Hub, but if that is missing, you can show the
+internals of the chart. You can use <code class="docutils literal notranslate"><span class="pre">helm</span> <span class="pre">show</span></code>. It has four subcommands, which you can read more about in
+the <code class="docutils literal notranslate"><span class="pre">helm</span> <span class="pre">show</span> <span class="pre">help</span></code>: <code class="docutils literal notranslate"><span class="pre">all</span></code>, <code class="docutils literal notranslate"><span class="pre">chart</span></code>, <code class="docutils literal notranslate"><span class="pre">readme</span></code>, <code class="docutils literal notranslate"><span class="pre">values</span></code>. Try running:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>show<span class="w"> </span>chart
+</pre></div>
+</div>
+<p>That will show a description of the chart, the maintainers, where to find the code, etc. All this is also on the Helm
+Hub page of the chart. One thing you cannot see in Helm Hub is the values file:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>bitnami/kube-state-metrics<span class="w"> </span>&gt;<span class="w"> </span>values.yaml
+</pre></div>
+</div>
+<p>This shows all the values you can change to configure this chart and their default values. Open it by opening a
+text editor that can highlight yaml files to make it more readable. You can see there things like: the default number of
+replicas is 1, the service listens on port 8080, there is a liveness probe defined, etc.</p>
+<p>If you want to customize your chart, you can change a value in this file and update the chart.</p>
+</div>
+<div class="section" id="updating-a-helm-chart">
+<h4>Updating a Helm Chart<a class="headerlink" href="#updating-a-helm-chart" title="Permalink to this heading">#</a></h4>
+<p>As an application releases a new version, likely a new Helm chart version will be released as well. Let’s look at the
+current version of our chart again:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>ls<span class="w"> </span>-n<span class="w"> </span>metrics
+NAME<span class="w">                    </span>NAMESPACE<span class="w">       </span>REVISION<span class="w">        </span>UPDATED<span class="w">                                 </span>STATUS<span class="w">          </span>CHART<span class="w">                           </span>APP<span class="w"> </span>VERSION
+kube-state-metrics<span class="w">      </span>metrics<span class="w">         </span><span class="m">1</span><span class="w">               </span><span class="m">2024</span>-02-02<span class="w"> </span><span class="m">15</span>:41:37.203101<span class="w"> </span>+0100<span class="w"> </span>CET<span class="w">    </span>deployed<span class="w">        </span>kube-state-metrics-3.11.3<span class="w">       </span><span class="m">2</span>.10.1<span class="w">   </span>
+</pre></div>
+</div>
+<p>There are two versions:</p>
+<ul class="simple">
+<li><p>chart version - this is the version of the Helm chart</p></li>
+<li><p>app version - the version of the underlying code that gets installed as a pod or set of pods</p></li>
+</ul>
+<p>Sometimes we don’t want the latest version of a chart, since it might be incompatible with the rest of our applications.
+Let’s say we want to downgrade to the version <code class="docutils literal notranslate"><span class="pre">3.11.2</span></code>. We can do that with the helm upgrade command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>upgrade<span class="w"> </span>kube-state-metrics<span class="w"> </span>bitnami/kube-state-metrics<span class="w"> </span>--version<span class="w"> </span><span class="m">3</span>.11.2<span class="w"> </span>-n<span class="w"> </span>metrics
+</pre></div>
+</div>
+<p>The command means: I want to upgrade the already installed <code class="docutils literal notranslate"><span class="pre">kube-state-metrics</span></code> chart to the chart <code class="docutils literal notranslate"><span class="pre">kube-state-metrics</span></code>
+chart from the <code class="docutils literal notranslate"><span class="pre">bitnami</span></code> repo with the version <code class="docutils literal notranslate"><span class="pre">3.11.2</span></code> in the namespace <code class="docutils literal notranslate"><span class="pre">metrics</span></code>. Let’s look at the K8s objects:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>all<span class="w"> </span>-n<span class="w"> </span>metrics
+NAME<span class="w">                                     </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+pod/kube-state-metrics-c9849cb4f-x8crw<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>2m53s
+
+NAME<span class="w">                         </span>TYPE<span class="w">        </span>CLUSTER-IP<span class="w">      </span>EXTERNAL-IP<span class="w">   </span>PORT<span class="o">(</span>S<span class="o">)</span><span class="w">    </span>AGE
+service/kube-state-metrics<span class="w">   </span>ClusterIP<span class="w">   </span><span class="m">10</span>.100.80.130<span class="w">   </span>&lt;none&gt;<span class="w">        </span><span class="m">8080</span>/TCP<span class="w">   </span>65m
+
+NAME<span class="w">                                 </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
+deployment.apps/kube-state-metrics<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>65m
+
+NAME<span class="w">                                            </span>DESIRED<span class="w">   </span>CURRENT<span class="w">   </span>READY<span class="w">   </span>AGE
+replicaset.apps/kube-state-metrics-86d5bb5bb7<span class="w">   </span><span class="m">0</span><span class="w">         </span><span class="m">0</span><span class="w">         </span><span class="m">0</span><span class="w">       </span>65m
+replicaset.apps/kube-state-metrics-c9849cb4f<span class="w">    </span><span class="m">1</span><span class="w">         </span><span class="m">1</span><span class="w">         </span><span class="m">1</span><span class="w">       </span>2m53s
+</pre></div>
+</div>
+<p>The service and the deployment did not change, whereas a new pod and replica set were created.</p>
+</div>
+</div>
+<div class="section" id="deploy-an-application-using-helm">
+<h3>Deploy an Application Using Helm<a class="headerlink" href="#deploy-an-application-using-helm" title="Permalink to this heading">#</a></h3>
+<div class="section" id="create-a-new-helm-chart-from-the-command-line">
+<h4>Create a new Helm chart from the command line<a class="headerlink" href="#create-a-new-helm-chart-from-the-command-line" title="Permalink to this heading">#</a></h4>
+<p>So far we learned how to install a third-party chart. But what if we have developed an application and want to
+deploy it to K8s. These are the steps:</p>
+<ul class="simple">
+<li><p>create a Docker image containing the app</p></li>
+<li><p>define a Helm chart template defining the desired K8s object to be deployed</p></li>
+</ul>
+<p>Let’s start by generating a template Helm chart from the command line. Let’s make a new directory and go there:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>helm-course<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>helm-course
+</pre></div>
+</div>
+<p>How let’s create a chart called <code class="docutils literal notranslate"><span class="pre">first-chart</span></code> and show what was created:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>create<span class="w"> </span>first-chart
+Creating<span class="w"> </span>first-chart
+$<span class="w">  </span>tree
+.
+└──<span class="w"> </span>first-chart
+<span class="w">    </span>├──<span class="w"> </span>Chart.yaml
+<span class="w">    </span>├──<span class="w"> </span>charts
+<span class="w">    </span>├──<span class="w"> </span>templates
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>NOTES.txt
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>_helpers.tpl
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>deployment.yaml
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>hpa.yaml
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>ingress.yaml
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>service.yaml
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>serviceaccount.yaml
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>tests
+<span class="w">    </span>│<span class="w">       </span>└──<span class="w"> </span>test-connection.yaml
+<span class="w">    </span>└──<span class="w"> </span>values.yaml
+</pre></div>
+</div>
+<p>These boilerplate files are the starting point for us to deploy our application.</p>
+</div>
+<div class="section" id="explore-the-helm-chart-directories-and-files">
+<h4>Explore the Helm chart directories and files<a class="headerlink" href="#explore-the-helm-chart-directories-and-files" title="Permalink to this heading">#</a></h4>
+<p>The file describing the chart is <code class="docutils literal notranslate"><span class="pre">Chart.yaml</span></code>. It has some predefined key values, like API version, chart name and
+description, chart type <code class="docutils literal notranslate"><span class="pre">application</span></code> (as opposed to <code class="docutils literal notranslate"><span class="pre">library</span></code>), the chart version, and the underlying application
+version. This metadata can be passed into the Helm templating engine.</p>
+<p>The other top level file is <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code>. Here we see lots of key value pairs, that can be used to configure the
+container(s) running in pod(s) and other K8s objects. To a large extent, it’s up to you what you put in here.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">charts</span></code> directory is where you can store sub-charts that are dependencies of the top level chart. Sometimes
+these are third party charts. Other times they are <code class="docutils literal notranslate"><span class="pre">library</span></code> charts (as we saw in the <code class="docutils literal notranslate"><span class="pre">type</span></code> in <code class="docutils literal notranslate"><span class="pre">Chart.yaml</span></code>).</p>
+<p>The most exciting one is the <code class="docutils literal notranslate"><span class="pre">templates</span></code> directory. That contains the <code class="docutils literal notranslate"><span class="pre">NOTES.txt</span></code> file, which will be displayed
+in the terminal when someone installs the chart. Here is the first time we see the Helm templating system, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. Get the application URL by running these commands:
+{{- if .Values.ingress.enabled }}
+{{- range $host := .Values.ingress.hosts }}
+...
+</pre></div>
+</div>
+<p>All the files in the <code class="docutils literal notranslate"><span class="pre">template</span></code> directory are sent through the Helm templating system, where the values from the
+<code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> are passed in and these templates get converted to familiar K8s objects. The boilerplate Helm chart comes
+with deployment, ingress, service, and serviceaccount files. In <code class="docutils literal notranslate"><span class="pre">service.yaml</span></code> we can see a familiar K8s service object,
+but some values are dynamically created with Helm templates. For example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>templates/service.yaml<span class="w"> </span>
+...
+metadata:
+<span class="w">  </span>name:<span class="w"> </span><span class="o">{{</span><span class="w"> </span>include<span class="w"> </span><span class="s2">&quot;first-chart.fullname&quot;</span><span class="w"> </span>.<span class="w"> </span><span class="o">}}</span>
+...
+spec:
+<span class="w">  </span>type:<span class="w"> </span><span class="o">{{</span><span class="w"> </span>.Values.service.type<span class="w"> </span><span class="o">}}</span>
+<span class="w">  </span>ports:
+<span class="w">    </span>-<span class="w"> </span>port:<span class="w"> </span><span class="o">{{</span><span class="w"> </span>.Values.service.port<span class="w"> </span><span class="o">}}</span>
+...
+</pre></div>
+</div>
+<p>The value of the name is determined by the value of <code class="docutils literal notranslate"><span class="pre">first-chart.fullname</span></code>. This value is created in the <code class="docutils literal notranslate"><span class="pre">_helpers.tpl</span></code>
+file. The comment there explains what the method <code class="docutils literal notranslate"><span class="pre">first-chart.fullname</span></code> does:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>template/_helper.tpl
+...
+<span class="o">{{</span>/*<span class="w">                                                                                        </span>
+Create<span class="w"> </span>a<span class="w"> </span>default<span class="w"> </span>fully<span class="w"> </span>qualified<span class="w"> </span>app<span class="w"> </span>name.<span class="w">                                                  </span>
+We<span class="w"> </span>truncate<span class="w"> </span>at<span class="w"> </span><span class="m">63</span><span class="w"> </span>chars<span class="w"> </span>because<span class="w"> </span>some<span class="w"> </span>Kubernetes<span class="w"> </span>name<span class="w"> </span>fields<span class="w"> </span>are<span class="w"> </span>limited<span class="w"> </span>to<span class="w"> </span>this<span class="w"> </span><span class="o">(</span>by<span class="w"> </span>the<span class="w"> </span>DNS<span class="w"> </span>naming<span class="w"> </span>spec<span class="o">)</span>.
+If<span class="w"> </span>release<span class="w"> </span>name<span class="w"> </span>contains<span class="w"> </span>chart<span class="w"> </span>name<span class="w"> </span>it<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>full<span class="w"> </span>name.<span class="w">                         </span>
+*/<span class="o">}}</span><span class="w">                                                                                        </span>
+<span class="o">{{</span>-<span class="w"> </span>define<span class="w"> </span><span class="s2">&quot;first-chart.fullname&quot;</span><span class="w"> </span>-<span class="o">}}</span><span class="w">                                                       </span>
+<span class="o">{{</span>-<span class="w"> </span><span class="k">if</span><span class="w"> </span>.Values.fullnameOverride<span class="w"> </span><span class="o">}}</span><span class="w">                                                          </span>
+<span class="o">{{</span>-<span class="w"> </span>.Values.fullnameOverride<span class="w"> </span><span class="p">|</span><span class="w"> </span>trunc<span class="w"> </span><span class="m">63</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>trimSuffix<span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="w"> </span><span class="o">}}</span><span class="w">                                 </span>
+<span class="o">{{</span>-<span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">}}</span><span class="w">                                                                                 </span>
+<span class="o">{{</span>-<span class="w"> </span><span class="nv">$name</span><span class="w"> </span>:<span class="o">=</span><span class="w"> </span>default<span class="w"> </span>.Chart.Name<span class="w"> </span>.Values.nameOverride<span class="w"> </span><span class="o">}}</span><span class="w">                                    </span>
+<span class="o">{{</span>-<span class="w"> </span><span class="k">if</span><span class="w"> </span>contains<span class="w"> </span><span class="nv">$name</span><span class="w"> </span>.Release.Name<span class="w"> </span><span class="o">}}</span><span class="w">                                                      </span>
+<span class="o">{{</span>-<span class="w"> </span>.Release.Name<span class="w"> </span><span class="p">|</span><span class="w"> </span>trunc<span class="w"> </span><span class="m">63</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>trimSuffix<span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="w"> </span><span class="o">}}</span><span class="w">                                            </span>
+<span class="o">{{</span>-<span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">}}</span><span class="w">                                                                                 </span>
+<span class="o">{{</span>-<span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;%s-%s&quot;</span><span class="w"> </span>.Release.Name<span class="w"> </span><span class="nv">$name</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>trunc<span class="w"> </span><span class="m">63</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>trimSuffix<span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="w"> </span><span class="o">}}</span><span class="w">                       </span>
+<span class="o">{{</span>-<span class="w"> </span>end<span class="w"> </span><span class="o">}}</span><span class="w">                                                                                  </span>
+<span class="o">{{</span>-<span class="w"> </span>end<span class="w"> </span><span class="o">}}</span><span class="w">                                                                                  </span>
+<span class="o">{{</span>-<span class="w"> </span>end<span class="w"> </span><span class="o">}}</span><span class="w"> </span>
+...
+</pre></div>
+</div>
+<p>Back to <code class="docutils literal notranslate"><span class="pre">service.yaml</span></code>. <code class="docutils literal notranslate"><span class="pre">type</span></code> and <code class="docutils literal notranslate"><span class="pre">ports</span></code> are coming from the <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> files because they start with
+<code class="docutils literal notranslate"><span class="pre">.Values.</span></code>. Specifically, they take the values <code class="docutils literal notranslate"><span class="pre">service.type</span></code> (i.e., <code class="docutils literal notranslate"><span class="pre">ClusterIP</span></code>) and <code class="docutils literal notranslate"><span class="pre">service.port</span></code> (i.e., <code class="docutils literal notranslate"><span class="pre">80</span></code>)
+respectively.</p>
+</div>
+<div class="section" id="deploy-and-update-a-kubernetes-configmap-via-helm">
+<h4>Deploy and update a Kubernetes ConfigMap via Helm<a class="headerlink" href="#deploy-and-update-a-kubernetes-configmap-via-helm" title="Permalink to this heading">#</a></h4>
+<p>A ConfigMap is a K8s object that stores non-sensitive data used by pods, like port numbers and environment
+variables. Let us deploy a ConfigMap with Helm. First, check if Helm generates a <code class="docutils literal notranslate"><span class="pre">templates/configmap.yaml</span></code>
+file.</p>
+<p>It does not. It does not mean we cannot add one. The current files in the <code class="docutils literal notranslate"><span class="pre">templates</span></code> directory are nice and all
+to give us a taste of K8s objects that you can add in a Helm chart, but as a starting point we’ll create a smaller
+chart that only has a ConfigMap. So let’s remove all the files from that directory and create a ConfigMap file.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>templates/*
+$<span class="w"> </span>touch<span class="w"> </span>templates/cm.yaml
+</pre></div>
+</div>
+<p>Add this to <code class="docutils literal notranslate"><span class="pre">cm.yaml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">first-chart-configmap</span>
+<span class="nt">data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;8080&quot;</span>
+</pre></div>
+</div>
+<p>This ConfigMap is called <code class="docutils literal notranslate"><span class="pre">first-chart-configmap</span></code> and it stores the key value pair of port 8080. Now let’s install
+the current directory with Helm.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>install<span class="w"> </span>first-chart<span class="w"> </span>.
+NAME:<span class="w"> </span>first-chart
+LAST<span class="w"> </span>DEPLOYED:<span class="w"> </span>Sat<span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">16</span>:44:00<span class="w"> </span><span class="m">2024</span>
+NAMESPACE:<span class="w"> </span>default
+STATUS:<span class="w"> </span>deployed
+REVISION:<span class="w"> </span><span class="m">1</span>
+TEST<span class="w"> </span>SUITE:<span class="w"> </span>None
+</pre></div>
+</div>
+<p>It has been installed under the release name <code class="docutils literal notranslate"><span class="pre">first-chart</span></code> in the namespace <code class="docutils literal notranslate"><span class="pre">default</span></code>. Let’s confirm that by inspecting
+the deployed config maps.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>cm<span class="w">   </span>
+NAME<span class="w">                    </span>DATA<span class="w">   </span>AGE
+first-chart-configmap<span class="w">   </span><span class="m">1</span><span class="w">      </span>76s
+$<span class="w">  </span>kubectl<span class="w"> </span>describe<span class="w"> </span>cm<span class="w"> </span>first-chart-configmap
+Name:<span class="w">         </span>first-chart-configmap
+Namespace:<span class="w">    </span>default
+...
+<span class="nv">Data</span>
+<span class="o">====</span>
+port:
+----
+<span class="m">8080</span>
+...
+</pre></div>
+</div>
+<p>Great! It’s there and it contains the right data. Let’s add another key value to our <code class="docutils literal notranslate"><span class="pre">cm.yaml</span></code>: <code class="docutils literal notranslate"><span class="pre">allowTesting:</span> <span class="pre">&quot;true&quot;</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">...</span>
+<span class="nt">data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;8080&quot;</span>
+<span class="w">  </span><span class="nt">allowTesting</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+</pre></div>
+</div>
+<p>Before we deploy the change to the K8s cluster, we can view the change locally by running:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>template<span class="w"> </span>first-chart<span class="w"> </span>.
+---
+<span class="c1">## Source: first-chart/templates/cm.yaml</span>
+apiVersion:<span class="w"> </span>v1
+kind:<span class="w"> </span>ConfigMap
+metadata:
+<span class="w">  </span>name:<span class="w"> </span>first-chart-configmap
+data:
+<span class="w">  </span>port:<span class="w"> </span><span class="s2">&quot;8080&quot;</span>
+<span class="w">  </span>allowTesting:<span class="w"> </span><span class="s2">&quot;true&quot;</span>
+</pre></div>
+</div>
+<p>It looks good. So let’s upgrade the chart on the K8s cluster:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>upgrade<span class="w"> </span>first-chart<span class="w"> </span>.
+Release<span class="w"> </span><span class="s2">&quot;first-chart&quot;</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>upgraded.<span class="w"> </span>Happy<span class="w"> </span>Helming!
+NAME:<span class="w"> </span>first-chart
+LAST<span class="w"> </span>DEPLOYED:<span class="w"> </span>Sat<span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">16</span>:51:58<span class="w"> </span><span class="m">2024</span>
+NAMESPACE:<span class="w"> </span>default
+STATUS:<span class="w"> </span>deployed
+REVISION:<span class="w"> </span><span class="m">2</span>
+TEST<span class="w"> </span>SUITE:<span class="w"> </span>None
+</pre></div>
+</div>
+<p>As you can see the revision has gone up to <code class="docutils literal notranslate"><span class="pre">2</span></code>. Let’s describe the ConfigMap again to see if our new value
+was added:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>describe<span class="w"> </span>cm<span class="w"> </span>first-chart-configmap
+...
+<span class="nv">Data</span>
+<span class="o">====</span>
+allowTesting:
+----
+<span class="nb">true</span>
+port:
+----
+<span class="m">8080</span>
+...
+</pre></div>
+</div>
+<p>Great! <code class="docutils literal notranslate"><span class="pre">allowTesting</span></code> is there! We’ve just learned how to deploy a config map with Helm.</p>
+</div>
+<div class="section" id="deploy-and-update-a-kubernetes-secret-via-helm">
+<h4>Deploy and update a Kubernetes secret via Helm<a class="headerlink" href="#deploy-and-update-a-kubernetes-secret-via-helm" title="Permalink to this heading">#</a></h4>
+<p>K8s secrets store sensitive information like passwords and SSH keys. Let’s create a <code class="docutils literal notranslate"><span class="pre">templates/secret.yaml</span></code> file with
+this content:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">first-secret</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
+<span class="nt">data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">username</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">password</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">username</span></code> we want to use is <code class="docutils literal notranslate"><span class="pre">admin</span></code> and the <code class="docutils literal notranslate"><span class="pre">password</span></code>: <code class="docutils literal notranslate"><span class="pre">4w572$9sns1&amp;!</span></code>. Before we put these in the secret, we
+have to encode them with <code class="docutils literal notranslate"><span class="pre">base64</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;admin&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64
+<span class="nv">YWRtaW4</span><span class="o">=</span>
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;4w572$9sns1&amp;!&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64
+<span class="nv">NHc1NzIkOXNuczEmIQ</span><span class="o">==</span>
+</pre></div>
+</div>
+<p>Let’s paste those values in <code class="docutils literal notranslate"><span class="pre">secret.yaml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">...</span>
+<span class="nt">data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YWRtaW4=</span>
+<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NHc1NzIkOXNuczEmIQ==</span>
+</pre></div>
+</div>
+<p>Let’s process our chart through the Helm template processor and see the K8s objects we get:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>template<span class="w"> </span>first-chart<span class="w"> </span>.
+---
+<span class="c1">## Source: first-chart/templates/secret.yaml</span>
+apiVersion:<span class="w"> </span>v1
+kind:<span class="w"> </span>Secret
+metadata:
+<span class="w">  </span>name:<span class="w"> </span>first-secret
+type:<span class="w"> </span>Opaque
+data:
+<span class="w">  </span>username:<span class="w"> </span><span class="nv">YWRtaW4</span><span class="o">=</span>
+<span class="w">  </span>password:<span class="w"> </span><span class="nv">NHc1NzIkOXNuczEmIQ</span><span class="o">==</span>
+---
+<span class="c1">## Source: first-chart/templates/cm.yaml</span>
+...
+</pre></div>
+</div>
+<p>Now we can see both the config map and the secret object. Let’s deploy the chart and inspect the secret:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>upgrade<span class="w"> </span>first-chart<span class="w"> </span>.<span class="w"> </span>
+$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>secrets
+NAME<span class="w">                                </span>TYPE<span class="w">                 </span>DATA<span class="w">   </span>AGE
+first-secret<span class="w">                        </span>Opaque<span class="w">               </span><span class="m">2</span><span class="w">      </span>43s
+sh.helm.release.v1.first-chart.v1<span class="w">   </span>helm.sh/release.v1<span class="w">   </span><span class="m">1</span><span class="w">      </span>23m
+sh.helm.release.v1.first-chart.v2<span class="w">   </span>helm.sh/release.v1<span class="w">   </span><span class="m">1</span><span class="w">      </span>15m
+sh.helm.release.v1.first-chart.v3<span class="w">   </span>helm.sh/release.v1<span class="w">   </span><span class="m">1</span><span class="w">      </span>43s
+$<span class="w"> </span>kubectl<span class="w"> </span>describe<span class="w"> </span>secret<span class="w"> </span>first-secret
+Name:<span class="w">         </span>first-secret
+Namespace:<span class="w">    </span>default
+Labels:<span class="w">       </span>app.kubernetes.io/managed-by<span class="o">=</span>Helm
+Annotations:<span class="w">  </span>meta.helm.sh/release-name:<span class="w"> </span>first-chart
+<span class="w">              </span>meta.helm.sh/release-namespace:<span class="w"> </span>default
+
+Type:<span class="w">  </span>Opaque
+
+<span class="nv">Data</span>
+<span class="o">====</span>
+password:<span class="w">  </span><span class="m">13</span><span class="w"> </span>bytes
+username:<span class="w">  </span><span class="m">5</span><span class="w"> </span>bytes
+</pre></div>
+</div>
+<p>We don’t see the exact secret data, but we see the number of bytes, which is what we expect. Great! Yet another
+K8s object type deployed by you with Helm.</p>
+</div>
+<div class="section" id="roll-back-a-helm-release">
+<h4>Roll back a Helm release<a class="headerlink" href="#roll-back-a-helm-release" title="Permalink to this heading">#</a></h4>
+<p>Sometimes it happens that you release a version of your application that breaks in an unexpected way. Usually the
+best course of action is to quickly roll back that version. First you need to decide which version do you want to
+roll back to: the previous one or something older. You can see the history of your installed helm chart revisions
+by running:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span><span class="nb">history</span><span class="w"> </span>first-chart
+REVISION<span class="w">        </span>UPDATED<span class="w">                         </span>STATUS<span class="w">          </span>CHART<span class="w">                   </span>APP<span class="w"> </span>VERSION<span class="w">     </span>DESCRIPTION<span class="w">     </span>
+<span class="m">1</span><span class="w">               </span>Sat<span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">16</span>:44:00<span class="w"> </span><span class="m">2024</span><span class="w">        </span>superseded<span class="w">      </span>first-chart-0.1.0<span class="w">       </span><span class="m">1</span>.16.0<span class="w">          </span>Install<span class="w"> </span><span class="nb">complete</span>
+<span class="m">2</span><span class="w">               </span>Sat<span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">16</span>:51:58<span class="w"> </span><span class="m">2024</span><span class="w">        </span>superseded<span class="w">      </span>first-chart-0.1.0<span class="w">       </span><span class="m">1</span>.16.0<span class="w">          </span>Upgrade<span class="w"> </span><span class="nb">complete</span>
+<span class="m">3</span><span class="w">               </span>Sat<span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">17</span>:07:00<span class="w"> </span><span class="m">2024</span><span class="w">        </span>deployed<span class="w">        </span>first-chart-0.1.0<span class="w">       </span><span class="m">1</span>.16.0<span class="w">          </span>Upgrade<span class="w"> </span><span class="nb">complete</span>
+</pre></div>
+</div>
+<p>If you want to roll back to the previous revision, you run:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>rollback<span class="w"> </span>first-chart
+Rollback<span class="w"> </span>was<span class="w"> </span>a<span class="w"> </span>success!<span class="w"> </span>Happy<span class="w"> </span>Helming!
+$<span class="w"> </span>helm<span class="w"> </span><span class="nb">history</span><span class="w"> </span>first-chart<span class="w"> </span>
+REVISION<span class="w">        </span>UPDATED<span class="w">                         </span>STATUS<span class="w">          </span>CHART<span class="w">                   </span>APP<span class="w"> </span>VERSION<span class="w">     </span>DESCRIPTION<span class="w">     </span>
+<span class="m">1</span><span class="w">               </span>Sat<span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">16</span>:44:00<span class="w"> </span><span class="m">2024</span><span class="w">        </span>superseded<span class="w">      </span>first-chart-0.1.0<span class="w">       </span><span class="m">1</span>.16.0<span class="w">          </span>Install<span class="w"> </span><span class="nb">complete</span>
+<span class="m">2</span><span class="w">               </span>Sat<span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">16</span>:51:58<span class="w"> </span><span class="m">2024</span><span class="w">        </span>superseded<span class="w">      </span>first-chart-0.1.0<span class="w">       </span><span class="m">1</span>.16.0<span class="w">          </span>Upgrade<span class="w"> </span><span class="nb">complete</span>
+<span class="m">3</span><span class="w">               </span>Sat<span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">17</span>:07:00<span class="w"> </span><span class="m">2024</span><span class="w">        </span>superseded<span class="w">      </span>first-chart-0.1.0<span class="w">       </span><span class="m">1</span>.16.0<span class="w">          </span>Upgrade<span class="w"> </span><span class="nb">complete</span>
+<span class="m">4</span><span class="w">               </span>Sat<span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">21</span>:36:36<span class="w"> </span><span class="m">2024</span><span class="w">        </span>deployed<span class="w">        </span>first-chart-0.1.0<span class="w">       </span><span class="m">1</span>.16.0<span class="w">          </span>Rollback<span class="w"> </span>to<span class="w"> </span><span class="m">2</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>That succeeded. We can see that in the description of the last revision: <code class="docutils literal notranslate"><span class="pre">Rollback</span> <span class="pre">to</span> <span class="pre">2</span></code>. If you want to roll back
+to a certain revision, run:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>rollback<span class="w"> </span>first-chart<span class="w"> </span><span class="m">1</span>
+Rollback<span class="w"> </span>was<span class="w"> </span>a<span class="w"> </span>success!<span class="w"> </span>Happy<span class="w"> </span>Helming!
+$<span class="w"> </span>helm<span class="w"> </span><span class="nb">history</span><span class="w"> </span>first-chart<span class="w">   </span>
+REVISION<span class="w">        </span>UPDATED<span class="w">                         </span>STATUS<span class="w">          </span>CHART<span class="w">                   </span>APP<span class="w"> </span>VERSION<span class="w">     </span>DESCRIPTION<span class="w">     </span>
+<span class="m">1</span><span class="w">               </span>Sat<span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">16</span>:44:00<span class="w"> </span><span class="m">2024</span><span class="w">        </span>superseded<span class="w">      </span>first-chart-0.1.0<span class="w">       </span><span class="m">1</span>.16.0<span class="w">          </span>Install<span class="w"> </span><span class="nb">complete</span>
+<span class="m">2</span><span class="w">               </span>Sat<span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">16</span>:51:58<span class="w"> </span><span class="m">2024</span><span class="w">        </span>superseded<span class="w">      </span>first-chart-0.1.0<span class="w">       </span><span class="m">1</span>.16.0<span class="w">          </span>Upgrade<span class="w"> </span><span class="nb">complete</span>
+<span class="m">3</span><span class="w">               </span>Sat<span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">17</span>:07:00<span class="w"> </span><span class="m">2024</span><span class="w">        </span>superseded<span class="w">      </span>first-chart-0.1.0<span class="w">       </span><span class="m">1</span>.16.0<span class="w">          </span>Upgrade<span class="w"> </span><span class="nb">complete</span>
+<span class="m">4</span><span class="w">               </span>Sat<span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">21</span>:36:36<span class="w"> </span><span class="m">2024</span><span class="w">        </span>superseded<span class="w">      </span>first-chart-0.1.0<span class="w">       </span><span class="m">1</span>.16.0<span class="w">          </span>Rollback<span class="w"> </span>to<span class="w"> </span><span class="m">2</span><span class="w">   </span>
+<span class="m">5</span><span class="w">               </span>Sat<span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">21</span>:39:21<span class="w"> </span><span class="m">2024</span><span class="w">        </span>deployed<span class="w">        </span>first-chart-0.1.0<span class="w">       </span><span class="m">1</span>.16.0<span class="w">          </span>Rollback<span class="w"> </span>to<span class="w"> </span><span class="m">1</span><span class="w">  </span>
+</pre></div>
+</div>
+<p>Good job! Now you know how to roll back.</p>
+</div>
+</div>
+<div class="section" id="advanced-features">
+<h3>Advanced features<a class="headerlink" href="#advanced-features" title="Permalink to this heading">#</a></h3>
+<div class="section" id="render-a-configmap-value-dynamically-with-helm-templating">
+<h4>Render a ConfigMap value dynamically with Helm templating<a class="headerlink" href="#render-a-configmap-value-dynamically-with-helm-templating" title="Permalink to this heading">#</a></h4>
+<p>Let’s learn how we can use the Helm templating system to create dynamic values in the final K8s objects. Let’s do that
+in our ConfigMap. Currently, it has a static name: <code class="docutils literal notranslate"><span class="pre">first-chart-configmap</span></code>. Let’s add the chart version number to it.
+That value is stored in the <code class="docutils literal notranslate"><span class="pre">Chart.yaml</span></code> file and right now that chart is the version 0.1.0. We could hard-code this
+version in the ConfigMap name, but we want to update the chart version often, and we don’t want to keep on changing
+it manually in the name of the ConfigMap.</p>
+<p>This is where Helm templating comes in handy. The templating engine will pull values from the <code class="docutils literal notranslate"><span class="pre">Chart.yaml</span></code>
+and <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code>. All you have to do is use the templating directive <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">&lt;something&gt;</span> <span class="pre">}}</span></code>. To tell Helm to take the
+value from <code class="docutils literal notranslate"><span class="pre">Chart.yaml</span></code> file, we reference the value with <code class="docutils literal notranslate"><span class="pre">{{.Chart.&lt;key&gt;}}</span></code>, in this case <code class="docutils literal notranslate"><span class="pre">{{.Chart.Version}}</span></code>. Both
+are capitalized, because that is the convention in Go, the programming language the Helm is written in. So our ConfigMap
+now looks like this:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">first-chart-configmap-{{.Chart.Version}}</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>Now let’s upgrade our chart:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>upgrade<span class="w"> </span>first-chart<span class="w"> </span>.
+$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>cm
+NAME<span class="w">                          </span>DATA<span class="w">   </span>AGE
+first-chart-configmap-0.1.0<span class="w">   </span><span class="m">2</span><span class="w">      </span>14s
+</pre></div>
+</div>
+<p>Yay! We can see the new version in the name of the ConfigMap. Now change the version in <code class="docutils literal notranslate"><span class="pre">Chart.yaml</span></code> to <code class="docutils literal notranslate"><span class="pre">0.1.1</span></code> and
+upgrade the chart:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>upgrade<span class="w"> </span>first-chart<span class="w"> </span>.
+$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>cm<span class="w">            </span>
+NAME<span class="w">                          </span>DATA<span class="w">   </span>AGE
+first-chart-configmap-0.1.1<span class="w">   </span><span class="m">2</span><span class="w">      </span>16s
+</pre></div>
+</div>
+<p>The name of the config map has been updated! Great! Now you know how to pass a chart value to Helm via the
+templating engine.</p>
+</div>
+<div class="section" id="using-the-values-yaml-file">
+<h4>Using the values.yaml file<a class="headerlink" href="#using-the-values-yaml-file" title="Permalink to this heading">#</a></h4>
+<p>Like <code class="docutils literal notranslate"><span class="pre">Chart.yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> is a builtin object in Helm. Meaning that the values in these files can automatically
+be templated using the template directive syntax. The generated <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> files contains quite a few values
+predefined, but these are just suggestions, so you can remove or add any values you like. For example if we wanted
+to have some values to be passed for our staging environment, we could add some data like this to the <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code>:
+with this content:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">...</span>
+<span class="nt">staging</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">sample-key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample-12345</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>If we wanted to access that value in a template, we would use <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">.Values.staging.sample-key</span> <span class="pre">}}</span></code>. When you deploy a
+Helm chart, you can also pass values that will overwrite the values in the <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> from the chart.</p>
+</div>
+<div class="section" id="dynamically-render-a-value-with-a-helm-conditional-statement">
+<h4>Dynamically render a value with a Helm conditional statement<a class="headerlink" href="#dynamically-render-a-value-with-a-helm-conditional-statement" title="Permalink to this heading">#</a></h4>
+<p>Like programming languages, the Helm templating system has conditionals, which allows you to render values dynamically,
+whether a condition is met or not.</p>
+<p>Imagine that you have two different environments. Staging is the place where developers can push commits and trigger
+a set of automated tests to see if the application still works with their changes. And production, where your workloads
+are handling actual traffic from your users and therefore doesn’t need tests to run because the change has already been
+approved by your CI/CD system. In this scenario we want the value of <code class="docutils literal notranslate"><span class="pre">allowTesting</span></code> to be true for staging and false
+for production. The if-else statement is a Helm directive and each part of the statement, if, else, and end, begin
+and end with double curly braces. Let’s add those to the ConfigMap:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">...</span>
+<span class="nt">data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;8080&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">if eq .Values.env &quot;staging&quot;</span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="nt">allowTesting</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">else</span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="nt">allowTesting</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;false&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">end</span><span class="p p-Indicator">}}</span>
+</pre></div>
+</div>
+<p>Also let’s add to <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">...</span>
+<span class="nt">env</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">production</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>Let’s see the change:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>template<span class="w"> </span>first-chart<span class="w"> </span>.
+...
+---
+<span class="c1">## Source: first-chart/templates/cm.yaml</span>
+...
+<span class="w">  </span>allowTesting:<span class="w"> </span><span class="s2">&quot;false&quot;</span>
+</pre></div>
+</div>
+<p>Look at that! <code class="docutils literal notranslate"><span class="pre">allowTesting</span></code> got set to false. Now try setting <code class="docutils literal notranslate"><span class="pre">env:</span> <span class="pre">staging</span></code> in <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> and see what happens
+with <code class="docutils literal notranslate"><span class="pre">allowTesting</span></code>.</p>
+</div>
+<div class="section" id="helm-going-forward">
+<h4>Helm going forward<a class="headerlink" href="#helm-going-forward" title="Permalink to this heading">#</a></h4>
+<p>In conclusion, the idea of Helm is pretty simple: you put in <code class="docutils literal notranslate"><span class="pre">templates</span></code> files with any K8s objects you want to be
+templated. In those you can use the Helm templating system to pass values from <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> and <code class="docutils literal notranslate"><span class="pre">Chart.yaml</span></code>.
+If you know how to define a K8s object, you can add it to Helm. We’ve only tried a minor set of features of the Helm
+templating systems: values and conditionals. But you can write more complicated code, like loops, or define your own
+functions in <code class="docutils literal notranslate"><span class="pre">_helpers.tpl</span></code>.</p>
+<p>Happy Helming!</p>
+</div>
+</div>
+</div>
+</div>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../python/python.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Python</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="kubernetes.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Kubernetes</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, IMC
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Helm</a><ul>
+<li><a class="reference internal" href="#checklist">Checklist</a><ul>
+<li><a class="reference internal" href="#essential-concepts">Essential Concepts</a></li>
+<li><a class="reference internal" href="#practical-skills">Practical Skills</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linkedin-learning">LinkedIn Learning</a></li>
+<li><a class="reference internal" href="#tutorial">Tutorial</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#introduction-to-helm">Introduction to Helm</a><ul>
+<li><a class="reference internal" href="#what-is-helm">What is Helm?</a></li>
+<li><a class="reference internal" href="#installing-helm">Installing Helm</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#install-and-configure-a-chart-from-helm-hub">Install and Configure a Chart from Helm Hub</a><ul>
+<li><a class="reference internal" href="#explore-the-helm-hub">Explore the Helm Hub</a></li>
+<li><a class="reference internal" href="#install-a-third-party-helm-chart">Install a third party Helm chart</a></li>
+<li><a class="reference internal" href="#inspect-a-chart-in-your-k8s-cluster">Inspect a chart in your K8s cluster</a></li>
+<li><a class="reference internal" href="#try-helm-show-commands">Try Helm show commands</a></li>
+<li><a class="reference internal" href="#updating-a-helm-chart">Updating a Helm Chart</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#deploy-an-application-using-helm">Deploy an Application Using Helm</a><ul>
+<li><a class="reference internal" href="#create-a-new-helm-chart-from-the-command-line">Create a new Helm chart from the command line</a></li>
+<li><a class="reference internal" href="#explore-the-helm-chart-directories-and-files">Explore the Helm chart directories and files</a></li>
+<li><a class="reference internal" href="#deploy-and-update-a-kubernetes-configmap-via-helm">Deploy and update a Kubernetes ConfigMap via Helm</a></li>
+<li><a class="reference internal" href="#deploy-and-update-a-kubernetes-secret-via-helm">Deploy and update a Kubernetes secret via Helm</a></li>
+<li><a class="reference internal" href="#roll-back-a-helm-release">Roll back a Helm release</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#advanced-features">Advanced features</a><ul>
+<li><a class="reference internal" href="#render-a-configmap-value-dynamically-with-helm-templating">Render a ConfigMap value dynamically with Helm templating</a></li>
+<li><a class="reference internal" href="#using-the-values-yaml-file">Using the values.yaml file</a></li>
+<li><a class="reference internal" href="#dynamically-render-a-value-with-a-helm-conditional-statement">Dynamically render a value with a Helm conditional statement</a></li>
+<li><a class="reference internal" href="#helm-going-forward">Helm going forward</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    </body>
+</html>

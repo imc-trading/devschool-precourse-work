@@ -5,14 +5,33 @@ testing, and packaging of Java projects. With its convention-over-configuration 
 and robust dependency resolution, Maven enhances project development by promoting standardized project structures,
 ensuring consistent builds, and facilitating seamless collaboration among developers.
 
-Historically, Java projects at IMC were built were Maven. Some newer projects are being migrated to Bazel, but a vast majority of projects are still on Maven with no near-term plans to migrate.
+Historically, Java projects at IMC were built were Maven. Some newer projects are being migrated to Bazel, but a vast
+majority of projects are still on Maven with no near-term plans to migrate.
+
+## Exercise
+
+:::{admonition} Instructions
+Please clone
+[`https://github.com/imc-trading/devschool-maven-exercise`](https://github.com/imc-trading/devschool-maven-exercise) and
+work through the exercises there.
+
+There is nothing to submit for this exercise.
+:::
+
+:::{note}
+The exercises should be standalone, and not require any Maven knowledge, but if necessary read the reading below first.
+:::
 
 ## Recommended Reading Material
 
-- [Apache: Maven in 5 Minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
-- [Apache: Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/index.html)
-- [Baeldung: Apache Maven Tutorial](https://www.baeldung.com/maven)
-- [Baedung: Various Maven Tutorials](https://www.baeldung.com/category/maven/tag/maven-basics)
+[Maven By Example](https://books.sonatype.com/mvnex-book/reference/index.html)
+
+Chapters
+
+- 1. Introducing Apache Maven
+- 3. A Simple Maven Project
+- 4. Customizing a Maven Project
+- 6. A Multi-Module Project
 
 ## Checklist
 

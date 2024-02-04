@@ -1,290 +1,314 @@
 # Java Exam
 
+:::{admonition} Instructions
+Answer the below questions with short (a few sentences) answers. Keep your answers as precise and concise as possible.
+
+Send your answers as an email, to
+[Dev School Leads](mailto:Development%20School%20Leads%20%3Cdevschoolleads%40imc%2Ecom%3E?subject=Pre%2Dwork%20Git%20theory%20exam%20submission)
+(devschoolleads@imc.com) with the subject "Pre-work Java exam submission".
+
+The answers should be in the following form:
+
+```
+Basic Java Concepts
+1. 4
+2. 1
+3. 2
+4. 2 4 5
+...
+
+Intermediate Java Concepts
+1. 4
+...
+```
+:::
+
+
 ## Basic Java Concepts
 
 1. Which of the following best describes a class?
-	- A way to group related functions and data
-	- A blueprint for creating objects, containing data members and methods that define the state and behavior of objects
-	- An instance of a blueprint, containing specific values for its data members
-	- A mechanism for organizing code into reusable components
+	1. A way to group related functions and data
+	1. A blueprint for creating objects, containing data members and methods that define the state and behavior of objects
+	1. An instance of a blueprint, containing specific values for its data members
+	1. Mechanism for organizing code into reusable components
 
 1. What is the primary purpose of interfaces?
-	- To define a contract or blueprint for implementing classes
-	- To encapsulate data and behavior
-	- To create a class hierarchy
-	- To share code between classes
+    1. To define a contract or blueprint for implementing classes
+    1. To encapsulate data and behavior
+    1. To create a class hierarchy
+    1. To share code between classes
 
 1. Which of the following best describes an object?
-	- A collection of related data and functions in a single unit
-	- A blueprint that defines the structure and behavior of other objects
-	- A specific instance of a class that contains state and behavior defined by the class
-	- A mechanism for organizing and reusing code
+    1. A collection of related data and functions in a single unit
+    1. A blueprint that defines the structure and behavior of other objects
+    1. A specific instance of a class that contains state and behavior defined by the class
+    1. A mechanism for organizing and reusing code
 	
 1. What are the key properties of interfaces? Select all that apply
-	- Interfaces can have mutable static variables
-	- Interfaces can have concrete methods
-	- Interfaces can have abstract methods
-	- A class can implement multiple interfaces
-	- Interfaces can have instance variables
-	- Interfaces can have constructors
+    1. Interfaces can have mutable static variables
+    1. Interfaces can have concrete methods
+    1. Interfaces can have abstract methods
+    1. A class can implement multiple interfaces
+    1. Interfaces can have instance variables
+    1. Interfaces can have constructors
 
 1. What are the key properties of abstract classes? Select all that apply
-	- Abstract classes can have abstract methods
-	- Abstract classes can have constructors
-	- Abstract classes can have concrete methods
-	- Abstract classes can have mutable static variables
-	- A class can extend multiple abstract classes
-	- Abstract classes can have instance variables
+    1. Abstract classes can have abstract methods
+    1. Abstract classes can have constructors
+    1. Abstract classes can have concrete methods
+    1. Abstract classes can have mutable static variables
+    1. A class can extend multiple abstract classes
+    1. Abstract classes can have instance variables
 
 1. Which of the following best describes the purpose of a constructor?
-	- To create a new object instance of a class
-	- To initialize an object's state when it is created
-	- To compare two objects for equality
-	- To define the structure and behavior of a class
+    1. To create a new object instance of a class
+    1. To initialize an object's state when it is created
+    1. To compare two objects for equality
+    1. To define the structure and behavior of a class
 
 1. What is method overloading?
-	- Calling a method from a parent class in a derived class
-	- Redefining a method from a parent class in a derived class
-	- Defining a method with the same name but different parameters in the same class
-	- Defining a method with the same name and parameters in two different classes
+    1. Calling a method from a parent class in a derived class
+    1. Redefining a method from a parent class in a derived class
+    1. Defining a method with the same name but different parameters in the same class
+    1. Defining a method with the same name and parameters in two different classes
 
 1. What is the primary role of the Java heap?
-	- To store static variables and methods
-	- To allocate memory for object instances during runtime
-	- To store local variables and method call information
-	- To store the source code of a Java program
+    1. To store static variables and methods
+    1. To allocate memory for object instances during runtime
+    1. To store local variables and method call information
+    1. To store the source code of a Java program
 
 1. What is the purpose of the 'static' keyword?
-	- To make a variable or method available without creating an object
-	- To make a variable or method available only within a method
-	- To make a variable or method unchangeable
-	- To make a variable or method available only within a class
+    1. To make a variable or method available without creating an object
+    1. To make a variable or method available only within a method
+    1. To make a variable or method unchangeable
+    1. To make a variable or method available only within a class
 
 1. What is the difference between a static inner class instead of a non-static one?
-	- There is only one global instance of a static inner class
-	- A static inner class is not tightly coupled to the enclosing class.
-	- A static inner class can be instantiated without an instance of the enclosing class	- A static inner class can access the instance variables and methods of the enclosing class
+    1. There is only one global instance of a static inner class
+    1. A static inner class is not tightly coupled to the enclosing class.
+    1. A static inner class can be instantiated without an instance of the enclosing class	- A static inner class can access the instance variables and methods of the enclosing class
 
 1. What is the purpose of the 'final' keyword?
-	- All of the above
-	- Prevents a class from being inherited
-	- Prevents a variable from being reassigned
-	- Indicates that a method cannot be overridden
+    1. All of the above
+    1. Prevents a class from being inherited
+    1. Prevents a variable from being reassigned
+    1. Indicates that a method cannot be overridden
 
 1. Is a field with a `final` field always immutable?
-	- Yes, a `final` field is always immutable
-	- No, a `final` field is only immutable if the containing class is also `final`
-	- No, a `final` field can be mutable if it is a reference to a mutable object
-	- None of the above
+    1. Yes, a `final` field is always immutable
+    1. No, a `final` field is only immutable if the containing class is also `final`
+    1. No, a `final` field can be mutable if it is a reference to a mutable object
+    1. None of the above
 
 1. How do you indicate that a class is immutable?
-	- By declaring all its instance variables as final
-	- By declaring all its instance variables as static
-	- By implementing the Immutable interface
-	- By declaring all its methods as final
-	- None of the above
+    1. By declaring all its instance variables as final
+    1. By declaring all its instance variables as static
+    1. By implementing the Immutable interface
+    1. By declaring all its methods as final
+    1. None of the above
 
 1. What is the main difference between primitive types and objects (reference types)?
-	- Primitive types are passed by value, while objects are passed by reference
-	- Primitive types have methods and attributes, while objects do not
-	- Primitive types are user-defined, while objects are built-in types
-	- Primitive types are immutable, while objects are mutable
+    1. Primitive types are passed by value, while objects are passed by reference
+    1. Primitive types have methods and attributes, while objects do not
+    1. Primitive types are user-defined, while objects are built-in types
+    1. Primitive types are immutable, while objects are mutable
 
 1. Which of the following is true about Java's autoboxing and unboxing feature?
-	- It automatically converts primitives to their corresponding wrapper classes and vice versa
-	- It automatically converts arrays to ArrayLists and vice versa
-	- It automatically casts objects to a more specific type
-	- It automatically detects type mismatches
+    1. It automatically converts primitives to their corresponding wrapper classes and vice versa
+    1. It automatically converts arrays to ArrayLists and vice versa
+    1. It automatically casts objects to a more specific type
+    1. It automatically detects type mismatches
 	
 1. When passing arguments to a method, which of the following statements is true?
-	- Primitive types are passed by value, and objects are passed by reference
-	- Primitive types are passed by reference, and objects are passed by value
-	- Both primitive types and objects are passed by value
-	- Both primitive types and objects are passed by reference
+    1. Primitive types are passed by value, and objects are passed by reference
+    1. Primitive types are passed by reference, and objects are passed by value
+    1. Both primitive types and objects are passed by value
+    1. Both primitive types and objects are passed by reference
 
 1. What are varargs?
-	- A way to pass multiple arguments of different types to a method
-	- A shorthand syntax for creating an array
-	- A way to declare a variable number of arguments in a method
-	- A way to declare optional method arguments
+    1. A way to pass multiple arguments of different types to a method
+    1. A shorthand syntax for creating an array
+    1. A way to declare a variable number of arguments in a method
+    1. A way to declare optional method arguments
 
 1. Which of the following best describes the 'Throwable' class?
-	- A class that represents an error or exception that can be caught and handled
-	- A class that represents exceptions that can be caught and handled by the programmer
-	- A class that represents errors that occur during the execution of a program
-	- A class that represents exceptions that occur due to programming errors
+    1. A class that represents an error or exception that can be caught and handled
+    1. A class that represents exceptions that can be caught and handled by the programmer
+    1. A class that represents errors that occur during the execution of a program
+    1. A class that represents exceptions that occur due to programming errors
 
 1. What is the main difference between the 'Error' and 'Exception' classes?
-	- 'Error' represents errors that occur during the execution of a program, while 'Exception' represents exceptions that occur due to programming errors
-	- 'Error' represents errors that occur during the execution of a program, while 'Exception' represents exceptions that can be caught and handled by the programmer
-	- 'Error' represents exceptions that can be caught and handled by the programmer, while 'Exception' represents errors that occur during the execution of a program
-	- 'Error' represents exceptions that occur due to programming errors, while 'Exception' represents errors that occur during the execution of a program
+    1. 'Error' represents errors that occur during the execution of a program, while 'Exception' represents exceptions that occur due to programming errors
+    1. 'Error' represents errors that occur during the execution of a program, while 'Exception' represents exceptions that can be caught and handled by the programmer
+    1. 'Error' represents exceptions that can be caught and handled by the programmer, while 'Exception' represents errors that occur during the execution of a program
+    1. 'Error' represents exceptions that occur due to programming errors, while 'Exception' represents errors that occur during the execution of a program
 
 1. Which of the following statements best describes unchecked exceptions?
-	- Unchecked exceptions are exceptions that the Java compiler requires to be caught or declared in a method's 'throws' clause
-	- Unchecked exceptions are exceptions that occur due to external factors, such as invalid user input or file I/O errors
-	- Unchecked exceptions are exceptions that are automatically caught and handled by the Java Virtual Machine (JVM)
-	- Unchecked exceptions are exceptions that are subclasses of the 'RuntimeException' class
+    1. Unchecked exceptions are exceptions that the Java compiler requires to be caught or declared in a method's 'throws' clause
+    1. Unchecked exceptions are exceptions that occur due to external factors, such as invalid user input or file I/O errors
+    1. Unchecked exceptions are exceptions that are automatically caught and handled by the Java Virtual Machine (JVM)
+    1. Unchecked exceptions are exceptions that are subclasses of the 'RuntimeException' class
 
 1. In which of the following scenarios should a checked exception be used?
-	- When the exception occurs due to programming errors and needs to be caught during development
-	- When the exception occurs and may be propagated up the call stack without being caught or declared
-	- When the exception should be automatically caught and handled by the Java Virtual Machine (JVM)
-	- When the exception is caused by external factors, such as invalid user input or file I/O errors, and the programmer must be aware of and handle the exception
+    1. When the exception occurs due to programming errors and needs to be caught during development
+    1. When the exception occurs and may be propagated up the call stack without being caught or declared
+    1. When the exception should be automatically caught and handled by the Java Virtual Machine (JVM)
+    1. When the exception is caused by external factors, such as invalid user input or file I/O errors, and the programmer must be aware of and handle the exception
 
 1. Which of the following is true about Java's garbage collection?
-	- It must be manually invoked by the programmer
-	- It is a part of the Java standard library
-	- It is a feature exclusive to Java
-	- It automatically deallocates memory for objects that are no longer needed
+    1. It must be manually invoked by the programmer
+    1. It is a part of the Java standard library
+    1. It is a feature exclusive to Java
+    1. It automatically deallocates memory for objects that are no longer needed
 
 1.  What is the equals() and hashCode() contract?
-	- A requirement that if two objects are considered equal by the equals() method, their hash codes must also be equal
-	- A requirement that if two objects have the same hash code, they must also be considered equal by the equals() method
-	- A guarantee that two objects of the same class will always be considered equal by the equals() method
-	- A guarantee that two objects of the same class will always have different hash codes
+    1. A requirement that if two objects are considered equal by the equals() method, their hash codes must also be equal
+    1. A requirement that if two objects have the same hash code, they must also be considered equal by the equals() method
+    1. A guarantee that two objects of the same class will always be considered equal by the equals() method
+    1. A guarantee that two objects of the same class will always have different hash codes
 
 1. What happens if the equals() and hashCode() contract is broken for a class?
-	- The JVM will automatically fix the issue and repair the broken contract
-	- The behavior of some standard library collections may be undefined or incorrect
-	- The `equals()` method may not be used to compare instances of this class
-	- An `IllegalContractException` will be thrown if the class is used in a `HashMap` or `HashSet`
+    1. The JVM will automatically fix the issue and repair the broken contract
+    1. The behavior of some standard library collections may be undefined or incorrect
+    1. The `equals()` method may not be used to compare instances of this class
+    1. An `IllegalContractException` will be thrown if the class is used in a `HashMap` or `HashSet`
 
 1. What is the difference between Comparable and Comparator?
-	- Comparable and Comparator are both interfaces used to define different ways of ordering objects
-	- Comparable is an interface used to define a natural ordering of objects, while Comparator is a separate class used to define an external ordering of objects
-	- Comparable is a separate class used to define an external ordering of objects, while Comparator is an interface used to define a natural ordering of objects
-	- There is no difference between Comparable and Comparator
+    1. Comparable and Comparator are both interfaces used to define different ways of ordering objects
+    1. Comparable is an interface used to define a natural ordering of objects, while Comparator is a separate class used to define an external ordering of objects
+    1. Comparable is a separate class used to define an external ordering of objects, while Comparator is an interface used to define a natural ordering of objects
+    1. There is no difference between Comparable and Comparator
 
 1. What is necessary in order to use a class with sorted collections?
-	- The class implements Comparable
-	- The class implements Comparator
-	- The class implements both Comparable and Comparator
-	- A Comparable for the class is provided to the collection
-	- A Comparator for the class is provided to the collection
+    1. The class implements Comparable
+    1. The class implements Comparator
+    1. The class implements both Comparable and Comparator
+    1. A Comparable for the class is provided to the collection
+    1. A Comparator for the class is provided to the collection
 
 1. Which of the following statements about the toString() method are true?
-	- An ideal toString() includes all of the interesting information in an object
-	- Programmatic access to the information returned by toString should always be provided
-	- The toString() method is used to provide a string representation of an object
-	- The toString() method should always include private fields in the output
-	- Overriding the toString() method can improve the debugging experience
-	- The toString() method is automatically called when an object is used as a string
+    1. An ideal toString() includes all of the interesting information in an object
+    1. Programmatic access to the information returned by toString should always be provided
+    1. The toString() method is used to provide a string representation of an object
+    1. The toString() method should always include private fields in the output
+    1. Overriding the toString() method can improve the debugging experience
+    1. The toString() method is automatically called when an object is used as a string
 
 ## Intermediate Java Concepts
 
 1. What is the main purpose of generics?
-	- To reduce the amount of code needed to implement collections and algorithms
-	- To improve the performance of Java programs by reducing the need for casting
-	- To enables a class, interface, or method to work with different types without a need for casting
-	- To enable a class, interface, or method to work only with a specific type
-	- To allow a variable to be declared with no specific type
-	- To make Java more compatible with other programming languages 
+    1. To reduce the amount of code needed to implement collections and algorithms
+    1. To improve the performance of Java programs by reducing the need for casting
+    1. To enables a class, interface, or method to work with different types without a need for casting
+    1. To enable a class, interface, or method to work only with a specific type
+    1. To allow a variable to be declared with no specific type
+    1. To make Java more compatible with other programming languages 
 
 1. If you have a `List<Number> numbers`, which of the following are allowed?
-	- `Object o = numbers.get(0);`
-	- `Number n = numbers.get(0);`
-	- `Integer i = numbers.get(0);`
-	- `int x = numbers.get(0);`
-	- `numbers.add(x); // x is type int`
-	- `numbers.add(i); // i is type Integer`
-	- `numbers.add(n); // n is type Number`
-	- `numbers.add(o); // o is type Object`
-	- `numbers.add(null);`
+    1. `Object o = numbers.get(0);`
+    1. `Number n = numbers.get(0);`
+    1. `Integer i = numbers.get(0);`
+    1. `int x = numbers.get(0);`
+    1. `numbers.add(x); // x is type int`
+    1. `numbers.add(i); // i is type Integer`
+    1. `numbers.add(n); // n is type Number`
+    1. `numbers.add(o); // o is type Object`
+    1. `numbers.add(null);`
 
 1. If you have a `List<? extends Number> numbers`, which of the following are allowed?
-	- `Object o = numbers.get(0);`
-	- `Number n = numbers.get(0);`
-	- `Integer i = numbers.get(0);`
-	- `int x = numbers.get(0);`
-	- `numbers.add(x); // x is type int`
-	- `numbers.add(i); // i is type Integer`
-	- `numbers.add(n); // n is type Number`
-	- `numbers.add(o); // o is type Object`
-	- `numbers.add(null);`
+    1. `Object o = numbers.get(0);`
+    1. `Number n = numbers.get(0);`
+    1. `Integer i = numbers.get(0);`
+    1. `int x = numbers.get(0);`
+    1. `numbers.add(x); // x is type int`
+    1. `numbers.add(i); // i is type Integer`
+    1. `numbers.add(n); // n is type Number`
+    1. `numbers.add(o); // o is type Object`
+    1. `numbers.add(null);`
 
 1. If you have a `List<? super Number> numbers`, which of the following are allowed?
-	- `Object o = numbers.get(0);`
-	- `Number n = numbers.get(0);`
-	- `Integer i = numbers.get(0);`
-	- `int x = numbers.get(0);`
-	- `numbers.add(x); // x is type int`
-	- `numbers.add(i); // i is type Integer`
-	- `numbers.add(n); // n is type Number`
-	- `numbers.add(o); // o is type Object`
-	- `numbers.add(null);`
+    1. `Object o = numbers.get(0);`
+    1. `Number n = numbers.get(0);`
+    1. `Integer i = numbers.get(0);`
+    1. `int x = numbers.get(0);`
+    1. `numbers.add(x); // x is type int`
+    1. `numbers.add(i); // i is type Integer`
+    1. `numbers.add(n); // n is type Number`
+    1. `numbers.add(o); // o is type Object`
+    1. `numbers.add(null);`
 	
 1. Which of the following can cause a `ConcurrentModificationException`?
-   - Multiple threads are assigning to a variable concurrently.
-   - Multiple threads are calling modifying a non-thread-safe Collection concurrently.
-   - One thread is modifying a `HashMap` while another thread is reading from it.
-   - One thread is modifying a `HashMap` while another thread is iterating over it.
-   - One thread is modifying a `ConcurrentHashMap` while another thread is iterating over it.
-   - A single thread is modifying a `HashMap` while it is iterating over it.
-   - A single thread is modifying a `ConcurrentHashMap` while it is iterating over it.
+   1. Multiple threads are assigning to a variable concurrently.
+   1. Multiple threads are calling modifying a non-thread-safe Collection concurrently.
+   1. One thread is modifying a `HashMap` while another thread is reading from it.
+   1. One thread is modifying a `HashMap` while another thread is iterating over it.
+   1. One thread is modifying a `ConcurrentHashMap` while another thread is iterating over it.
+   1. A single thread is modifying a `HashMap` while it is iterating over it.
+   1. A single thread is modifying a `ConcurrentHashMap` while it is iterating over it.
 
 1. Which of the following are true about writing thread-safe code.
-	- Writing thread-safe code is hard
-	- Synchronizing all methods of a class ensures thread-safety
-	- It is safe to use a `HashMap` from multiple threads as long as the threads are only reading
-	- It is safe to use a `HashMap` from multiple threads as long as no more than one thread is writing
-	- A `volatile` field can be accessed from multiple threads without thread-safety concerns	- A write to a `volatile` field is always visible to other threads
-	- Using a thread-safe collection such as `CopyOnWriteArrayList` ensures thread-safety for all operations on that collection
+    1. Writing thread-safe code is hard
+    1. Synchronizing all methods of a class ensures thread-safety
+    1. It is safe to use a `HashMap` from multiple threads as long as the threads are only reading
+    1. It is safe to use a `HashMap` from multiple threads as long as no more than one thread is writing
+    1. A `volatile` field can be accessed from multiple threads without thread-safety concerns	- A write to a `volatile` field is always visible to other threads
+    1. Using a thread-safe collection such as `CopyOnWriteArrayList` ensures thread-safety for all operations on that collection
 
 1. Which of the following is true of using the Java Stream API?
-	- It provides a functional programming approach to work with collections
-	- It allows for parallelizable operations
-	- It supports lazy evaluation of intermediate operations
-	- It can reduce code complexity and improve readibility in some cases
-	- It is always an improvement over imperative code
+    1. It provides a functional programming approach to work with collections
+    1. It allows for parallelizable operations
+    1. It supports lazy evaluation of intermediate operations
+    1. It can reduce code complexity and improve readibility in some cases
+    1. It is always an improvement over imperative code
 
 1. What is an anonymous class?
-	- A class that is used to define an unnamed tuple object
-	- A class that is defined inside another class and can access its enclosing class's variables and methods
-	- A class that is defined with no name and can be used to implement an interface or extend a class inline
-	- A class that is used to define a custom data type in an anonymous context
+    1. A class that is used to define an unnamed tuple object
+    1. A class that is defined inside another class and can access its enclosing class's variables and methods
+    1. A class that is defined with no name and can be used to implement an interface or extend a class inline
+    1. A class that is used to define a custom data type in an anonymous context
 
 1. What is a lambda expression?
-	- An anonymous function that can be used as a method parameter or a variable assignment
-	- A shorthand way of defining a class
-	- A way to create an anonymous object
-	- A way to declare a constant variable
+    1. An anonymous function that can be used as a method parameter or a variable assignment
+    1. A shorthand way of defining a class
+    1. A way to create an anonymous object
+    1. A way to declare a constant variable
 
 1. What is a method reference?
-	- A type of anonymous class that can be used to define functions inline
-	- A way to invoke a method on an object using a shorthand syntax
-	- A reference to a method that can be stored or passed as a value
-	- A way to create new instances of a class using a factory method
+    1. A type of anonymous class that can be used to define functions inline
+    1. A way to invoke a method on an object using a shorthand syntax
+    1. A reference to a method that can be stored or passed as a value
+    1. A way to create new instances of a class using a factory method
 
 1. What is a functional interface?
-	- An interface that defines a single abstract method and can be used as a lambda expression or method reference
-	- An interface that defines multiple abstract methods and can be used as a lambda expression or method reference
-	- An interface that can only be implemented by classes in the java.util.function package
-	- An interface that is used to define a natural ordering of objects
+    1. An interface that defines a single abstract method and can be used as a lambda expression or method reference
+    1. An interface that defines multiple abstract methods and can be used as a lambda expression or method reference
+    1. An interface that can only be implemented by classes in the java.util.function package
+    1. An interface that is used to define a natural ordering of objects
 
 1. What is a Java annotation?
-	- A comment in the code
-	- A way to attach metadata to code elements such as classes, methods, and fields
-	- A way to define a class, interface, or method
-	- A shorthand syntax for creating an object
+    1. A comment in the code
+    1. A way to attach metadata to code elements such as classes, methods, and fields
+    1. A way to define a class, interface, or method
+    1. A shorthand syntax for creating an object
 
 1. Which of the following statements are true about records?
-	- Records are a new feature introduced in Java 16
-	- Records can be used to define simple data-holding classes with a concise syntax
-	- Records are always immutable
-	- Record fields are `final` by default, but can be made non-`final`
-	- Record fields are always private
-	- Records automatically generate equals(), hashCode(), and toString() methods based on their state
-	- Records can be subclassed like regular classes
-    - Records cannot have non-default constructors
-	- Records support all of the same features as regular classes, but with a different syntax
+    1. Records are a new feature introduced in Java 16
+    1. Records can be used to define simple data-holding classes with a concise syntax
+    1. Records are always immutable
+    1. Record fields are `final` by default, but can be made non-`final`
+    1. Record fields are always private
+    1. Records automatically generate equals(), hashCode(), and toString() methods based on their state
+    1. Records can be subclassed like regular classes
+    1. Records cannot have non-default constructors
+    1. Records support all of the same features as regular classes, but with a different syntax
 
 1. Which of the following statements are true about serialization?
-	- Java provides built-in serialization by implementing the `Serializable` interface
-    - It is recommended to use Java Serialization instead of a third-party serialization library
-    - Supporting serialization can increase the maintenance cost of a software system due to compatibility concerns
-    - JSON is the best serialization format
-    - `Jackson`, `Avro`, and `Protocol Buffers` are commonly used serialization libraries
+    1. Java provides built-in serialization by implementing the `Serializable` interface
+    1. It is recommended to use Java Serialization instead of a third-party serialization library
+    1. Supporting serialization can increase the maintenance cost of a software system due to compatibility concerns
+    1. JSON is the best serialization format
+    1. `Jackson`, `Avro`, and `Protocol Buffers` are commonly used serialization libraries
 	
 	
 

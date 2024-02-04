@@ -9,6 +9,7 @@ code.
 
 One way to do this is through Code Katas. There are many lists of Code Katas
 online. Here is one:
+
 * [Code Katas](http://codekata.com/)
 
 ### Recommended Reading
@@ -16,7 +17,6 @@ online. Here is one:
 [A Tour of C++, 3rd Edition by Bjarne Stroustrup](https://www.stroustrup.com/tour3.html)
 
 :::{note}
-
 - If you *are not proficient in C++*, please read all the chapters noted below.
 - If you *are proficient in C++* but haven't kept up with modern features of the language (since C++17), please read the
   relevant chapters to ensure familiarity before the traineeship starts.

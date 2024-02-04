@@ -159,9 +159,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../docker/exam.html">Docker Exam</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../kubernetes/kubernetes.html">Kubernetes and Helm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/kubernetes.html">Kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/helm.html">Helm</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../python/python.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../python/exercise.html">Python &amp; Pandas Fundamentals Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/exercise.html">Python Fundamentals Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../python/pandas.html">Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/pandas_exercise.html">Pandas Exercise</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ide/pycharm.html">Pycharm</a></li>
@@ -201,38 +206,56 @@
 <h1>Git Exam<a class="headerlink" href="#git-exam" title="Permalink to this heading">#</a></h1>
 <div class="section" id="theory">
 <h2>Theory<a class="headerlink" href="#theory" title="Permalink to this heading">#</a></h2>
+<div class="admonition-instructions admonition">
+<p class="admonition-title">Instructions</p>
+<p>Answer the below questions with short (a few sentences) answers. Keep your answers as precise and concise as possible.</p>
+<p>Send your answers as an email, with one blank line in between answers to each question, to
+<a class="reference external" href="mailto:Development%20School%20Leads%20%3Cdevschoolleads&#37;&#52;&#48;imc%2Ecom%3E?subject=Pre%2Dwork%20Git%20theory%20exam%20submission">Dev School Leads</a>
+(devschoolleads&#64;imc.com) with the subject “Pre-work Git theory exam submission”.</p>
+</div>
 <ol class="arabic simple">
-<li><p>What does it mean when Git commits are described as immutable? How is
-that reconciled with the ability to amend or delete commits?</p></li>
-<li><p>What does it mean to merge branches A into branch B?</p></li>
-<li><p>What does it mean to rebase branch A on top of branch B?</p></li>
-<li><p>What is a “fast-forward merge”?</p></li>
-<li><p>How does a tag differ from a branch?</p></li>
+<li><p>What do <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> do?</p></li>
+<li><p>What is a commit in Git? What are the components of a commit?</p></li>
+<li><p>What is a branch in Git? What is the purpose of branches?</p></li>
+<li><p>What does it mean for a commit to have more than one parent?</p></li>
+<li><p>How do you merge changes from branch A into branch B? What does this mean? What happens
+to each branch?</p></li>
+<li><p>How do you cherry-pick a change onto branch A? What does this mean? What happens when you do this?</p></li>
+<li><p>How do you rebase changes from branch <code class="docutils literal notranslate"><span class="pre">A</span></code> on top of branch <code class="docutils literal notranslate"><span class="pre">B</span></code>? What does this mean? What happens to each branch?</p></li>
+<li><p>What is a ‘merge conflict’ in Git? What operations can result in a merge conflict? How are merge conflicts resolved?</p></li>
+<li><p>What is a fast-forward merge?</p></li>
+<li><p>What is a ‘remote’ in Git? What is ‘origin’?</p></li>
+<li><p>What is the difference between <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code>?</p></li>
+<li><p>What is the difference between a tag and a branch?</p></li>
 <li><p>What are the most common use cases for tags?</p></li>
-<li><p>What is a “commit-ish”?</p></li>
-<li><p>What is the difference between <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> and a “head”?</p></li>
-<li><p>What is the <code class="docutils literal notranslate"><span class="pre">origin</span></code>?</p></li>
-<li><p>What is the different between <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>?</p></li>
-<li><p>What is a merge conflict? How do you resolve a merge conflict?</p></li>
-<li><p>How would you find the commit where a bug was introduced?</p></li>
-<li><p>How do you check out the code for a previous commit so that you can
-debug it?</p></li>
-<li><p>What is “Detached HEAD mode”? How do you get into detached HEAD mode? How
-do you get out of detached HEAD mode?</p></li>
-<li><p>What does rewriting history mean? When might you do it? When should you
-not rewrite history? What can go wrong when you modify history?</p></li>
-<li><p>When should you delete a commit vs revert it?</p></li>
-<li><p>What is the difference between <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">29f5e54</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span>&#160; <span class="pre">31f5e54</span></code>?</p></li>
-<li><p>What is the difference between a soft, hard, and mixed reset?</p></li>
-<li><p>When would you use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code>?</p></li>
-<li><p>Is it possible to lose a commit? Or to lose your changes? Under what
-circumstances?</p></li>
+<li><p>What is a “commit-ish”? What are a few examples of a “commit-ish”?</p></li>
+<li><p>What is the difference between <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> and a “head” (such as <code class="docutils literal notranslate"><span class="pre">refs/heads/master</span></code>)?</p></li>
+<li><p>What is “Detached HEAD mode”? How do you get into detached HEAD mode? How do you get out of detached HEAD mode?</p></li>
+<li><p>If you find a bug in code that you know was working at some point in the past, but isn’t working now, how would you
+find the commit where a bug was introduced?</p></li>
+<li><p>How do you check out the code for an arbitrary past commit so that you can debug it?</p></li>
+<li><p>What does rewriting history mean? What is a typical reason you will rewrite history?</p></li>
+<li><p>What is the difference between reverting a commit and deleting it?</p></li>
+<li><p>What is the difference between <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">29f5e54</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">29f5e54</span></code>?</p></li>
+<li><p>How do you delete the most recent commit from a branch?</p></li>
+<li><p>How do you delete an older commit from a branch’s history?</p></li>
+<li><p>When should you not rewrite history? What can go wrong when you modify history?</p></li>
+<li><p>If you <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></code> a commit, how can you recover the previous version of that commit?</p></li>
 <li><p>What is the <code class="docutils literal notranslate"><span class="pre">reflog</span></code>? When would you use it?</p></li>
 </ol>
 </div>
 <div class="section" id="practical">
 <h2>Practical<a class="headerlink" href="#practical" title="Permalink to this heading">#</a></h2>
-<p>Please clone <a class="reference external" href="https://github.com/imc-trading/devschool-git-exam"><code class="docutils literal notranslate"><span class="pre">https://github.com/imc-trading/devschool-git-exam</span></code></a>.</p>
+<div class="admonition-instrucitons admonition">
+<p class="admonition-title">Instrucitons</p>
+<p>Clone the repository from
+<a class="reference external" href="https://github.com/imc-trading/devschool-git-exam"><code class="docutils literal notranslate"><span class="pre">https://github.com/imc-trading/devschool-git-exam</span></code></a> and then
+complete the following steps.</p>
+<p>When you are done, zip up your repository and send it, along with the answers to each question, with a blank line in
+between each answer, to
+<a class="reference external" href="mailto:Development%20School%20Leads%20%3Cdevschoolleads&#37;&#52;&#48;imc%2Ecom%3E?subject=Pre%2Dwork%20Git%20practical%20exam%20submission">Dev School Leads</a>
+(devschoolleads&#64;imc.com) with the subject “Pre-work Git practical exam submission”.</p>
+</div>
 <ol class="arabic simple">
 <li><p>Check out the branch <code class="docutils literal notranslate"><span class="pre">resume</span></code>. Change the commit message from “Add Wok Experience” to
 “Add Work Experience”. What commands did you run?</p></li>

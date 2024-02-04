@@ -159,9 +159,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../docker/exam.html">Docker Exam</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../kubernetes/kubernetes.html">Kubernetes and Helm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/kubernetes.html">Kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/helm.html">Helm</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../python/python.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../python/exercise.html">Python &amp; Pandas Fundamentals Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/exercise.html">Python Fundamentals Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../python/pandas.html">Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/pandas_exercise.html">Pandas Exercise</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ide/pycharm.html">Pycharm</a></li>
@@ -199,18 +204,33 @@
         <article role="main">
           <div class="tex2jax_ignore mathjax_ignore section" id="googletest">
 <h1>GoogleTest<a class="headerlink" href="#googletest" title="Permalink to this heading">#</a></h1>
-<div class="section" id="tools">
-<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this heading">#</a></h2>
-<p><a class="reference external" href="https://google.github.io/googletest/">GoogleTest</a>
-and <a class="reference external" href="https://google.github.io/googletest/gmock_for_dummies.html">gMock</a> are the preferred testing and mocking library
-for the majority of C++ development teams at IMC, and what we will be using
-during Development School.</p>
+<p><a class="reference external" href="https://google.github.io/googletest/">GoogleTest</a> it the preferred testing and
+mocking library for the majority of C++ development teams at IMC, and what we
+will be using during Development School.</p>
+<div class="section" id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
+<p>There is an exercise to complete and submit as part of the pre-work. We
+recommend you go through the recommended reading materials below before
+completing the exercise.</p>
+<div class="admonition-instructions admonition">
+<p class="admonition-title">Instructions</p>
+<p>Clone the repository from
+<a class="reference external" href="https://github.com/imc-trading/devschool-googletest-exercise">GitHub</a> and
+follow the instructions in the README.md file.</p>
+<p>Email your completed OrderTests.cpp file to
+<a class="reference external" href="mailto:Development%20School%20Leads%20%3Cdevschoolleads&#37;&#52;&#48;imc%2Ecom%3E?subject=Pre%2Dwork%20GoogleTest%20exercise%20submission">Dev School Leads</a>
+(devschoolleads&#64;imc.com) with the subject “Pre-work GoogleTest exercise submission”.</p>
+</div>
 </div>
 <div class="section" id="recommended-reading-material">
 <h2>Recommended Reading Material<a class="headerlink" href="#recommended-reading-material" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://google.github.io/googletest/primer.html">GoogleTest Primer</a></p></li>
 <li><p><a class="reference external" href="https://google.github.io/googletest/gmock_for_dummies.html">gMock</a></p></li>
+<li><p><a class="reference external" href="https://google.github.io/googletest/reference/matchers.html">GoogleTest Matchers Reference</a> -
+Matchers used with <code class="docutils literal notranslate"><span class="pre">EXPECT_THAT</span></code> and <code class="docutils literal notranslate"><span class="pre">ASSERT_THAT</span></code> are preferred over old style
+GoogleTest assertions. This reference shows the variety available. Get familiar
+with what is available.</p></li>
 </ul>
 </div>
 <div class="section" id="checklist">
@@ -232,7 +252,7 @@ during Development School.</p>
 <li><p>Test Fixtures</p>
 <ul>
 <li><p>Run simple unit tests</p></li>
-<li><p>Write assertions</p></li>
+<li><p>Write assertions using matchers</p></li>
 <li><p>Ignore tests</p></li>
 <li><p>Test setup/teardown test state</p>
 <ul>
@@ -262,7 +282,7 @@ during Development School.</p>
 </li>
 <li><p>Bazel</p>
 <ul>
-<li><p>Run GoogleTest with Bazel</p></li>
+<li><p>Run GoogleTest with Bazel (Hint: <a class="reference external" href="https://google.github.io/googletest/quickstart-bazel.html">Quickstart: Bazel with GoogleTest</a>)</p></li>
 </ul>
 </li>
 </ul>
@@ -316,7 +336,7 @@ during Development School.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">GoogleTest</a><ul>
-<li><a class="reference internal" href="#tools">Tools</a></li>
+<li><a class="reference internal" href="#exercise">Exercise</a></li>
 <li><a class="reference internal" href="#recommended-reading-material">Recommended Reading Material</a></li>
 <li><a class="reference internal" href="#checklist">Checklist</a><ul>
 <li><a class="reference internal" href="#concepts">Concepts</a></li>

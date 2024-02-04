@@ -22,7 +22,7 @@ that will serve as a great starting point for your studies. We have found these
 to be good introductory resources for covering fundamental concepts and
 providing practical examples to help grasp the essentials. If they do not fit
 your learning style, you are encouraged to find your own resources on Google,
-YouTube, or elsewhere. If you are already familiar with any material, feel 
+YouTube, or elsewhere. If you are already familiar with any material, feel
 free to skip the specific content.
 
 Additionally, we are providing you with a checklist of concepts for each
@@ -30,6 +30,11 @@ technology. This checklist will serve as a valuable tool to ensure that you
 cover the most important topics within each technology. It is highly recommended
 that you use this checklist as a guideline to gauge your progress and track your
 learning.
+
+For some topics, we have prepared exercises to work through, and/or an exam to
+test your knowledge. Any exams are open-book and untimed - once again, the
+point is to help double-check your understanding and gauge your progress. However,
+when noted, please submit your answers via email.
 
 It is very important that you are completely comfortable with these basics, as
 they are mostly taken for granted in the training.

@@ -1,16 +1,33 @@
 # GoogleTest
 
-## Tools
+[GoogleTest](https://google.github.io/googletest/) it the preferred testing and
+mocking library for the majority of C++ development teams at IMC, and what we
+will be using during Development School.
 
-[GoogleTest](https://google.github.io/googletest/)
-and [gMock](https://google.github.io/googletest/gmock_for_dummies.html) are the preferred testing and mocking library
-for the majority of C++ development teams at IMC, and what we will be using
-during Development School.
+## Exercise
+
+There is an exercise to complete and submit as part of the pre-work. We
+recommend you go through the recommended reading materials below before
+completing the exercise.
+
+:::{admonition} Instructions
+Clone the repository from
+[GitHub](https://github.com/imc-trading/devschool-googletest-exercise) and
+follow the instructions in the README.md file.
+
+Email your completed OrderTests.cpp file to
+[Dev School Leads](mailto:Development%20School%20Leads%20%3Cdevschoolleads%40imc%2Ecom%3E?subject=Pre%2Dwork%20GoogleTest%20exercise%20submission)
+(devschoolleads@imc.com) with the subject "Pre-work GoogleTest exercise submission".
+:::
 
 ## Recommended Reading Material
 
 - [GoogleTest Primer](https://google.github.io/googletest/primer.html)
 - [gMock](https://google.github.io/googletest/gmock_for_dummies.html)
+- [GoogleTest Matchers Reference](https://google.github.io/googletest/reference/matchers.html) -
+  Matchers used with `EXPECT_THAT` and `ASSERT_THAT` are preferred over old style
+  GoogleTest assertions. This reference shows the variety available. Get familiar
+  with what is available.
 
 ## Checklist
 
@@ -28,7 +45,7 @@ Know how to do the following:
 * GoogleTest
   * Test Fixtures
     * Run simple unit tests
-    * Write assertions
+    * Write assertions using matchers
     * Ignore tests
     * Test setup/teardown test state
       * `SetUp`, `TearDown`
@@ -41,7 +58,7 @@ Know how to do the following:
     * Create mocks
     * Stub method calls
 * Bazel
-  * Run GoogleTest with Bazel
+  * Run GoogleTest with Bazel (Hint: [Quickstart: Bazel with GoogleTest](https://google.github.io/googletest/quickstart-bazel.html))
 
 ### Advanced Features
 

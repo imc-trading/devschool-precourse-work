@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Python Basics - Python Prework</title>
+        <title>K8s + Helm exam - C++ Prework</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -122,7 +122,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../track_python.html"><div class="brand">Python Prework</div></a>
+      <a href="../track_cpp.html"><div class="brand">C++ Prework</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -133,7 +133,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -142,10 +142,10 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand" href="../track_python.html">
+      <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand" href="../track_cpp.html">
   
   
-  <span class="sidebar-brand-text">Python Prework</span>
+  <span class="sidebar-brand-text">C++ Prework</span>
   
 </a><div class="sidebar-tree">
   <ul>
@@ -155,16 +155,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../unix/basics.html">Unix basics</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../docker/docker.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../docker/exam.html">Docker Exam</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../kubernetes/kubernetes.html">Kubernetes and Helm</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="python.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="exercise.html">Python &amp; Pandas Fundamentals Exercise</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../ide/pycharm.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/cpp.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bazel/bazel.html">Bazel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ide/clion.html">CLion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/testing.html">GoogleTest</a></li>
 </ul>
 
 </div></div>
@@ -191,80 +185,27 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <div class="tex2jax_ignore mathjax_ignore section" id="python-basics">
-<h1>Python Basics<a class="headerlink" href="#python-basics" title="Permalink to this heading">#</a></h1>
-<p>Python is the industry standard programming language for data analytics and IMC is no exception. No matter what your
-primary role is, you will be well served in being comfortable reading and writing basic Python code, and working with data analysis libraries like Pandas.</p>
-<div class="section" id="recommended-reading-material">
-<h2>Recommended Reading Material<a class="headerlink" href="#recommended-reading-material" title="Permalink to this heading">#</a></h2>
+          <div class="tex2jax_ignore mathjax_ignore section" id="k8s-helm-exam">
+<h1>K8s + Helm exam<a class="headerlink" href="#k8s-helm-exam" title="Permalink to this heading">#</a></h1>
+<p>Create a Helm chart for the <code class="docutils literal notranslate"><span class="pre">pod-info-app</span></code> application from the K8s pre-work. For the most part this entails copying into
+the Helm chart’s <code class="docutils literal notranslate"><span class="pre">templates</span></code> directory the K8s YAML files you created in the K8s pre-work. Moreover, you’ll need to make
+some things configurable there.</p>
+<p>Requirements:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/">Python 3 Tutorial</a></p></li>
-<li><p><a class="reference external" href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html">Pandas Getting Started Tutorials</a> - These three chapters:</p>
-<ul>
-<li><p><a class="reference external" href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/01_table_oriented.html">Data Type Handled by Pandas</a></p></li>
-<li><p><a class="reference external" href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/02_read_write.html">Reading/Writing Tabular Data</a></p></li>
-<li><p><a class="reference external" href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html">Selecting and Filtering</a></p></li>
-<li><p>We recommend the rest of the chapters only if your work will involve data analysis on a regular basis.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">exam</span></code> namespace.</p></li>
+<li><p>Have a deployment that creates a number of replicas for the <code class="docutils literal notranslate"><span class="pre">pod-info-app</span></code> pods. Make the <strong>number of replicas
+configurable</strong> in <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> with the key <code class="docutils literal notranslate"><span class="pre">replicaCount</span></code>.</p></li>
+<li><p>Add a service. Make the external port configurable with the key <code class="docutils literal notranslate"><span class="pre">externalPort</span></code>.</p></li>
+<li><p>Have a <code class="docutils literal notranslate"><span class="pre">debug</span></code> value in <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code>. If <code class="docutils literal notranslate"><span class="pre">debug:</span> <span class="pre">&quot;true&quot;</span></code> your chart should deploy a <code class="docutils literal notranslate"><span class="pre">busybox</span></code> deployment.</p></li>
+<li><p>Make the name of the deployments and of the service end with the version of the chart.</p></li>
 </ul>
-</li>
-</ul>
-</div>
-<div class="section" id="checklist">
-<h2>Checklist<a class="headerlink" href="#checklist" title="Permalink to this heading">#</a></h2>
-<div class="section" id="python-language-basics">
-<h3>Python Language Basics<a class="headerlink" href="#python-language-basics" title="Permalink to this heading">#</a></h3>
-<p>You should be familiar with the syntax for programming in Python,  especially following:</p>
-<ul class="simple">
-<li><p>Syntax and Fundamentals</p>
-<ul>
-<li><p>Defining variables and functions</p></li>
-<li><p>Defining classes</p></li>
-<li><p>Operators, control flow</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">range</span></code> and <code class="docutils literal notranslate"><span class="pre">enumerate</span></code></p></li>
-<li><p>Standard library data structures</p></li>
-<li><p>Comprehensions</p></li>
-</ul>
-</li>
-<li><p>Concepts</p>
-<ul>
-<li><p>Higher order functions</p></li>
-<li><p>Generators</p></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="section" id="pandas">
-<h3>Pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h3>
-<p>You should be able to do the following using Pandas</p>
-<ul class="simple">
-<li><p>Data Frames</p>
-<ul>
-<li><p>Data Selection and Filtering</p></li>
-<li><p>Data Grouping and Aggregation - optional</p></li>
-<li><p>Data Reshaping and Pivot tables - optional</p></li>
-<li><p>Combine data from multiple tables - optional</p></li>
-<li><p>Query time series - optional</p></li>
-</ul>
-</li>
-<li><p>Data Input and Output</p>
-<ul>
-<li><p>Read data from external sources such as CSV, Excel, databases, etc.</p></li>
-</ul>
-</li>
-<li><p>Visualizations</p>
-<ul>
-<li><p>Generate Charts and Tables - optional</p></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+<p>Zip the Helm chart and send it to us.</p>
 </div>
 
         </article>
@@ -292,32 +233,8 @@ primary role is, you will be well served in being comfortable reading and writin
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Python Basics</a><ul>
-<li><a class="reference internal" href="#recommended-reading-material">Recommended Reading Material</a></li>
-<li><a class="reference internal" href="#checklist">Checklist</a><ul>
-<li><a class="reference internal" href="#python-language-basics">Python Language Basics</a></li>
-<li><a class="reference internal" href="#pandas">Pandas</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

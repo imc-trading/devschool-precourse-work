@@ -8,6 +8,8 @@ git/git
 unix/basics
 docker/docker
 kubernetes/kubernetes
+kubernetes/helm
 python/python
+python/pandas
 ide/pycharm
 :::

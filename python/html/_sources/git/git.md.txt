@@ -109,6 +109,7 @@ You are **not** required to know anything about these.
 
 * [An Introduction To Git and Github](https://www.youtube.com/watch?v=MJUJ4wbFm_A) - Introduction to Git, but in video format.
 * [Think Like (a) Git](https://think-like-a-git.net/sections/graphs-and-git.html)
+* [Confusing git terminology](https://jvns.ca/blog/2023/11/01/confusing-git-terminology/)
 
 ## Exam
 

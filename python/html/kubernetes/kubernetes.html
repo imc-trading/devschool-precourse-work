@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Python" href="../python/python.html" /><link rel="prev" title="Docker Exam" href="../docker/exam.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Helm" href="helm.html" /><link rel="prev" title="Docker Exam" href="../docker/exam.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Kubernetes and Helm - Python Prework</title>
+        <title>Kubernetes - Python Prework</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -159,9 +159,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../docker/exam.html">Docker Exam</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Kubernetes and Helm</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helm.html">Helm</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../python/python.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../python/exercise.html">Python &amp; Pandas Fundamentals Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/exercise.html">Python Fundamentals Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../python/pandas.html">Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/pandas_exercise.html">Pandas Exercise</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ide/pycharm.html">Pycharm</a></li>
@@ -197,51 +202,8 @@
           </label>
         </div>
         <article role="main">
-          <div class="tex2jax_ignore mathjax_ignore section" id="kubernetes-and-helm">
-<h1>Kubernetes and Helm<a class="headerlink" href="#kubernetes-and-helm" title="Permalink to this heading">#</a></h1>
-<p>Kubernetes is a powerful tool for orchestrating containerized applications, offering automated management, scaling, and
-updating of applications across multiple hosts.</p>
-<p>Helm is a package manager for Kubernetes that simplifies deployment of applications. It uses a packaging format called
-Charts, which are collections of files that describe a related set of Kubernetes resources. Helm provides a way to
-manage and maintain complex applications through a simple, declarative approach, making deployments repeatable and more
-manageable.</p>
-<p>The next generation of IMC’s deployment tools are built on top of
-Kubernetes and Helm, so it is valuable to have a basic understanding of how these tools work and how to work
-with them.</p>
-<p>Note: Kubernetes is a complex topic with a lot of depth, most of which you
-don’t need. Just make sure you know the K8s and Helm concepts listed in
-the <a class="reference internal" href="#checklist"><span class="xref myst">checklist below</span></a>. The recommended readings and tutorials
-are good places to start.</p>
-<div class="section" id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h2>
-<div class="section" id="recommended-reading">
-<h3>Recommended Reading<a class="headerlink" href="#recommended-reading" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.jeremyjordan.me/kubernetes/">Introduction to Kubernetes</a></p></li>
-<li><p><a class="reference external" href="https://matthewpalmer.net/kubernetes-app-developer/articles/ultimate-configmap-guide-kubernetes.html">Config Maps</a></p></li>
-</ul>
-</div>
-<div class="section" id="recommended-tutorials">
-<h3>Recommended Tutorials<a class="headerlink" href="#recommended-tutorials" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://kubernetes.io/docs/tutorials/hello-minikube/">Hello Minikube</a></p></li>
-<li><p><a class="reference external" href="https://devopscube.com/create-helm-chart/">Helm Chart Tutorial</a></p></li>
-</ul>
-</div>
-<div class="section" id="alternatives">
-<h3>Alternatives<a class="headerlink" href="#alternatives" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=s_o8dwzRlu4">Youtube - Kubernetes Crash Course</a></p></li>
-</ul>
-</div>
-<div class="section" id="reference-documentation">
-<h3>Reference documentation<a class="headerlink" href="#reference-documentation" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://kubernetes.io/docs/home/">Kubernetes Documentation</a></p></li>
-<li><p><a class="reference external" href="https://helm.sh/docs/">Helm Documentation</a></p></li>
-</ul>
-</div>
-</div>
+          <div class="tex2jax_ignore mathjax_ignore section" id="kubernetes">
+<h1>Kubernetes<a class="headerlink" href="#kubernetes" title="Permalink to this heading">#</a></h1>
 <div class="section" id="checklist">
 <h2>Checklist<a class="headerlink" href="#checklist" title="Permalink to this heading">#</a></h2>
 <div class="section" id="essential-concepts">
@@ -267,31 +229,16 @@ concepts under each point.</p>
 <li><p>Services</p></li>
 </ul>
 </li>
-<li><p>Helm</p>
-<ul>
-<li><p>What is Helm and why use it?</p></li>
-<li><p>Charts</p>
-<ul>
-<li><p>Chart Structure</p></li>
-<li><p>Chart Dependencies</p></li>
-</ul>
-</li>
-<li><p>Repositories</p></li>
-<li><p>Releases</p></li>
-</ul>
-</li>
 </ul>
 </div>
 <div class="section" id="useful-concepts">
 <h3>Useful Concepts<a class="headerlink" href="#useful-concepts" title="Permalink to this heading">#</a></h3>
 <p>You should have a general familiarity with the following concepts, but deep understanding is not necessary.</p>
 <ul class="simple">
-<li><p>Services</p></li>
 <li><p>Storage</p>
 <ul>
 <li><p>Volumes</p></li>
 <li><p>Persistent Volumes</p></li>
-<li><p>Persistent Volume Claims</p></li>
 </ul>
 </li>
 <li><p>Configuration</p>
@@ -320,14 +267,694 @@ concepts under each point.</p>
 <li><p>Open an interactive shell on a running pod for debugging</p></li>
 </ul>
 </li>
-<li><p>Helm Basics</p>
-<ul>
-<li><p>Read simple Helm Charts</p></li>
-<li><p>Create a simple Helm Chart from scratch</p></li>
-<li><p>Deploy a Helm Chart</p></li>
 </ul>
-</li>
+</div>
+</div>
+<div class="section" id="linkedin-learning">
+<h2>LinkedIn learning<a class="headerlink" href="#linkedin-learning" title="Permalink to this heading">#</a></h2>
+<p>If you already have an IMC laptop and have access to LinkedIn Learning, watch this course:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.linkedin.com/learning/learning-kubernetes-16086900">Learning Kubernetes</a></p></li>
 </ul>
+</div>
+<div class="section" id="tutorial">
+<h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading">#</a></h2>
+<p>If you do <strong>not</strong> have access to LinkedIn Learning, read the following K8s tutorial. It is an adaptation of the course
+above.</p>
+<div class="section" id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Basic command line knowledge: cd, mkdir</p></li>
+<li><p>Higher level understanding of Container technology: Docker. Do the Docker pre-work if not ready.</p></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h3>
+<div class="section" id="what-is-kubernetes">
+<h4>What is Kubernetes?<a class="headerlink" href="#what-is-kubernetes" title="Permalink to this heading">#</a></h4>
+<p><a class="reference external" href="https://kubernetes.io/">Kubernetes</a>, aka K8s, is one of the most popular orchestration platforms. It was open-sourced
+by Google, inspired from their internal orchestration system.</p>
+<p>K8s is a container orchestrator. It decides on where and how containerized applications are launched on a server, when
+to scale them and down the number of application replicas, and what to do when an application stops working.</p>
+<p>K8s can run on any kind of server: in an on-premise datacenter, as a cloud service, or a mix of the two. You can install
+it on your own or use a managed service on a public cloud.</p>
+</div>
+<div class="section" id="what-are-containers">
+<h4>What are containers?<a class="headerlink" href="#what-are-containers" title="Permalink to this heading">#</a></h4>
+<p>A container bundles an application’s binaries and configuration into one unit. You can run multiple containers on a
+server. An image is a file containing executable code that can be run as a container. A container registry is a
+database that stores container images. One famous registry is Docker Hub, but companies often have an internal
+registry as well.</p>
+</div>
+</div>
+<div class="section" id="setting-up-kubernetes">
+<h3>Setting up Kubernetes<a class="headerlink" href="#setting-up-kubernetes" title="Permalink to this heading">#</a></h3>
+<div class="section" id="install-docker">
+<h4>Install Docker<a class="headerlink" href="#install-docker" title="Permalink to this heading">#</a></h4>
+<p>Make sure you have a terminal and a text editor ready for use. Make sure you have the Docker engine installed on your
+machine. If not follow <a class="reference external" href="https://docs.docker.com/desktop/">these instructions</a>. Make sure Docker is running:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker
+</pre></div>
+</div>
+<p>This should show the list of docker commands.</p>
+</div>
+<div class="section" id="install-minikube">
+<h4>Install Minikube<a class="headerlink" href="#install-minikube" title="Permalink to this heading">#</a></h4>
+<p>We need a K8s cluster. Normally a K8s cluster is installed on at least three machines running in a datacenter.
+However, for learning purposes we can use a small cluster running entirely on our machine: specifically Minikube.
+Install minikube as described in the <a class="reference external" href="https://minikube.sigs.k8s.io/docs/start/">docs</a>.</p>
+<p>Let’s start the cluster:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>minikube<span class="w"> </span>start
+</pre></div>
+</div>
+<p>Get the minikube version to see if it matches the latest stable version:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>minikube<span class="w"> </span>update-check
+CurrentVersion:<span class="w"> </span>v1.32.0
+LatestVersion:<span class="w"> </span>v1.32.0
+</pre></div>
+</div>
+<p>You can stop the cluster by running:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>minikube<span class="w"> </span>stop
+</pre></div>
+</div>
+<p>And you can delete the cluster like this:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>minikube<span class="w"> </span>delete
+</pre></div>
+</div>
+</div>
+<div class="section" id="spin-up-and-explore-a-minikube-cluster">
+<h4>Spin up and explore a minikube cluster<a class="headerlink" href="#spin-up-and-explore-a-minikube-cluster" title="Permalink to this heading">#</a></h4>
+<p>If you’ve deleted the cluster, we’ll create a new one:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>minikube<span class="w"> </span>start
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">minikube</span></code> is just one way to create a cluster. If you were to use a cloud provider, you’d use whatever
+alternative tool they provide to create a cluster. No matter how you create a cluster, you will use the K8s CLI tool
+to connect to the cluster: <code class="docutils literal notranslate"><span class="pre">kubectl</span></code>. You can point it to any cluster. <code class="docutils literal notranslate"><span class="pre">minikube</span> <span class="pre">start</span></code> has automatically configured
+your <code class="docutils literal notranslate"><span class="pre">kubectl</span></code> to connect to the minikube cluster.</p>
+<p>Inspect the cluster:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>cluster-info
+Kubernetes<span class="w"> </span>control<span class="w"> </span>plane<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at<span class="w"> </span>https://127.0.0.1:32774
+CoreDNS<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at<span class="w"> </span>https://127.0.0.1:32774/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+</pre></div>
+</div>
+<p>That shows the address and port of the cluster control plane. We’ll explore this later.
+If you see an error saying that the connection to the server was refused, it means you don’t have a minikube cluster
+running. Either wait for it to start up or run <code class="docutils literal notranslate"><span class="pre">minikube</span> <span class="pre">start</span></code>.</p>
+<p>Get info about the cluster nodes with:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
+NAME<span class="w">       </span>STATUS<span class="w">   </span>ROLES<span class="w">           </span>AGE<span class="w">     </span>VERSION
+minikube<span class="w">   </span>Ready<span class="w">    </span>control-plane<span class="w">   </span>7m10s<span class="w">   </span>v1.28.3
+</pre></div>
+</div>
+<p>You should see just one node, with the role of <code class="docutils literal notranslate"><span class="pre">control-plane</span></code> and the K8s version it’s running. Let’s look at all the
+namespaces that get created by default:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>namespaces
+NAME<span class="w">              </span>STATUS<span class="w">   </span>AGE
+default<span class="w">           </span>Active<span class="w">   </span>34m
+kube-node-lease<span class="w">   </span>Active<span class="w">   </span>34m
+kube-public<span class="w">       </span>Active<span class="w">   </span>34m
+kube-system<span class="w">       </span>Active<span class="w">   </span>34m
+</pre></div>
+</div>
+<p>Namespaces are a way to isolate and manage applications and services. Now let’s look at the pods that run by default on
+the cluster:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A
+NAMESPACE<span class="w">     </span>NAME<span class="w">                               </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">      </span>AGE
+kube-system<span class="w">   </span>coredns-5dd5756b68-pxfzv<span class="w">           </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">2</span><span class="w"> </span><span class="o">(</span>30m<span class="w"> </span>ago<span class="o">)</span><span class="w">   </span>35m
+kube-system<span class="w">   </span>etcd-minikube<span class="w">                      </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">2</span><span class="w"> </span><span class="o">(</span>30m<span class="w"> </span>ago<span class="o">)</span><span class="w">   </span>35m
+kube-system<span class="w">   </span>kube-apiserver-minikube<span class="w">            </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">2</span><span class="w"> </span><span class="o">(</span>29m<span class="w"> </span>ago<span class="o">)</span><span class="w">   </span>35m
+kube-system<span class="w">   </span>kube-controller-manager-minikube<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">2</span><span class="w"> </span><span class="o">(</span>30m<span class="w"> </span>ago<span class="o">)</span><span class="w">   </span>35m
+kube-system<span class="w">   </span>kube-proxy-2wwf7<span class="w">                   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">2</span><span class="w"> </span><span class="o">(</span>30m<span class="w"> </span>ago<span class="o">)</span><span class="w">   </span>35m
+kube-system<span class="w">   </span>kube-scheduler-minikube<span class="w">            </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">2</span><span class="w"> </span><span class="o">(</span>30m<span class="w"> </span>ago<span class="o">)</span><span class="w">   </span>35m
+kube-system<span class="w">   </span>storage-provisioner<span class="w">                </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">4</span><span class="w"> </span><span class="o">(</span>28m<span class="w"> </span>ago<span class="o">)</span><span class="w">   </span>35m
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">-A</span></code> flag means that we want to see the pods in every namespace. Pods are how containers are run in K8s. The pods
+above are all in the <code class="docutils literal notranslate"><span class="pre">kube-system</span></code> namespace, meaning that these specific pods are required to run a K8s cluster itself.</p>
+<p>Finally, let’s see the services that run in this cluster:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>-A
+NAMESPACE<span class="w">     </span>NAME<span class="w">         </span>TYPE<span class="w">        </span>CLUSTER-IP<span class="w">   </span>EXTERNAL-IP<span class="w">   </span>PORT<span class="o">(</span>S<span class="o">)</span><span class="w">                  </span>AGE
+default<span class="w">       </span>kubernetes<span class="w">   </span>ClusterIP<span class="w">   </span><span class="m">10</span>.96.0.1<span class="w">    </span>&lt;none&gt;<span class="w">        </span><span class="m">443</span>/TCP<span class="w">                  </span>39m
+kube-system<span class="w">   </span>kube-dns<span class="w">     </span>ClusterIP<span class="w">   </span><span class="m">10</span>.96.0.10<span class="w">   </span>&lt;none&gt;<span class="w">        </span><span class="m">53</span>/UDP,53/TCP,9153/TCP<span class="w">   </span>39m
+</pre></div>
+</div>
+<p>Services act as load balancers within the cluster and direct network traffic to pods.
+Don’t worry if these look cryptic. We’ll cover all these concepts later.</p>
+<p>You can pat yourself on the back. You’ve just spun up a cluster and used <code class="docutils literal notranslate"><span class="pre">kubectl</span></code> to inspect
+how the cluster is set up by default.</p>
+</div>
+</div>
+<div class="section" id="application-deployment">
+<h3>Application deployment<a class="headerlink" href="#application-deployment" title="Permalink to this heading">#</a></h3>
+<div class="section" id="reading-and-writing-yaml">
+<h4>Reading and writing YAML<a class="headerlink" href="#reading-and-writing-yaml" title="Permalink to this heading">#</a></h4>
+<p>In the K8s world you will see two big movements being mentioned often: <em>Infrastructure as Code</em> and <em>GitOps</em>. This means
+the state of the system can be expressed as code and the changes of that system should be tracked using a code version
+management system like Git.</p>
+<p>In K8s, the code is commonly described in a YAML format, which is a data serialization format, like JSON or XML.</p>
+<p>Here is an example of a generic YAML file (not K8s specific):</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="c1"># Description</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bob Doyle</span>
+<span class="nt">professions</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">software engineer</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coder</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">software developer</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">programmer</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hacker</span>
+<span class="nt">previousJobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">IMC</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1 year</span>
+<span class="w">  </span><span class="nt">IMC trading</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2 years</span>
+<span class="w">  </span><span class="nt">titles</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team lead</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">software engineer</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">---</span></code> means that it’s the beginning of a document. So you can have multiple documents in one file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Description</span></code> is a comment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name:</span> <span class="pre">Bob</span> <span class="pre">Doyle</span></code> key value pair</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">professions</span></code> is list or array of items and each item is preceded by one <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">previousJobs</span></code> - is a nested map of key value pairs. On one line you have a <code class="docutils literal notranslate"><span class="pre">key:</span></code> and on the next line
+you indent and add the next <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> pair.</p></li>
+</ul>
+<p>YAML files end with either <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> or <code class="docutils literal notranslate"><span class="pre">.yml</span></code>. It’s easy to make mistakes when writing YAML. Luckily you can validate
+your YAML with an online service like: https://yamlchecker.com.</p>
+</div>
+<div class="section" id="namespaces">
+<h4>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this heading">#</a></h4>
+<p>Namespaces let you organize and isolate workloads. E.g., if both your prod and dev are running in the same cluster,
+you can separate those two by creating two namespaces. Let’s look at the default ones:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>namespaces
+NAME<span class="w">              </span>STATUS<span class="w">   </span>AGE
+default<span class="w">           </span>Active<span class="w">   </span>148m
+kube-node-lease<span class="w">   </span>Active<span class="w">   </span>148m
+kube-public<span class="w">       </span>Active<span class="w">   </span>148m
+kube-system<span class="w">       </span>Active<span class="w">   </span>148m
+</pre></div>
+</div>
+<p>Let’s look at a Kubernetes manifest for a namespace:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Namespace</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">development</span>
+</pre></div>
+</div>
+<p>The only thing you need to worry about is the <code class="docutils literal notranslate"><span class="pre">name</span></code> field, in this case: <code class="docutils literal notranslate"><span class="pre">development</span></code>. Save this code in a
+<code class="docutils literal notranslate"><span class="pre">namespace.yaml</span></code> file and let’s create this namespace in our K8s cluster:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>namespace.yaml<span class="w"> </span>
+namespace/development<span class="w"> </span>created
+</pre></div>
+</div>
+<p>See the newly created namespace by running:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>namespaces
+NAME<span class="w">              </span>STATUS<span class="w">   </span>AGE
+default<span class="w">           </span>Active<span class="w">   </span>5h5m
+development<span class="w">       </span>Active<span class="w">   </span>46s
+kube-node-lease<span class="w">   </span>Active<span class="w">   </span>5h5m
+kube-public<span class="w">       </span>Active<span class="w">   </span>5h5m
+kube-system<span class="w">       </span>Active<span class="w">   </span>5h5m
+</pre></div>
+</div>
+<p>Since in YAML, we can have multiple documents in a file, we can define multiple K8s resources in a file.
+Add one more namespace called <code class="docutils literal notranslate"><span class="pre">production</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Namespace</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">development</span>
+<span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Namespace</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">production</span>
+</pre></div>
+</div>
+<p>And apply it again:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>namespace.yaml<span class="w"> </span>
+namespace/development<span class="w"> </span>unchanged
+namespace/production<span class="w"> </span>created
+</pre></div>
+</div>
+<p>As you can see K8s is smart enough to know that it should not create the <code class="docutils literal notranslate"><span class="pre">development</span></code>
+namespace again, only <code class="docutils literal notranslate"><span class="pre">production</span></code>. Inspect the namespaces again:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>namespaces
+NAME<span class="w">              </span>STATUS<span class="w">   </span>AGE
+default<span class="w">           </span>Active<span class="w">   </span>5h8m
+development<span class="w">       </span>Active<span class="w">   </span>4m35s
+kube-node-lease<span class="w">   </span>Active<span class="w">   </span>5h8m
+kube-public<span class="w">       </span>Active<span class="w">   </span>5h8m
+kube-system<span class="w">       </span>Active<span class="w">   </span>5h8m
+production<span class="w">        </span>Active<span class="w">   </span>14s
+</pre></div>
+</div>
+<p>To delete these namespaces, run:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">$ kubectl delete -f namespace.yaml</span>
+<span class="l l-Scalar l-Scalar-Plain">namespace &quot;development&quot; deleted</span>
+<span class="l l-Scalar l-Scalar-Plain">namespace &quot;production&quot; deleted</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="deploy-an-application">
+<h4>Deploy an application<a class="headerlink" href="#deploy-an-application" title="Permalink to this heading">#</a></h4>
+<p>First, let’s create a simple application. Create a file called <code class="docutils literal notranslate"><span class="pre">app.py</span></code> and paste this code in:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">print_env_variables</span><span class="p">():</span>
+    <span class="n">pod_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;POD_NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;Default Pod Name&#39;</span><span class="p">)</span>
+    <span class="n">pod_namespace</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;POD_NAMESPACE&#39;</span><span class="p">,</span> <span class="s1">&#39;Default Pod Namespace&#39;</span><span class="p">)</span>
+    <span class="n">pod_id</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;POD_ID&#39;</span><span class="p">,</span> <span class="s1">&#39;Default Pod ID&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;POD_NAME: </span><span class="si">{</span><span class="n">pod_name</span><span class="si">}</span><span class="s1">, POD_NAMESPACE: </span><span class="si">{</span><span class="n">pod_namespace</span><span class="si">}</span><span class="s1">, POD_ID: </span><span class="si">{</span><span class="n">pod_id</span><span class="si">}</span><span class="s1">&#39;</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">3000</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is a simple Python HTTP server, listening on port 3000, that returns the values of three environment variables:
+<code class="docutils literal notranslate"><span class="pre">POD_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">POD_NAMESPACE</span></code>, <code class="docutils literal notranslate"><span class="pre">POD_ID</span></code>.</p>
+<p>Now let’s create a Docker image that packages this application. Create a <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> file with this content:</p>
+<div class="highlight-dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.8-slim</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/app
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--trusted-host<span class="w"> </span>pypi.python.org<span class="w"> </span>Flask
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">3000</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">POD_NAME</span><span class="o">=</span>default_pod<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">POD_NAMESPACE</span><span class="o">=</span>default_namespace<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">POD_ID</span><span class="o">=</span>default_id
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;app.py&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This copies our <code class="docutils literal notranslate"><span class="pre">app.py</span></code> into the image, installs the appropriate Python packages, exposes the port 3000,
+specifies the expected environment variables, and specifies how to start tha app.</p>
+<p>We’ll use this Docker image in our minikube K8s cluster. Minikube has its own Docker registry,
+so before building the image, we need to make sure it gets pushed to the Minikube Docker registry:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">eval</span><span class="w"> </span><span class="k">$(</span>minikube<span class="w"> </span>docker-env<span class="k">)</span>
+</pre></div>
+</div>
+<p>In the same terminal build the Docker image with the name <code class="docutils literal notranslate"><span class="pre">pod-info-app</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>pod-info-app<span class="w"> </span>.
+</pre></div>
+</div>
+<div class="section" id="deploying-the-app-on-k8s">
+<h5>Deploying the app on K8s<a class="headerlink" href="#deploying-the-app-on-k8s" title="Permalink to this heading">#</a></h5>
+<p>K8s is designed to make your applications highly available. It does that
+by creating multiple replicas of your application, so if one fails, the
+others can still serve your clients.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Pods</span></code> are K8s resources that run your applications and microservices.
+One way to make sure that your application is highly available is to
+organize your pods into K8s <code class="docutils literal notranslate"><span class="pre">deployments</span></code>. This is a spec for a K8s deployment (see <code class="docutils literal notranslate"><span class="pre">kind:</span> <span class="pre">Deployment</span></code>):</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-info-deployment</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">development</span>
+<span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-info</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-info</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-info</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-info-container</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-info-app</span>
+<span class="w">          </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
+<span class="w">          </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POD_NAME</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">fieldRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">fieldPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metadata.name</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POD_NAMESPACE</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">fieldRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">fieldPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metadata.namespace</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POD_ID</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">fieldRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">fieldPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">status.podIP</span>
+</pre></div>
+</div>
+<p>The deployment is called <code class="docutils literal notranslate"><span class="pre">pod-info-deployment</span></code> specifying that the pods should be in the
+<code class="docutils literal notranslate"><span class="pre">development</span></code> namespace and labeling all the pods in this group with the key value: <code class="docutils literal notranslate"><span class="pre">app:</span> <span class="pre">pod-info</span></code>.</p>
+<p>Under <code class="docutils literal notranslate"><span class="pre">spec</span></code> we specify that we want 3 replicas of our container to run at the same time.
+Under <code class="docutils literal notranslate"><span class="pre">containers</span></code> we specify the Docker container we want to run in the pod. Notice that <code class="docutils literal notranslate"><span class="pre">containers</span></code>
+is a list, so we can have <em>multiple</em> containers in a pod.</p>
+<p>We define a container called <code class="docutils literal notranslate"><span class="pre">pod-info-container</span></code> which will use the latest version of Docker image we’ve just created:
+<code class="docutils literal notranslate"><span class="pre">pod-info-app</span></code>. Moreover, we direct the traffic for the container to port <code class="docutils literal notranslate"><span class="pre">3000</span></code>. <code class="docutils literal notranslate"><span class="pre">imagePullPolicy:</span> <span class="pre">IfNotPresent</span></code> is
+needed to make Minikube use its own Docker registry instead of going to Docker Hub to fetch the Docker image.</p>
+<p>We pass the three environment variables to the Docker container: <code class="docutils literal notranslate"><span class="pre">POD_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">POD_NAMESPACE</span></code>, and <code class="docutils literal notranslate"><span class="pre">POD_IP</span></code>. These will
+take their values from the K8s pod metadata: <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">namespace</span></code>, <code class="docutils literal notranslate"><span class="pre">status.podIP</span></code> respectively.</p>
+<p>Save the YAML above in a file called <code class="docutils literal notranslate"><span class="pre">deployment.yaml</span></code>. Make sure you create the <code class="docutils literal notranslate"><span class="pre">development</span></code> namespace as we did above
+and deploy this K8s deployment:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>namespace.yaml
+$<span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml<span class="w">         </span>
+deployment.apps/pod-info-deployment<span class="w"> </span>created
+</pre></div>
+</div>
+<p>Now see the deployment in the <code class="docutils literal notranslate"><span class="pre">development</span></code> namespace:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>deployments<span class="w"> </span>-n<span class="w"> </span>development
+NAME<span class="w">                  </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
+pod-info-deployment<span class="w">   </span><span class="m">3</span>/3<span class="w">     </span><span class="m">3</span><span class="w">            </span><span class="m">3</span><span class="w">           </span>5m4s
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">3/3</span></code> means there are three pods ready to be used. Now let’s see the pods created:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>development
+NAME<span class="w">                                   </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+pod-info-deployment-84b8474657-hbpbg<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>6m58s
+pod-info-deployment-84b8474657-jgj4z<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>6m58s
+pod-info-deployment-84b8474657-rt9wn<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>6m58s
+</pre></div>
+</div>
+<p>If you want to see how the K8s deployment ensures three pods running at any time, try deleting one of those pods:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>-n<span class="w"> </span>development<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>pod-info-deployment-84b8474657-hbpbg<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>development
+pod<span class="w"> </span><span class="s2">&quot;pod-info-deployment-84b8474657-hbpbg&quot;</span><span class="w"> </span>deleted
+NAME<span class="w">                                   </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+pod-info-deployment-84b8474657-jgj4z<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>9m25s
+pod-info-deployment-84b8474657-mpmjw<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>31s
+pod-info-deployment-84b8474657-rt9wn<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>9m25s
+</pre></div>
+</div>
+<p>As you can see, it automatically created a new pod instead (the second one).</p>
+<p>Great! Now you understand K8s pods and deployments. Yay!</p>
+</div>
+</div>
+<div class="section" id="checking-the-health-of-a-pod">
+<h4>Checking the health of a pod<a class="headerlink" href="#checking-the-health-of-a-pod" title="Permalink to this heading">#</a></h4>
+<p>When a pod gets created, it happens often that it fails creating due to a multitude of reasons:</p>
+<ul class="simple">
+<li><p>The Docker image cannot be found (e.g., due to mis-configuration)</p></li>
+<li><p>You could be out of space on your worker node, so the pod cannot be scheduled.</p></li>
+<li><p>Or it starts running, but suddenly stops due to some error in your app.</p></li>
+</ul>
+<p>For this you can look into the event log of the pod:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>-n<span class="w"> </span>development<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>pod-info-deployment-84b8474657-jgj4z<span class="w"> </span>
+...
+Events:
+<span class="w">  </span>Type<span class="w">    </span>Reason<span class="w">     </span>Age<span class="w">   </span>From<span class="w">               </span>Message
+<span class="w">  </span>----<span class="w">    </span>------<span class="w">     </span>----<span class="w">  </span>----<span class="w">               </span>-------
+<span class="w">  </span>Normal<span class="w">  </span>Scheduled<span class="w">  </span>17m<span class="w">   </span>default-scheduler<span class="w">  </span>Successfully<span class="w"> </span>assigned<span class="w"> </span>development/pod-info-deployment-84b8474657-jgj4z<span class="w"> </span>to<span class="w"> </span>minikube
+<span class="w">  </span>Normal<span class="w">  </span>Pulled<span class="w">     </span>17m<span class="w">   </span>kubelet<span class="w">            </span>Container<span class="w"> </span>image<span class="w"> </span><span class="s2">&quot;pod-info-app&quot;</span><span class="w"> </span>already<span class="w"> </span>present<span class="w"> </span>on<span class="w"> </span>machine
+<span class="w">  </span>Normal<span class="w">  </span>Created<span class="w">    </span>17m<span class="w">   </span>kubelet<span class="w">            </span>Created<span class="w"> </span>container<span class="w"> </span>pod-info-container
+<span class="w">  </span>Normal<span class="w">  </span>Started<span class="w">    </span>17m<span class="w">   </span>kubelet<span class="w">            </span>Started<span class="w"> </span>container<span class="w"> </span>pod-info-container
+</pre></div>
+</div>
+<p>There is a lot of useful information here and the events are at the bottom. If the pod has been running for a long
+time, you’ll not see any events, meaning that K8s lets the pod do its own thing because it’s healthy.</p>
+<p>This is a healthy pod, but let’s try with a failing pod. Change your <code class="docutils literal notranslate"><span class="pre">deployment.yaml</span></code> to have a typo in the Docker
+image, delete the deployment, re-apply it, get the pods, notice the failing pods, and check the events of one of those:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>delete<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
+$<span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
+$<span class="w"> </span>kubectl<span class="w"> </span>-n<span class="w"> </span>development<span class="w"> </span>get<span class="w"> </span>pods
+NAME<span class="w">                                   </span>READY<span class="w">   </span>STATUS<span class="w">             </span>RESTARTS<span class="w">   </span>AGE
+pod-info-deployment-5c7f779b8b-b5wfc<span class="w">   </span><span class="m">0</span>/1<span class="w">     </span>ImagePullBackOff<span class="w">   </span><span class="m">0</span><span class="w">          </span>51s
+pod-info-deployment-5c7f779b8b-csc8j<span class="w">   </span><span class="m">0</span>/1<span class="w">     </span>ImagePullBackOff<span class="w">   </span><span class="m">0</span><span class="w">          </span>51s
+pod-info-deployment-5c7f779b8b-gqpgc<span class="w">   </span><span class="m">0</span>/1<span class="w">     </span>ImagePullBackOff<span class="w">   </span><span class="m">0</span><span class="w">          </span>51s
+$<span class="w"> </span>kubectl<span class="w"> </span>-n<span class="w"> </span>development<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>pod-info-deployment-5c7f779b8b-b5wfc
+...
+Events:
+<span class="w">  </span>Type<span class="w">     </span>Reason<span class="w">     </span>Age<span class="w">                </span>From<span class="w">               </span>Message
+<span class="w">  </span>----<span class="w">     </span>------<span class="w">     </span>----<span class="w">               </span>----<span class="w">               </span>-------
+<span class="w">  </span>Normal<span class="w">   </span>Scheduled<span class="w">  </span>86s<span class="w">                </span>default-scheduler<span class="w">  </span>Successfully<span class="w"> </span>assigned<span class="w"> </span>development/pod-info-deployment-5c7f779b8b-b5wfc<span class="w"> </span>to<span class="w"> </span>minikube
+<span class="w">  </span>Normal<span class="w">   </span>Pulling<span class="w">    </span>45s<span class="w"> </span><span class="o">(</span>x2<span class="w"> </span>over<span class="w"> </span>85s<span class="o">)</span><span class="w">  </span>kubelet<span class="w">            </span>Pulling<span class="w"> </span>image<span class="w"> </span><span class="s2">&quot;pod-info-app-typo&quot;</span>
+<span class="w">  </span>Warning<span class="w">  </span>Failed<span class="w">     </span>20s<span class="w"> </span><span class="o">(</span>x2<span class="w"> </span>over<span class="w"> </span>56s<span class="o">)</span><span class="w">  </span>kubelet<span class="w">            </span>Failed<span class="w"> </span>to<span class="w"> </span>pull<span class="w"> </span>image<span class="w"> </span><span class="s2">&quot;pod-info-app-typo&quot;</span>:<span class="w"> </span>Error<span class="w"> </span>response<span class="w"> </span>from<span class="w"> </span>daemon:<span class="w"> </span>pull<span class="w"> </span>access<span class="w"> </span>denied<span class="w"> </span><span class="k">for</span><span class="w"> </span>pod-info-app-typo,<span class="w"> </span>repository<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>exist<span class="w"> </span>or<span class="w"> </span>may<span class="w"> </span>require<span class="w"> </span><span class="s1">&#39;docker login&#39;</span>:<span class="w"> </span>denied:<span class="w"> </span>requested<span class="w"> </span>access<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>resource<span class="w"> </span>is<span class="w"> </span>denied
+...
+</pre></div>
+</div>
+<p>This helps you quickly identify where the misconfiguration is. Most issues with pods occur at the beginning of the
+lifecycle, and now you know exactly how to investigate them.</p>
+<p>Now, fix the image in <code class="docutils literal notranslate"><span class="pre">deployment.yaml</span></code> and re-apply.</p>
+</div>
+<div class="section" id="check-that-your-application-is-working">
+<h4>Check that your application is working<a class="headerlink" href="#check-that-your-application-is-working" title="Permalink to this heading">#</a></h4>
+<p>Our pod is now exposing an HTTP server on the port 3000. This port is not yet exposed to the outside world.
+It’s only exposed internally in the cluster, so other pods can access it. In order to try that
+we’ll deploy another pod running a container called <code class="docutils literal notranslate"><span class="pre">busybox</span></code>. Busybox is a minimal Linux docker image that
+has handy tools like: <code class="docutils literal notranslate"><span class="pre">cat</span></code>, <code class="docutils literal notranslate"><span class="pre">wget</span></code>, etc. It’s great for troubleshooting.
+Let’s define another deployment in a file called <code class="docutils literal notranslate"><span class="pre">busybox.yaml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox-container</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox:latest</span>
+<span class="w">          </span><span class="c1"># Keep the container running</span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&quot;/bin/sh&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;-c&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;--&quot;</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&quot;while</span><span class="nv"> </span><span class="s">true;</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">sleep</span><span class="nv"> </span><span class="s">30;</span><span class="nv"> </span><span class="s">done;&quot;</span><span class="w"> </span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+<p>Unlike for our other deployment, we’re going to deploy this in the <code class="docutils literal notranslate"><span class="pre">default</span></code> namespace and run only one replica. Let’s
+create it and show the pods:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>busybox.yaml
+$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pods
+NAME<span class="w">                       </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+busybox-7f6c976c4c-p7vhp<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>39s
+</pre></div>
+</div>
+<p>The last command didn’t specify the namespace, meaning that it used the <code class="docutils literal notranslate"><span class="pre">default</span></code> namespace.</p>
+<p>Now, we’re going to jump into the <code class="docutils literal notranslate"><span class="pre">busybox</span></code> pod and run an HTTP GET request to one of our app pods. For that we first
+need the IP address of one of our app pods:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>development<span class="w"> </span>-o<span class="w"> </span>wide
+NAME<span class="w">                                   </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE<span class="w">   </span>IP<span class="w">            </span>NODE<span class="w">       </span>NOMINATED<span class="w"> </span>NODE<span class="w">   </span>READINESS<span class="w"> </span>GATES
+pod-info-deployment-84b8474657-7wqbv<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>18m<span class="w">   </span><span class="m">10</span>.244.0.31<span class="w">   </span>minikube<span class="w">   </span>&lt;none&gt;<span class="w">           </span>&lt;none&gt;
+pod-info-deployment-84b8474657-fm8br<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>18m<span class="w">   </span><span class="m">10</span>.244.0.33<span class="w">   </span>minikube<span class="w">   </span>&lt;none&gt;<span class="w">           </span>&lt;none&gt;
+pod-info-deployment-84b8474657-xxwbx<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>18m<span class="w">   </span><span class="m">10</span>.244.0.32<span class="w">   </span>minikube<span class="w">   </span>&lt;none&gt;<span class="w">           </span>&lt;none&gt;
+</pre></div>
+</div>
+<p>This command shows us extra information, including the IP addresses of our pods. Let’s take the first IP address:
+<code class="docutils literal notranslate"><span class="pre">10.244.0.31</span></code>.</p>
+<p>Now let’s jump into the <code class="docutils literal notranslate"><span class="pre">busybox</span></code> pod:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>busybox-7f6c976c4c-p7vhp<span class="w"> </span>--<span class="w"> </span>/bin/sh
+/<span class="w"> </span><span class="c1"># </span>
+</pre></div>
+</div>
+<p>This means we want to run the command <code class="docutils literal notranslate"><span class="pre">/bin/sh</span></code> inside the pod, and we use <code class="docutils literal notranslate"><span class="pre">-it</span></code> to get an interactive terminal.
+Now let’s use <code class="docutils literal notranslate"><span class="pre">wget</span></code> to make the HTTP request to our app pod:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>/<span class="w"> </span><span class="c1"># wget 10.244.0.31:3000</span>
+Connecting<span class="w"> </span>to<span class="w"> </span><span class="m">10</span>.244.0.31:3000<span class="w"> </span><span class="o">(</span><span class="m">10</span>.244.0.31:3000<span class="o">)</span>
+saving<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;index.html&#39;</span>
+index.html<span class="w">           </span><span class="m">100</span>%<span class="w"> </span><span class="p">|</span>*****************************************************************************************************************************************************************************************************<span class="p">|</span><span class="w">    </span><span class="m">95</span><span class="w">  </span><span class="m">0</span>:00:00<span class="w"> </span>ETA
+<span class="s1">&#39;index.html&#39;</span><span class="w"> </span>saved
+/<span class="w"> </span><span class="c1"># cat index.html </span>
+POD_NAME:<span class="w"> </span>pod-info-deployment-84b8474657-7wqbv,<span class="w"> </span>POD_NAMESPACE:<span class="w"> </span>development,<span class="w"> </span>POD_ID:<span class="w"> </span><span class="m">10</span>.244.0.31
+/<span class="w"> </span><span class="c1"># exit</span>
+</pre></div>
+</div>
+<p>This got us an <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file, which we displayed. As you can see we get our environment variables printed.
+These match the pod information we got when running <code class="docutils literal notranslate"><span class="pre">kubectl</span> <span class="pre">get</span> <span class="pre">pods</span> <span class="pre">-n</span> <span class="pre">development</span> <span class="pre">-o</span> <span class="pre">wide</span></code>.</p>
+<p>Yay! Our app is working!</p>
+</div>
+<div class="section" id="view-your-application-logs">
+<h4>View your application logs<a class="headerlink" href="#view-your-application-logs" title="Permalink to this heading">#</a></h4>
+<p>You can also inspect the health of your application by looking at its logs:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>-n<span class="w"> </span>development<span class="w"> </span>logs<span class="w"> </span>pod-info-deployment-84b8474657-7wqbv
+<span class="w"> </span>*<span class="w"> </span>Serving<span class="w"> </span>Flask<span class="w"> </span>app<span class="w"> </span><span class="s1">&#39;app&#39;</span>
+<span class="w"> </span>*<span class="w"> </span>Debug<span class="w"> </span>mode:<span class="w"> </span>off
+WARNING:<span class="w"> </span>This<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>development<span class="w"> </span>server.<span class="w"> </span>Do<span class="w"> </span>not<span class="w"> </span>use<span class="w"> </span>it<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>production<span class="w"> </span>deployment.<span class="w"> </span>Use<span class="w"> </span>a<span class="w"> </span>production<span class="w"> </span>WSGI<span class="w"> </span>server<span class="w"> </span>instead.
+<span class="w"> </span>*<span class="w"> </span>Running<span class="w"> </span>on<span class="w"> </span>all<span class="w"> </span>addresses<span class="w"> </span><span class="o">(</span><span class="m">0</span>.0.0.0<span class="o">)</span>
+<span class="w"> </span>*<span class="w"> </span>Running<span class="w"> </span>on<span class="w"> </span>http://127.0.0.1:3000
+<span class="w"> </span>*<span class="w"> </span>Running<span class="w"> </span>on<span class="w"> </span>http://10.244.0.31:3000
+Press<span class="w"> </span>CTRL+C<span class="w"> </span>to<span class="w"> </span>quit
+<span class="m">127</span>.0.0.1<span class="w"> </span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">02</span>/Feb/2024<span class="w"> </span><span class="m">10</span>:05:31<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET / HTTP/1.1&quot;</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-
+</pre></div>
+</div>
+<p>This command outputs the <code class="docutils literal notranslate"><span class="pre">stdout</span></code> of the application running inside the container. If your app is also writing
+to some file in the container, you can also use <code class="docutils literal notranslate"><span class="pre">kubectl</span> <span class="pre">exec</span> <span class="pre">-it</span> <span class="pre">&lt;pod</span> <span class="pre">name&gt;</span> <span class="pre">--</span> <span class="pre">/bin/sh</span></code> to jump to your
+app pod and explore the filesystem.</p>
+</div>
+</div>
+<div class="section" id="complex-application-deployment">
+<h3>Complex Application Deployment<a class="headerlink" href="#complex-application-deployment" title="Permalink to this heading">#</a></h3>
+<div class="section" id="expose-your-application-to-the-internet-with-a-loadbalancer">
+<h4>Expose your application to the internet with a LoadBalancer<a class="headerlink" href="#expose-your-application-to-the-internet-with-a-loadbalancer" title="Permalink to this heading">#</a></h4>
+<p>We have the pods accepting traffic from inside the K8s cluster, but how do we make the
+pods accessible from the internet? The answer is: K8s services.</p>
+<p>A K8s service is a load balancer that directs traffic from outside the cluster to the pods.
+A load balancer has a public and static IP address. The public part means that anyone can access
+it from the internet. And the static part is important because pods and their IP addresses change frequently,
+but your service IP needs to remain the same. Let’s define a service in a <code class="docutils literal notranslate"><span class="pre">service.yaml</span></code> file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo-service</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">development</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-info</span>
+<span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LoadBalancer</span>
+</pre></div>
+</div>
+<p>Notice <code class="docutils literal notranslate"><span class="pre">kind:</span> <span class="pre">Service</span></code>. Its name is <code class="docutils literal notranslate"><span class="pre">demo-service</span></code> and it will be deployed in the <code class="docutils literal notranslate"><span class="pre">development</span></code> namespace.
+The <code class="docutils literal notranslate"><span class="pre">selector</span></code> is the important part. It tells it that any traffic should be redirected to pods having the label:
+<code class="docutils literal notranslate"><span class="pre">app:</span> <span class="pre">pod-info</span></code>. Looking back at our <code class="docutils literal notranslate"><span class="pre">deployment.yaml</span></code>, we see that all the pods in our deployment had this label:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">...</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-info-deployment</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-info</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>Back to our service, we see that it accepts traffic on the port <code class="docutils literal notranslate"><span class="pre">80</span></code> and it redirects traffic to the port <code class="docutils literal notranslate"><span class="pre">3000</span></code> in
+the pods. Finally, we are specifying the service type to <code class="docutils literal notranslate"><span class="pre">LoadBalancer</span></code>. This is one of the three types supported. The
+other ones are <code class="docutils literal notranslate"><span class="pre">NodePort</span></code> and <code class="docutils literal notranslate"><span class="pre">ClusterIP</span></code>.</p>
+<p>Note: In IMC we only use <code class="docutils literal notranslate"><span class="pre">ClusterIP</span></code>. <code class="docutils literal notranslate"><span class="pre">LoadBalancer</span></code> and <code class="docutils literal notranslate"><span class="pre">NodePort</span></code> types are usually used in Cloud providers. There is
+no concept of <code class="docutils literal notranslate"><span class="pre">EXTERNAL-IP</span></code> to internal Kubernetes clusters at IMC. For the sake of this tutorial though, we’ll use
+<code class="docutils literal notranslate"><span class="pre">LoadBalancer</span></code>.</p>
+<p>Let’s create the service. Since we’re using Minikube, in a separate tab run this command and let it run:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>minikube<span class="w"> </span>tunnel
+</pre></div>
+</div>
+<p>This makes the Minikube cluster available on the host machine. In the original tab, run:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>service.yaml<span class="w"> </span>
+service/demo-service<span class="w"> </span>created
+</pre></div>
+</div>
+<p>Let’s find the IP of the service:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>service<span class="w"> </span>-n<span class="w"> </span>development
+NAME<span class="w">           </span>TYPE<span class="w">           </span>CLUSTER-IP<span class="w">      </span>EXTERNAL-IP<span class="w">   </span>PORT<span class="o">(</span>S<span class="o">)</span><span class="w">        </span>AGE
+demo-service<span class="w">   </span>LoadBalancer<span class="w">   </span><span class="m">10</span>.99.155.149<span class="w">   </span><span class="m">127</span>.0.0.1<span class="w">     </span><span class="m">80</span>:31717/TCP<span class="w">   </span>2m6s
+</pre></div>
+</div>
+<p>Our service has an ip for inside the cluster and one external IP. Notice that the external IP is actually the IP
+of our localhost. Because Minikube only runs on our machine, not on an actual cloud (e.g., AWS), we’re not actually
+getting an external IP available on the Internet.</p>
+<p>Let’s try doing an HTTP call to the IP address. You can open it in your browser or from the command line run:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ curl http://127.0.0.1        
+curl: (7) Failed to connect to 127.0.0.1 port 80 after 3 ms: Couldn&#39;t connect to server
+</pre></div>
+</div>
+<p>Oops! It does not work. That is because we are using the port 80, which needs admin rights to open.
+It would work with a port larger than 1024, e.g., 8080. But don’t despair. Go to the <code class="docutils literal notranslate"><span class="pre">minikube</span> <span class="pre">tunnel</span></code> tab. That is
+asking for your admin password. Type it in and try again:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>curl<span class="w"> </span>http://127.0.0.1/
+POD_NAME:<span class="w"> </span>pod-info-deployment-84b8474657-fm8br,<span class="w"> </span>POD_NAMESPACE:<span class="w"> </span>development,<span class="w"> </span>POD_ID:<span class="w"> </span><span class="m">10</span>.244.0.33
+</pre></div>
+</div>
+<p>Look at that! It works! To see the load balancer in action, run the command above repeatedly. You should get different
+responses, depending on the pod to which the service sends your traffic to.</p>
+<p>Yay! You’re a service expert. Congrats!</p>
+</div>
+<div class="section" id="add-resource-requests-and-limits-to-your-pod">
+<h4>Add resource requests and limits to your pod<a class="headerlink" href="#add-resource-requests-and-limits-to-your-pod" title="Permalink to this heading">#</a></h4>
+<p>Well configured containers let K8s know how much memory and CPU to reserve on a worker node. Resources refer to the
+amount of available CPU and memory on the worker node running a pod. If you deploy a pod without specifying the
+set of resource requests, it can be scheduled on a node that does not have enough processing power or memory
+and cause the node to fail. Similarly, if you don’t specify resource limits, the pod can start using more and
+more resources till the node runs out of resources and fails. That will affect other pods running on that node, too.
+See <a class="reference external" href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource Management for Pods and Containers</a>
+for more details.</p>
+<p>Let’s go to our <code class="docutils literal notranslate"><span class="pre">deployment.yaml</span></code> and add resource specification to the pod <code class="docutils literal notranslate"><span class="pre">spec</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">...</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-info-container</span>
+<span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-info-app</span>
+<span class="w">      </span><span class="nt">resources</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">requests</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;64Mi&quot;</span>
+<span class="w">          </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;250m&quot;</span>
+<span class="w">        </span><span class="nt">limits</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;128Mi&quot;</span>
+<span class="w">          </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;500m&quot;</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">requests</span></code> means: do not schedule the pod unless the node has at least 64Mi of memory and 250m of CPU. <code class="docutils literal notranslate"><span class="pre">limits</span></code> means:
+stop running this container if it exceeds 128Mi om memory and 500m of CPU (500m means 500 milliCPU, which means 0.5 CPU
+allocated). But how do you decide what values to put in here?
+There’s no standard answer for this. It depends on your application. The <code class="docutils literal notranslate"><span class="pre">pod-info</span></code> app does not do much, so these small
+values are fine. Let’s redeploy our deployment, inspect the new pods, and describe a pod to see the new limits:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">$ kubectl -n development get pods</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">NAME                                   READY   STATUS             RESTARTS         AGE</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">pod-info-deployment-556c97d5fd-46f2d   1/1     Running            0                111s</span>
+<span class="nn">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">$ kubectl -n development describe pod pod-info-deployment-556c97d5fd-46f2d</span>
+<span class="nn">...</span>
+<span class="nt">Limits</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500m</span>
+<span class="w">  </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">128Mi</span>
+<span class="nt">Requests</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">250m</span>
+<span class="w">  </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">64Mi</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cleaning-up">
+<h4>Cleaning up<a class="headerlink" href="#cleaning-up" title="Permalink to this heading">#</a></h4>
+<p>Now that we’ve reached the end of this tutorial, feel free to delete all the K8s resources and delete the minikube
+cluster if you wish. You can delete by using the yaml files in the command <code class="docutils literal notranslate"><span class="pre">kubectl</span> <span class="pre">delete</span> <span class="pre">-f</span> <span class="pre">&lt;yaml_file&gt;</span></code>.
+Delete <code class="docutils literal notranslate"><span class="pre">busybox.yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">deployment.yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">quote.yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">service.yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">namespace.yaml</span></code>. To delete the minikube
+cluster: <code class="docutils literal notranslate"><span class="pre">minikube</span> <span class="pre">delete</span></code>.</p>
+</div>
+</div>
+<div class="section" id="advanced-topics">
+<h3>Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permalink to this heading">#</a></h3>
+<div class="section" id="ways-to-manage-k8s-pods">
+<h4>Ways to manage K8s pods<a class="headerlink" href="#ways-to-manage-k8s-pods" title="Permalink to this heading">#</a></h4>
+<p><strong>Deployments</strong></p>
+<p>The most common way to deploy applications on K8s is by using deployments, which allows you to control the number of
+replicas running. When you are deploying a new version of your application, K8s can keep the old version up and running,
+roll up the new version, ensure the new pods are running and healthy, and then remove the old pods. This is a
+no-downtime upgrade, which is one of the most desirable ways to upgrade.</p>
+<p><strong>DaemonSets</strong></p>
+<p>Another way to deploy apps is using a DaemonSet. It will put one copy of your container on every node running in the
+cluster, so you cannot directly control how many replicas are running. These are usually used to run processes in the
+background, for example to collect metrics about the node and the pods running in the node.</p>
+<p><strong>Jobs</strong></p>
+<p>A job will create one or more pods and run a container inside of them until it has successfully completed its task.
+An example of a job is a script that runs a backup of your database. After it finishes, the pod gets deleted. This is
+used for one-off tasks.</p>
+</div>
+<div class="section" id="running-stateful-workloads">
+<h4>Running stateful workloads<a class="headerlink" href="#running-stateful-workloads" title="Permalink to this heading">#</a></h4>
+<p>Our application above was stateless, i.e., it was fine to restart it at any point and not have to worry about losing
+any data. What if you want to run an application that uses a database? One option is to connect to an external database
+service, e.g., one managed by a cloud provider.</p>
+<p>Another option is to use a K8s persistent volume. This is a type of data storage that exists in your cluster and
+remains even after a pod gets deleted. We usually mount it in the filesystem of a pod. For example, we could deploy
+a SQL database as a pod, but mount its data directory on a persistent volume. So even if you restart the SQL pod, the
+data is still there. You can use a K8s object called a stateful set, that makes sure that your updated application can
+communicate with the same volume as the previous pod.</p>
+</div>
 </div>
 </div>
 </div>
@@ -337,12 +964,12 @@ concepts under each point.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../python/python.html">
+          <a class="next-page" href="helm.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Python</div>
+                <div class="title">Helm</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -387,18 +1014,50 @@ concepts under each point.</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Kubernetes and Helm</a><ul>
-<li><a class="reference internal" href="#resources">Resources</a><ul>
-<li><a class="reference internal" href="#recommended-reading">Recommended Reading</a></li>
-<li><a class="reference internal" href="#recommended-tutorials">Recommended Tutorials</a></li>
-<li><a class="reference internal" href="#alternatives">Alternatives</a></li>
-<li><a class="reference internal" href="#reference-documentation">Reference documentation</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Kubernetes</a><ul>
 <li><a class="reference internal" href="#checklist">Checklist</a><ul>
 <li><a class="reference internal" href="#essential-concepts">Essential Concepts</a></li>
 <li><a class="reference internal" href="#useful-concepts">Useful Concepts</a></li>
 <li><a class="reference internal" href="#practical-skills">Practical Skills</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linkedin-learning">LinkedIn learning</a></li>
+<li><a class="reference internal" href="#tutorial">Tutorial</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#what-is-kubernetes">What is Kubernetes?</a></li>
+<li><a class="reference internal" href="#what-are-containers">What are containers?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#setting-up-kubernetes">Setting up Kubernetes</a><ul>
+<li><a class="reference internal" href="#install-docker">Install Docker</a></li>
+<li><a class="reference internal" href="#install-minikube">Install Minikube</a></li>
+<li><a class="reference internal" href="#spin-up-and-explore-a-minikube-cluster">Spin up and explore a minikube cluster</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#application-deployment">Application deployment</a><ul>
+<li><a class="reference internal" href="#reading-and-writing-yaml">Reading and writing YAML</a></li>
+<li><a class="reference internal" href="#namespaces">Namespaces</a></li>
+<li><a class="reference internal" href="#deploy-an-application">Deploy an application</a><ul>
+<li><a class="reference internal" href="#deploying-the-app-on-k8s">Deploying the app on K8s</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#checking-the-health-of-a-pod">Checking the health of a pod</a></li>
+<li><a class="reference internal" href="#check-that-your-application-is-working">Check that your application is working</a></li>
+<li><a class="reference internal" href="#view-your-application-logs">View your application logs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#complex-application-deployment">Complex Application Deployment</a><ul>
+<li><a class="reference internal" href="#expose-your-application-to-the-internet-with-a-loadbalancer">Expose your application to the internet with a LoadBalancer</a></li>
+<li><a class="reference internal" href="#add-resource-requests-and-limits-to-your-pod">Add resource requests and limits to your pod</a></li>
+<li><a class="reference internal" href="#cleaning-up">Cleaning up</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#advanced-topics">Advanced Topics</a><ul>
+<li><a class="reference internal" href="#ways-to-manage-k8s-pods">Ways to manage K8s pods</a></li>
+<li><a class="reference internal" href="#running-stateful-workloads">Running stateful workloads</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

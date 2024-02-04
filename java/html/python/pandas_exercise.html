@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="C++" href="../cpp/cpp.html" /><link rel="prev" title="Kubernetes and Helm" href="../kubernetes/kubernetes.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Python Basics - C++ Prework</title>
+        <title>Pandas Exercise - Java Prework</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -122,7 +122,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../track_cpp.html"><div class="brand">C++ Prework</div></a>
+      <a href="../track_java.html"><div class="brand">Java Prework</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -142,13 +142,13 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand" href="../track_cpp.html">
+      <div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand" href="../track_java.html">
   
   
-  <span class="sidebar-brand-text">C++ Prework</span>
+  <span class="sidebar-brand-text">Java Prework</span>
   
 </a><div class="sidebar-tree">
-  <ul class="current">
+  <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../git/git.html">Git</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../git/exam.html">Git Exam</a></li>
@@ -159,12 +159,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../docker/exam.html">Docker Exam</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../kubernetes/kubernetes.html">Kubernetes and Helm</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Python Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cpp/cpp.html">C++</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bazel/bazel.html">Bazel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ide/clion.html">CLion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cpp/testing.html">GoogleTest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/kubernetes.html">Kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/helm.html">Helm</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../java/java.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../java/exam.html">Java Exam</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maven/maven.html">Maven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ide/intellij.html">IntelliJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/testing.html">Java Testing</a></li>
 </ul>
 
 </div></div>
@@ -197,73 +200,29 @@
           </label>
         </div>
         <article role="main">
-          <div class="tex2jax_ignore mathjax_ignore section" id="python-basics">
-<h1>Python Basics<a class="headerlink" href="#python-basics" title="Permalink to this heading">#</a></h1>
-<p>Python is the industry standard programming language for data analytics and IMC is no exception. No matter what your
-primary role is, you will be well served in being comfortable reading and writing basic Python code, and working with data analysis libraries like Pandas.</p>
-<div class="section" id="recommended-reading-material">
-<h2>Recommended Reading Material<a class="headerlink" href="#recommended-reading-material" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/">Python 3 Tutorial</a></p></li>
-<li><p><a class="reference external" href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html">Pandas Getting Started Tutorials</a> - These three chapters:</p>
-<ul>
-<li><p><a class="reference external" href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/01_table_oriented.html">Data Type Handled by Pandas</a></p></li>
-<li><p><a class="reference external" href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/02_read_write.html">Reading/Writing Tabular Data</a></p></li>
-<li><p><a class="reference external" href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html">Selecting and Filtering</a></p></li>
-<li><p>We recommend the rest of the chapters only if your work will involve data analysis on a regular basis.</p></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="section" id="checklist">
-<h2>Checklist<a class="headerlink" href="#checklist" title="Permalink to this heading">#</a></h2>
-<div class="section" id="python-language-basics">
-<h3>Python Language Basics<a class="headerlink" href="#python-language-basics" title="Permalink to this heading">#</a></h3>
-<p>You should be familiar with the syntax for programming in Python,  especially following:</p>
-<ul class="simple">
-<li><p>Syntax and Fundamentals</p>
-<ul>
-<li><p>Defining variables and functions</p></li>
-<li><p>Defining classes</p></li>
-<li><p>Operators, control flow</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">range</span></code> and <code class="docutils literal notranslate"><span class="pre">enumerate</span></code></p></li>
-<li><p>Standard library data structures</p></li>
-<li><p>Comprehensions</p></li>
-</ul>
-</li>
-<li><p>Concepts</p>
-<ul>
-<li><p>Higher order functions</p></li>
-<li><p>Generators</p></li>
-</ul>
-</li>
-</ul>
-</div>
+          <div class="tex2jax_ignore mathjax_ignore section" id="pandas-exercise">
+<h1>Pandas Exercise<a class="headerlink" href="#pandas-exercise" title="Permalink to this heading">#</a></h1>
+<p>This exercise is a continuation of the Bank Transactions Simulator, using Pandas to analyze the simulated transactions.</p>
 <div class="section" id="pandas">
-<h3>Pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h3>
-<p>You should be able to do the following using Pandas</p>
+<h2>Pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Set up your project within a virtual environment, and <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pandas</span></code></p></li>
+<li><p>After running the simulation and generating the CSV file with transaction data, perform the following tasks in a
+notebook, using pandas:</p></li>
+<li><p>Load your CSV file of transactions into a DataFrame.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">group_by</span></code> and <code class="docutils literal notranslate"><span class="pre">concat</span></code> to construct a new dataframe with <code class="docutils literal notranslate"><span class="pre">account_number</span></code> as the index and the following columns</p>
 <ul class="simple">
-<li><p>Data Frames</p>
-<ul>
-<li><p>Data Selection and Filtering</p></li>
-<li><p>Data Grouping and Aggregation - optional</p></li>
-<li><p>Data Reshaping and Pivot tables - optional</p></li>
-<li><p>Combine data from multiple tables - optional</p></li>
-<li><p>Query time series - optional</p></li>
+<li><p>number of transactions</p></li>
+<li><p>current balance</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_balance</span></code> and <code class="docutils literal notranslate"><span class="pre">max_balance</span></code> over the whole simulation</p></li>
 </ul>
 </li>
-<li><p>Data Input and Output</p>
-<ul>
-<li><p>Read data from external sources such as CSV, Excel, databases, etc.</p></li>
-</ul>
-</li>
-<li><p>Visualizations</p>
-<ul>
-<li><p>Generate Charts and Tables - optional</p></li>
-</ul>
-</li>
-</ul>
-</div>
+<li><p>Reproduce the list of <code class="docutils literal notranslate"><span class="pre">inactive_accounts</span></code> from the first part, using Pandas operations on the transactions dataframe.
+Is the list of transactions enough information to guarantee we find them all?</p></li>
+<li><p>If your bank implementation allows negative balance, find out which accounts went into overdraft at any point. If
+not, check if anyone’s balance dipped below a threshold.</p></li>
+<li><p>Find which account made the most transactions and plot the balance of this account over time.</p></li>
+</ol>
 </div>
 </div>
 
@@ -272,26 +231,8 @@ primary role is, you will be well served in being comfortable reading and writin
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../cpp/cpp.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">C++</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../kubernetes/kubernetes.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Kubernetes and Helm</div>
-                
-              </div>
-            </a>
+          
+          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -322,13 +263,8 @@ primary role is, you will be well served in being comfortable reading and writin
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Python Basics</a><ul>
-<li><a class="reference internal" href="#recommended-reading-material">Recommended Reading Material</a></li>
-<li><a class="reference internal" href="#checklist">Checklist</a><ul>
-<li><a class="reference internal" href="#python-language-basics">Python Language Basics</a></li>
+<li><a class="reference internal" href="#">Pandas Exercise</a><ul>
 <li><a class="reference internal" href="#pandas">Pandas</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>

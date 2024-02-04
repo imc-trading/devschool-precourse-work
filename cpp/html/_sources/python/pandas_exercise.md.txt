@@ -1,0 +1,26 @@
+# Pandas Exercise
+
+This exercise is a continuation of the Bank Transactions Simulator, using Pandas to analyze the simulated transactions.
+
+## Pandas
+
+1. Set up your project within a virtual environment, and `pip install pandas`
+
+1. After running the simulation and generating the CSV file with transaction data, perform the following tasks in a
+   notebook, using pandas:
+
+1. Load your CSV file of transactions into a DataFrame.
+
+1. Use `group_by` and `concat` to construct a new dataframe with `account_number` as the index and the following columns
+    * number of transactions
+    * current balance
+    * `min_balance` and `max_balance` over the whole simulation
+
+1. Reproduce the list of `inactive_accounts` from the first part, using Pandas operations on the transactions dataframe.
+   Is the list of transactions enough information to guarantee we find them all?
+
+1. If your bank implementation allows negative balance, find out which accounts went into overdraft at any point. If
+   not, check if anyone's balance dipped below a threshold.
+
+1. Find which account made the most transactions and plot the balance of this account over time.
+

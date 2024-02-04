@@ -6,7 +6,6 @@ unix/basics
 docker/docker
 kubernetes/kubernetes
 jetbrains/jetbrains
-python/basics
 
 java/java
 maven/maven
