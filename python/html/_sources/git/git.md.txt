@@ -115,9 +115,6 @@ You are **not** required to know anything about these.
 
 The [Git Exam](exam.md) can be used to evaluate your understanding of git.
 
-This exam is not graded - you should it to identify weaknesses in your 
-understanding.
-
 :::{toctree}
 :hidden:
 exam

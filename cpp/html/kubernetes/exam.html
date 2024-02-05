@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>K8s + Helm exam - C++ Prework</title>
+        <title>Kubernetes + Helm exam - C++ Prework</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -191,11 +191,17 @@
           </label>
         </div>
         <article role="main">
-          <div class="tex2jax_ignore mathjax_ignore section" id="k8s-helm-exam">
-<h1>K8s + Helm exam<a class="headerlink" href="#k8s-helm-exam" title="Permalink to this heading">#</a></h1>
+          <div class="tex2jax_ignore mathjax_ignore section" id="kubernetes-helm-exam">
+<h1>Kubernetes + Helm exam<a class="headerlink" href="#kubernetes-helm-exam" title="Permalink to this heading">#</a></h1>
+<div class="admonition-instructions admonition">
+<p class="admonition-title">Instructions</p>
 <p>Create a Helm chart for the <code class="docutils literal notranslate"><span class="pre">pod-info-app</span></code> application from the K8s pre-work. For the most part this entails copying into
 the Helm chart’s <code class="docutils literal notranslate"><span class="pre">templates</span></code> directory the K8s YAML files you created in the K8s pre-work. Moreover, you’ll need to make
 some things configurable there.</p>
+<p>Zip the Helm chart and send it to
+<a class="reference external" href="mailto:Development%20School%20Leads%20%3Cdevschoolleads&#37;&#52;&#48;imc%2Ecom%3E?subject=Pre%2Dwork%20K8s%20helm%20exam%20submission">Dev School Leads</a>
+(devschoolleads&#64;imc.com) with the subject “Pre-work K8s Helm exam submission”.</p>
+</div>
 <p>Requirements:</p>
 <ul class="simple">
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">exam</span></code> namespace.</p></li>
@@ -205,7 +211,6 @@ configurable</strong> in <code class="docutils literal notranslate"><span class=
 <li><p>Have a <code class="docutils literal notranslate"><span class="pre">debug</span></code> value in <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code>. If <code class="docutils literal notranslate"><span class="pre">debug:</span> <span class="pre">&quot;true&quot;</span></code> your chart should deploy a <code class="docutils literal notranslate"><span class="pre">busybox</span></code> deployment.</p></li>
 <li><p>Make the name of the deployments and of the service end with the version of the chart.</p></li>
 </ul>
-<p>Zip the Helm chart and send it to us.</p>
 </div>
 
         </article>

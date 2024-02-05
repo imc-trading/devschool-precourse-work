@@ -1,8 +1,14 @@
-# K8s + Helm exam
+# Kubernetes + Helm exam
 
+:::{admonition} Instructions
 Create a Helm chart for the `pod-info-app` application from the K8s pre-work. For the most part this entails copying into
 the Helm chart's `templates` directory the K8s YAML files you created in the K8s pre-work. Moreover, you'll need to make
 some things configurable there.
+
+Zip the Helm chart and send it to
+[Dev School Leads](mailto:Development%20School%20Leads%20%3Cdevschoolleads%40imc%2Ecom%3E?subject=Pre%2Dwork%20K8s%20helm%20exam%20submission)
+(devschoolleads@imc.com) with the subject "Pre-work K8s Helm exam submission".
+:::
 
 Requirements:
 
@@ -12,5 +18,3 @@ Requirements:
 * Add a service. Make the external port configurable with the key `externalPort`.
 * Have a `debug` value in `values.yaml`. If `debug: "true"` your chart should deploy a `busybox` deployment.
 * Make the name of the deployments and of the service end with the version of the chart.
-
-Zip the Helm chart and send it to us.
