@@ -30,16 +30,9 @@ You must be able to do the following:
 * Create a simple Helm Chart from scratch
 * Deploy a Helm Chart
 
-## LinkedIn Learning
-
-If you already have an IMC laptop and have access to LinkedIn Learning, watch this course:
-
-* [Kubernetes: Package Management With Helm](https://www.linkedin.com/learning/kubernetes-package-management-with-helm)
-
 ## Tutorial
 
-If you do **not** have access to LinkedIn Learning, please work through
-the [Helm tutorial](helm_tutorial.md). It is an adaptation of the course above.
+This [Helm tutorial](helm_tutorial.md) covers the skills above.
 
 :::{toctree}
 :hidden:

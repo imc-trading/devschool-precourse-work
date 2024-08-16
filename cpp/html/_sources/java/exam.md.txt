@@ -87,7 +87,8 @@ Intermediate Java Concepts
 1. What is the difference between a static inner class instead of a non-static one?
     1. There is only one global instance of a static inner class
     1. A static inner class is not tightly coupled to the enclosing class.
-    1. A static inner class can be instantiated without an instance of the enclosing class	- A static inner class can access the instance variables and methods of the enclosing class
+    1. A static inner class can be instantiated without an instance of the enclosing class	
+    1. A static inner class can access the instance variables and methods of the enclosing class
 
 1. What is the purpose of the 'final' keyword?
     1. All of the above
@@ -252,7 +253,8 @@ Intermediate Java Concepts
     1. Synchronizing all methods of a class ensures thread-safety
     1. It is safe to use a `HashMap` from multiple threads as long as the threads are only reading
     1. It is safe to use a `HashMap` from multiple threads as long as no more than one thread is writing
-    1. A `volatile` field can be accessed from multiple threads without thread-safety concerns	- A write to a `volatile` field is always visible to other threads
+    1. A `volatile` field can be accessed from multiple threads without thread-safety concerns
+    1. A write to a `volatile` field is always visible to other threads
     1. Using a thread-safe collection such as `CopyOnWriteArrayList` ensures thread-safety for all operations on that collection
 
 1. Which of the following is true of using the Java Stream API?

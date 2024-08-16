@@ -751,7 +751,7 @@ Requests:
 
 Now that we've reached the end of this tutorial, feel free to delete all the K8s resources and delete the minikube
 cluster if you wish. You can delete by using the yaml files in the command `kubectl delete -f <yaml_file>`.
-Delete `busybox.yaml`, `deployment.yaml`, `quote.yaml`, `service.yaml`, `namespace.yaml`. To delete the minikube
+Delete `busybox.yaml`, `deployment.yaml`, `service.yaml`, `namespace.yaml`. To delete the minikube
 cluster: `minikube delete`.
 
 ## Advanced Topics

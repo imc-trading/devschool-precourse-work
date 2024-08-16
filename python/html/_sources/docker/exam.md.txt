@@ -3,7 +3,7 @@
 :::{admonition} Instructions
 Send your answers as an email, with one blank line in between answers to each question, to
 [Dev School Leads](mailto:Development%20School%20Leads%20%3Cdevschoolleads%40imc%2Ecom%3E?subject=Pre%2Dwork%20Git%20exam%20submission)
-(devschoolleads@imc.com) with the subject "Pre-work Git exam submission".
+(devschoolleads@imc.com) with the subject "Pre-work Docker exam submission".
 :::
 
 1. What command(s) do you use to run [MariaDB](https://hub.docker.com/_/mariadb)

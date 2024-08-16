@@ -44,16 +44,9 @@ You must be able to do the following:
     * Get logs
     * Open an interactive shell on a running pod for debugging
 
-## LinkedIn learning
-
-If you already have an IMC laptop and have access to LinkedIn Learning, watch this course:
-
-* [Learning Kubernetes](https://www.linkedin.com/learning/learning-kubernetes-16086900)
-
 ## Tutorial
 
-If you do **not** have access to LinkedIn Learning, please work through
-the [Kubernetes tutorial](kubernetes_tutorial.md). It is an adaptation of the course above.
+This [Kubernetes tutorial](kubernetes_tutorial.md) covers the skills above.
 
 :::{toctree}
 :hidden:
