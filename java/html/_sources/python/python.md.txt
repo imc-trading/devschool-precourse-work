@@ -19,6 +19,7 @@ online. Here is one:
 
 - [Python 3 Tutorial](https://docs.python.org/3/tutorial/)
 - [Alternative Tutorial](https://www.learnpython.org/)
+- [Practical Programming concepts in Python](https://dabeaz-course.github.io/practical-python/Notes/Contents.html) (You can skip Chapter 7)
 
 ## Exercise
 

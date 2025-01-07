@@ -7,9 +7,9 @@ advanced Git features around rewriting history.
 
 ## Recommended Reading Material
 
-### [Pro Git](https://git-scm.com/book/en/v2)
+### Pro Git
 
-The following chapters contain the most useful material about using Git.
+The following chapters of [Pro Git](https://git-scm.com/book/en/v2) contain the most useful material about using Git.
 
 * 1\. Getting Started
 * 2\. Git Basics
