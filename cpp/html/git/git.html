@@ -2,8 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Git Exam" href="exam.html" /><link rel="prev" title="Introduction" href="../index.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Git Exam" href="exam.html" /><link rel="prev" title="Introduction" href="../index.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>Git - C++ Prework</title>
@@ -157,6 +156,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../unix/basics.html">Unix basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cpp/cpp.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/libraries.html">C++ Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/sanitizers.html">C++ Sanitizers &amp; Settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bazel/bazel.html">Bazel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ide/clion.html">CLion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cpp/testing.html">GoogleTest</a></li>
@@ -192,14 +193,14 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="git">
+          <div class="tex2jax_ignore mathjax_ignore section" id="git">
 <h1>Git<a class="headerlink" href="#git" title="Permalink to this heading">#</a></h1>
 <p>Git is the dominant VCS in the tech community, and is used by all development teams at IMC.</p>
 <p>Additionally, most teams use the <a class="reference external" href="https://www.gerritcodereview.com">Gerrit</a> code review tool, which heavily relies on
 advanced Git features around rewriting history.</p>
-<section id="recommended-reading-material">
+<div class="section" id="recommended-reading-material">
 <h2>Recommended Reading Material<a class="headerlink" href="#recommended-reading-material" title="Permalink to this heading">#</a></h2>
-<section id="pro-git">
+<div class="section" id="pro-git">
 <h3>Pro Git<a class="headerlink" href="#pro-git" title="Permalink to this heading">#</a></h3>
 <p>The following chapters of <a class="reference external" href="https://git-scm.com/book/en/v2">Pro Git</a> contain the most useful material about using Git.</p>
 <ul class="simple">
@@ -223,16 +224,16 @@ open source and on Github, but not
 immediately relevant to work at IMC.</p>
 <p>The other sections of Chapter 7 cover more advanced Git tools that are useful,
 but will not be used in Dev School.</p>
-</section>
-</section>
-<section id="recommended-exercises">
+</div>
+</div>
+<div class="section" id="recommended-exercises">
 <h2>Recommended Exercises<a class="headerlink" href="#recommended-exercises" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://learngitbranching.js.org/">Learn Git Branching</a> is a good practical
 exercise for learning about the most useful Git commands.</p>
-</section>
-<section id="checklist">
+</div>
+<div class="section" id="checklist">
 <h2>Checklist<a class="headerlink" href="#checklist" title="Permalink to this heading">#</a></h2>
-<section id="essential-concepts">
+<div class="section" id="essential-concepts">
 <h3>Essential Concepts<a class="headerlink" href="#essential-concepts" title="Permalink to this heading">#</a></h3>
 <p>You should have a solid understanding of the following concepts.</p>
 <ul class="simple">
@@ -257,8 +258,8 @@ exercise for learning about the most useful Git commands.</p>
 <li><p>Rewriting history</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code></p></li>
 </ul>
-</section>
-<section id="practical-skills">
+</div>
+<div class="section" id="practical-skills">
 <h3>Practical Skills<a class="headerlink" href="#practical-skills" title="Permalink to this heading">#</a></h3>
 <p>You must be able to do the following:</p>
 <ul class="simple">
@@ -316,8 +317,8 @@ exercise for learning about the most useful Git commands.</p>
 </ul>
 </li>
 </ul>
-</section>
-<section id="advanced-git-concepts-and-tools">
+</div>
+<div class="section" id="advanced-git-concepts-and-tools">
 <h3>Advanced Git Concepts and Tools<a class="headerlink" href="#advanced-git-concepts-and-tools" title="Permalink to this heading">#</a></h3>
 <p>You are <strong>not</strong> required to know anything about these.</p>
 <ul class="simple">
@@ -332,23 +333,23 @@ exercise for learning about the most useful Git commands.</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rerere</span></code></p></li>
 </ul>
-</section>
-</section>
-<section id="additional-material">
+</div>
+</div>
+<div class="section" id="additional-material">
 <h2>Additional Material<a class="headerlink" href="#additional-material" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=MJUJ4wbFm_A">An Introduction To Git and Github</a> - Introduction to Git, but in video format.</p></li>
 <li><p><a class="reference external" href="https://think-like-a-git.net/sections/graphs-and-git.html">Think Like (a) Git</a></p></li>
 <li><p><a class="reference external" href="https://jvns.ca/blog/2023/11/01/confusing-git-terminology/">Confusing git terminology</a></p></li>
 </ul>
-</section>
-<section id="exam">
+</div>
+<div class="section" id="exam">
 <h2>Exam<a class="headerlink" href="#exam" title="Permalink to this heading">#</a></h2>
 <p>The <a class="reference internal" href="exam.html"><span class="std std-doc">Git Exam</span></a> can be used to evaluate your understanding of git.</p>
 <div class="toctree-wrapper compound">
 </div>
-</section>
-</section>
+</div>
+</div>
 
         </article>
       </div>

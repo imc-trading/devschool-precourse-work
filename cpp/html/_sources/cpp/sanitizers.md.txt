@@ -1,0 +1,70 @@
+# C++ Sanitizers & Settings
+
+Programming is hard and error-prone, and we need all the help that we can get. Luckily, there are tools to help us catch mistakes as early as possible.
+
+## Compiler warnings
+
+The compiler can warn us when it detects potentially harmful/buggy constructs being used in our code. These warnings are controlled by passing flags (such as -Wall) to the compiler. 
+
+At IMC, we treat all warnings as errors: Compilation will fail if any warning is reported!
+
+Warnings are enabled by adding a flag to the compile command. In Bazel we can add global warnings in our `WORKSPACE` file, where we configure our `imc_cc_toolchain`, by adding them as a `copt` or adding a copts argument directly to a rule:
+```python
+imc_cc_toolchain(
+    copts = [
+        "-Wall",
+        "-Werror",
+        "-Wconversion",
+    ],
+    gcc_only_cxxopts = [
+        "-Wno-maybe-uninitialized",
+    ],
+)
+```
+
+```python
+cc_library(
+    name = "cc-lib",
+    copts = [ "-Wsign-conversion" ]
+    ...
+)
+```
+
+Some warnings in `-Wall, -Wextra or -pedantic` are, well, too pedantic. Individual warnings can be disabled pre-pending no- to the warning name, e.g. to disable `unused-parameter`:
+```python
+copts = ["-Wno-unused-parameter"],
+```
+
+[Reference to warnings for gcc compiler](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html).
+
+## Sanitizers
+
+Sanitizers allows detecting certain classes of errors (such as memory or threading issues) at runtime. The typical workflow is:
+
+- First, during compilation, the sanitizer instruments your code to add certain checks
+- Then, at runtime, these checks fire if an error is detected, and an error message is printed
+
+The runtime overhead induced by sanitizers is almost always unacceptable for production usage. Therefore, we tend to run sanitized code as part of our CI/CD pipelines (or locally) instead. Therefore sanitizers can only catch issues if we have sufficient unit tests.
+
+Types of Sanitizers
+
+- Address Sanitizer ASan [Docs](https://github.com/google/sanitizers/wiki/AddressSanitizer)
+- Thread Sanitizer TSan [Docs](https://github.com/google/sanitizers/wiki#threadsanitizer)
+- Memory Sanitizer MSan [Docs](https://clang.llvm.org/docs/MemorySanitizer.html)
+- Undefined Behavior Sanitier UBSan [Docs](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html)
+
+See [gcc reference on how to enable sanitizers](https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html). ;tldr - use `-fsanitize=address` for ASan, `-fsanitize=thread` for TSan, and `-fsanitize=undefined` for UBSan.
+
+The IMC Bazel toolchain has first class support for sanitizers, but not all compilers support all sanitizers.
+
+- --features=asan (address) 
+- --features=lsan (leak)
+- --features=ubsan (undefined behavior)
+- --features=cast_san (float cast san)
+- --features=divide_by_zero_san
+
+Examples -
+```bash
+bazel run //engine --features=asan
+bazel run //engine --features=lsan
+```

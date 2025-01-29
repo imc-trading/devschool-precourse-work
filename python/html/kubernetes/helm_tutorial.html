@@ -2,8 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Kubernetes + Helm exam" href="exam.html" /><link rel="prev" title="Helm" href="helm.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Kubernetes + Helm exam" href="exam.html" /><link rel="prev" title="Helm" href="helm.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>Tutorial - Python Prework</title>
@@ -210,9 +209,9 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="tutorial">
+          <div class="tex2jax_ignore mathjax_ignore section" id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading">#</a></h1>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>K8s pre-work:</p>
@@ -224,10 +223,10 @@
 <li><p>Know basic Unix commands: mkdir, cd, mv</p></li>
 <li><p>A text editor</p></li>
 </ul>
-</section>
-<section id="introduction-to-helm">
+</div>
+<div class="section" id="introduction-to-helm">
 <h2>Introduction to Helm<a class="headerlink" href="#introduction-to-helm" title="Permalink to this heading">#</a></h2>
-<section id="what-is-helm">
+<div class="section" id="what-is-helm">
 <h3>What is Helm?<a class="headerlink" href="#what-is-helm" title="Permalink to this heading">#</a></h3>
 <p>Helm is the package management system for K8s, just like npm is for Node.js and apt-get is for Debian.
 Without Helm, deploying an application to K8s means copying and pasting lots of yaml files and
@@ -237,15 +236,15 @@ You can also version charts, upgrade them, debug deployments, roll back as neede
 a chart, so you can deploy the same application in different environments with different sets of values.</p>
 <p>Many open-source applications, like Mysql or Datadog, have readily available Helm charts that you can customize and
 easily deploy to your K8s cluster.</p>
-</section>
-<section id="installing-helm">
+</div>
+<div class="section" id="installing-helm">
 <h3>Installing Helm<a class="headerlink" href="#installing-helm" title="Permalink to this heading">#</a></h3>
 <p>Use the <a class="reference external" href="https://helm.sh/docs/intro/install/">Helm documentation</a> to install Helm on your machine.</p>
-</section>
-</section>
-<section id="install-and-configure-a-chart-from-helm-hub">
+</div>
+</div>
+<div class="section" id="install-and-configure-a-chart-from-helm-hub">
 <h2>Install and Configure a Chart from Helm Hub<a class="headerlink" href="#install-and-configure-a-chart-from-helm-hub" title="Permalink to this heading">#</a></h2>
-<section id="explore-the-helm-hub">
+<div class="section" id="explore-the-helm-hub">
 <h3>Explore the Helm Hub<a class="headerlink" href="#explore-the-helm-hub" title="Permalink to this heading">#</a></h3>
 <p>Go to the <a class="reference external" href="https://artifacthub.io/">Helm Hub</a> and scroll around. Can you recognize any of the apps? For examples, search
 for the <code class="docutils literal notranslate"><span class="pre">nginx-ingress</span></code> <a class="reference external" href="https://artifacthub.io/packages/helm/nginx/nginx-ingress">chart</a>. It deploys the nginx ingress
@@ -254,8 +253,8 @@ requires a K8s version that supports the
 Ingress Controller and at least Helm 3.0. Below we find instructions about how to install and uninstall the chart, and
 a list of values we can use to configure the chart. We can see the chart versions, the maintainers, and the source
 code location for the Helm chart.</p>
-</section>
-<section id="install-a-third-party-helm-chart">
+</div>
+<div class="section" id="install-a-third-party-helm-chart">
 <h3>Install a third party Helm chart<a class="headerlink" href="#install-a-third-party-helm-chart" title="Permalink to this heading">#</a></h3>
 <p>A popular chart to install on K8s clusters is: <code class="docutils literal notranslate"><span class="pre">kube-state-metrics</span></code>. It collects data about the K8s objects in that
 cluster (nodes, pods, deployments, etc) and monitors resource usage. Search it up in the Helm Hub and pick the one from
@@ -295,8 +294,8 @@ The command above means: we installed the chart <code class="docutils literal no
 to a lot of metrics. These metrics can be sent to a monitoring service, like Prometheus, and get alerts when the
 cluster is not healthy.</p>
 <p>Good stuff! You have deployed a Helm chart.</p>
-</section>
-<section id="inspect-a-chart-in-your-k8s-cluster">
+</div>
+<div class="section" id="inspect-a-chart-in-your-k8s-cluster">
 <h3>Inspect a chart in your K8s cluster<a class="headerlink" href="#inspect-a-chart-in-your-k8s-cluster" title="Permalink to this heading">#</a></h3>
 <p>Let’s list the installed chart:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>ls<span class="w"> </span>-n<span class="w"> </span>metrics<span class="w">                  </span>
@@ -330,8 +329,8 @@ I0202<span class="w"> </span><span class="m">14</span>:41:37.380005<span class="
 </div>
 <p>Without Helm, we would’ve had to create all those yaml files for all these K8s objects. Helm makes this process faster
 and more reliable.</p>
-</section>
-<section id="try-helm-show-commands">
+</div>
+<div class="section" id="try-helm-show-commands">
 <h3>Try Helm show commands<a class="headerlink" href="#try-helm-show-commands" title="Permalink to this heading">#</a></h3>
 <p>Normally when installing a Helm chart, you want to customize it. For that you need to inspect it to see what
 configuration there is. You can read the documentation on the Helm Hub, but if that is missing, you can show the
@@ -349,8 +348,8 @@ Hub page of the chart. One thing you cannot see in Helm Hub is the values file:<
 text editor that can highlight yaml files to make it more readable. You can see there things like: the default number of
 replicas is 1, the service listens on port 8080, there is a liveness probe defined, etc.</p>
 <p>If you want to customize your chart, you can change a value in this file and update the chart.</p>
-</section>
-<section id="updating-a-helm-chart">
+</div>
+<div class="section" id="updating-a-helm-chart">
 <h3>Updating a Helm Chart<a class="headerlink" href="#updating-a-helm-chart" title="Permalink to this heading">#</a></h3>
 <p>As an application releases a new version, likely a new Helm chart version will be released as well. Let’s look at the
 current version of our chart again:</p>
@@ -387,11 +386,11 @@ replicaset.apps/kube-state-metrics-c9849cb4f<span class="w">    </span><span cla
 </pre></div>
 </div>
 <p>The service and the deployment did not change, whereas a new pod and replica set were created.</p>
-</section>
-</section>
-<section id="deploy-an-application-using-helm">
+</div>
+</div>
+<div class="section" id="deploy-an-application-using-helm">
 <h2>Deploy an Application Using Helm<a class="headerlink" href="#deploy-an-application-using-helm" title="Permalink to this heading">#</a></h2>
-<section id="create-a-new-helm-chart-from-the-command-line">
+<div class="section" id="create-a-new-helm-chart-from-the-command-line">
 <h3>Create a new Helm chart from the command line<a class="headerlink" href="#create-a-new-helm-chart-from-the-command-line" title="Permalink to this heading">#</a></h3>
 <p>So far we learned how to install a third-party chart. But what if we have developed an application and want to
 deploy it to K8s. These are the steps:</p>
@@ -425,8 +424,8 @@ $<span class="w">  </span>tree
 </pre></div>
 </div>
 <p>These boilerplate files are the starting point for us to deploy our application.</p>
-</section>
-<section id="explore-the-helm-chart-directories-and-files">
+</div>
+<div class="section" id="explore-the-helm-chart-directories-and-files">
 <h3>Explore the Helm chart directories and files<a class="headerlink" href="#explore-the-helm-chart-directories-and-files" title="Permalink to this heading">#</a></h3>
 <p>The file describing the chart is <code class="docutils literal notranslate"><span class="pre">Chart.yaml</span></code>. It has some predefined key values, like API version, chart name and
 description, chart type <code class="docutils literal notranslate"><span class="pre">application</span></code> (as opposed to <code class="docutils literal notranslate"><span class="pre">library</span></code>), the chart version, and the underlying application
@@ -486,8 +485,8 @@ If<span class="w"> </span>release<span class="w"> </span>name<span class="w"> </
 <p>Back to <code class="docutils literal notranslate"><span class="pre">service.yaml</span></code>. <code class="docutils literal notranslate"><span class="pre">type</span></code> and <code class="docutils literal notranslate"><span class="pre">ports</span></code> are coming from the <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> files because they start with
 <code class="docutils literal notranslate"><span class="pre">.Values.</span></code>. Specifically, they take the values <code class="docutils literal notranslate"><span class="pre">service.type</span></code> (i.e., <code class="docutils literal notranslate"><span class="pre">ClusterIP</span></code>) and <code class="docutils literal notranslate"><span class="pre">service.port</span></code> (i.e., <code class="docutils literal notranslate"><span class="pre">80</span></code>)
 respectively.</p>
-</section>
-<section id="deploy-and-update-a-kubernetes-configmap-via-helm">
+</div>
+<div class="section" id="deploy-and-update-a-kubernetes-configmap-via-helm">
 <h3>Deploy and update a Kubernetes ConfigMap via Helm<a class="headerlink" href="#deploy-and-update-a-kubernetes-configmap-via-helm" title="Permalink to this heading">#</a></h3>
 <p>A ConfigMap is a K8s object that stores non-sensitive data used by pods, like port numbers and environment
 variables. Let us deploy a ConfigMap with Helm. First, check if Helm generates a <code class="docutils literal notranslate"><span class="pre">templates/configmap.yaml</span></code>
@@ -583,8 +582,8 @@ port:
 </pre></div>
 </div>
 <p>Great! <code class="docutils literal notranslate"><span class="pre">allowTesting</span></code> is there! We’ve just learned how to deploy a config map with Helm.</p>
-</section>
-<section id="deploy-and-update-a-kubernetes-secret-via-helm">
+</div>
+<div class="section" id="deploy-and-update-a-kubernetes-secret-via-helm">
 <h3>Deploy and update a Kubernetes secret via Helm<a class="headerlink" href="#deploy-and-update-a-kubernetes-secret-via-helm" title="Permalink to this heading">#</a></h3>
 <p>K8s secrets store sensitive information like passwords and SSH keys. Let’s create a <code class="docutils literal notranslate"><span class="pre">templates/secret.yaml</span></code> file with
 this content:</p>
@@ -655,8 +654,8 @@ username:<span class="w">  </span><span class="m">5</span><span class="w"> </spa
 </div>
 <p>We don’t see the exact secret data, but we see the number of bytes, which is what we expect. Great! Yet another
 K8s object type deployed by you with Helm.</p>
-</section>
-<section id="roll-back-a-helm-release">
+</div>
+<div class="section" id="roll-back-a-helm-release">
 <h3>Roll back a Helm release<a class="headerlink" href="#roll-back-a-helm-release" title="Permalink to this heading">#</a></h3>
 <p>Sometimes it happens that you release a version of your application that breaks in an unexpected way. Usually the
 best course of action is to quickly roll back that version. First you need to decide which version do you want to
@@ -694,11 +693,11 @@ REVISION<span class="w">        </span>UPDATED<span class="w">                  
 </pre></div>
 </div>
 <p>Good job! Now you know how to roll back.</p>
-</section>
-</section>
-<section id="advanced-features">
+</div>
+</div>
+<div class="section" id="advanced-features">
 <h2>Advanced features<a class="headerlink" href="#advanced-features" title="Permalink to this heading">#</a></h2>
-<section id="render-a-configmap-value-dynamically-with-helm-templating">
+<div class="section" id="render-a-configmap-value-dynamically-with-helm-templating">
 <h3>Render a ConfigMap value dynamically with Helm templating<a class="headerlink" href="#render-a-configmap-value-dynamically-with-helm-templating" title="Permalink to this heading">#</a></h3>
 <p>Let’s learn how we can use the Helm templating system to create dynamic values in the final K8s objects. Let’s do that
 in our ConfigMap. Currently, it has a static name: <code class="docutils literal notranslate"><span class="pre">first-chart-configmap</span></code>. Let’s add the chart version number to it.
@@ -734,8 +733,8 @@ first-chart-configmap-0.1.1<span class="w">   </span><span class="m">2</span><sp
 </div>
 <p>The name of the config map has been updated! Great! Now you know how to pass a chart value to Helm via the
 templating engine.</p>
-</section>
-<section id="using-the-values-yaml-file">
+</div>
+<div class="section" id="using-the-values-yaml-file">
 <h3>Using the values.yaml file<a class="headerlink" href="#using-the-values-yaml-file" title="Permalink to this heading">#</a></h3>
 <p>Like <code class="docutils literal notranslate"><span class="pre">Chart.yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> is a builtin object in Helm. Meaning that the values in these files can automatically
 be templated using the template directive syntax. The generated <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> files contains quite a few values
@@ -750,8 +749,8 @@ with this content:</p>
 </div>
 <p>If we wanted to access that value in a template, we would use <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">.Values.staging.sample-key</span> <span class="pre">}}</span></code>. When you deploy a
 Helm chart, you can also pass values that will overwrite the values in the <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> from the chart.</p>
-</section>
-<section id="dynamically-render-a-value-with-a-helm-conditional-statement">
+</div>
+<div class="section" id="dynamically-render-a-value-with-a-helm-conditional-statement">
 <h3>Dynamically render a value with a Helm conditional statement<a class="headerlink" href="#dynamically-render-a-value-with-a-helm-conditional-statement" title="Permalink to this heading">#</a></h3>
 <p>Like programming languages, the Helm templating system has conditionals, which allows you to render values dynamically,
 whether a condition is met or not.</p>
@@ -788,8 +787,8 @@ and end with double curly braces. Let’s add those to the ConfigMap:</p>
 </div>
 <p>Look at that! <code class="docutils literal notranslate"><span class="pre">allowTesting</span></code> got set to false. Now try setting <code class="docutils literal notranslate"><span class="pre">env:</span> <span class="pre">staging</span></code> in <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> and see what happens
 with <code class="docutils literal notranslate"><span class="pre">allowTesting</span></code>.</p>
-</section>
-<section id="helm-going-forward">
+</div>
+<div class="section" id="helm-going-forward">
 <h3>Helm going forward<a class="headerlink" href="#helm-going-forward" title="Permalink to this heading">#</a></h3>
 <p>In conclusion, the idea of Helm is pretty simple: you put in <code class="docutils literal notranslate"><span class="pre">templates</span></code> files with any K8s objects you want to be
 templated. In those you can use the Helm templating system to pass values from <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> and <code class="docutils literal notranslate"><span class="pre">Chart.yaml</span></code>.
@@ -797,9 +796,9 @@ If you know how to define a K8s object, you can add it to Helm. We’ve only tri
 templating systems: values and conditionals. But you can write more complicated code, like loops, or define your own
 functions in <code class="docutils literal notranslate"><span class="pre">_helpers.tpl</span></code>.</p>
 <p>Happy Helming!</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
         </article>
       </div>

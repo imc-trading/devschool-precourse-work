@@ -7,6 +7,8 @@ index
 git/git
 unix/basics
 cpp/cpp
+cpp/libraries
+cpp/sanitizers
 bazel/bazel
 ide/clion
 cpp/testing

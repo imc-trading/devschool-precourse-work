@@ -13,6 +13,8 @@ ide/intellij
 java/testing
 
 cpp/cpp
+cpp/libraries
+cpp/sanitizers
 bazel/bazel
 ide/clion
 cpp/testing

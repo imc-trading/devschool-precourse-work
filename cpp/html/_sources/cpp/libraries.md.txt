@@ -1,0 +1,57 @@
+# C++ Libraries
+
+## Containers
+
+The standard library comes with a collection of containers (such as std::vector or std::map). Useful links -
+
+- [All standard containers](https://en.cppreference.com/w/cpp/container)
+- [Interesting article on standard and non-standard containers](https://pvs-studio.com/en/blog/posts/0989)
+
+## Algorithms
+
+The standard library also comes with a collection of algorithms. Some important design choices here are:
+
+- These algorithms are designed to operate on iterators instead of operating on containers. This allows us to have algorithms that are container-agnostic. STL algorithms can work on your custom containers and you can write custom algorithms that work on STL containers.
+```cpp
+Container elements;
+auto it = std::find(elements.begin(), elements.end(), 78);
+if (it != elements.end()) {
+    // Found 78, it is the iterator for 78
+} else {
+    // 78 was not in the collection.
+}
+```
+
+- When relevant, the behavior of algorithms can be parameterized using so-called function objects. For example, by default std::sort() will sort in increasing order, but it can also be passed a function object to sort in any other order
+```cpp
+template<class RandomIt, class Compare>
+void sort(RandomIt first, RandomIt last, Compare comp);
+// Will sort in natural order, e.g. 1, 2, 3
+std::sort(elements.begin(), elements.end());
+// To reverse the order of sorting:
+std::sort(elements.begin(), elements.end(), std::greater<>{});
+```
+
+- [All standard algorithms](https://en.cppreference.com/w/cpp/algorithm)
+- Additional motivation (reasons to use algorithms): [Presentation by Sean Parent: C++ Seasoning](https://www.youtube.com/watch?v=W2tWOdzgXHA)
+
+## Iterators
+
+Iterators are a generalisation of pointers and are the glue between algorithms and containers
+
+- They "point" to something, can be dereferenced: *it
+- There are various categories like `InputIterator`, `ForwardIterator`, `BidirectionalIterator`, `RandomAccessIterator`, `OutputIterator`, `ContiguousIterator`
+- Knowing the iterator category of your container is valuable. `std::lower_bound` on a `std::vector` is logarithmic time complexity (`RandomAccessIterator`) whereas the same algo on `std::list` is linear (`BidirectionalIterator`)
+- Refer to [this tutorial](https://learn.microsoft.com/en-us/cpp/standard-library/iterators) to learn more.
+- Warning: There are no bounds checks in operations that change iterator positions. You are expected to do this yourself if necessary. No exceptions will be thrown. Dereferencing an iterator which points outside the bounds of the container results in undefined behavior (UB).
+
+## Third-party libraries
+
+Don't reinvent the wheel. There are many high-quality third-party libraries that we use at IMC. Some examples include:
+
+- [Google Test/Google Mock](https://github.com/google/googletest), will be covered later in pre-work
+- [Abseil](https://abseil.io/) - A collection of C++ libraries, by Google. Among other things, it provides a very high-performance hash table implementation
+- [Boost](https://www.boost.org/) - A very large collection of C++ libraries
+
+
+

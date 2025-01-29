@@ -2,8 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Helm" href="helm.html" /><link rel="prev" title="Kubernetes" href="kubernetes.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Helm" href="helm.html" /><link rel="prev" title="Kubernetes" href="kubernetes.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>Tutorial - Python Prework</title>
@@ -210,18 +209,18 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="tutorial">
+          <div class="tex2jax_ignore mathjax_ignore section" id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading">#</a></h1>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Basic command line knowledge: cd, mkdir</p></li>
 <li><p>Higher level understanding of Container technology: Docker. Do the Docker pre-work if not ready.</p></li>
 </ul>
-</section>
-<section id="introduction">
+</div>
+<div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
-<section id="what-is-kubernetes">
+<div class="section" id="what-is-kubernetes">
 <h3>What is Kubernetes?<a class="headerlink" href="#what-is-kubernetes" title="Permalink to this heading">#</a></h3>
 <p><a class="reference external" href="https://kubernetes.io/">Kubernetes</a>, aka K8s, is one of the most popular orchestration platforms. It was open-sourced
 by Google, inspired from their internal orchestration system.</p>
@@ -229,18 +228,18 @@ by Google, inspired from their internal orchestration system.</p>
 to scale them and down the number of application replicas, and what to do when an application stops working.</p>
 <p>K8s can run on any kind of server: in an on-premise datacenter, as a cloud service, or a mix of the two. You can install
 it on your own or use a managed service on a public cloud.</p>
-</section>
-<section id="what-are-containers">
+</div>
+<div class="section" id="what-are-containers">
 <h3>What are containers?<a class="headerlink" href="#what-are-containers" title="Permalink to this heading">#</a></h3>
 <p>A container bundles an application’s binaries and configuration into one unit. You can run multiple containers on a
 server. An image is a file containing executable code that can be run as a container. A container registry is a
 database that stores container images. One famous registry is Docker Hub, but companies often have an internal
 registry as well.</p>
-</section>
-</section>
-<section id="setting-up-kubernetes">
+</div>
+</div>
+<div class="section" id="setting-up-kubernetes">
 <h2>Setting up Kubernetes<a class="headerlink" href="#setting-up-kubernetes" title="Permalink to this heading">#</a></h2>
-<section id="install-docker">
+<div class="section" id="install-docker">
 <h3>Install Docker<a class="headerlink" href="#install-docker" title="Permalink to this heading">#</a></h3>
 <p>Make sure you have a terminal and a text editor ready for use. Make sure you have the Docker engine installed on your
 machine. If not follow <a class="reference external" href="https://docs.docker.com/desktop/">these instructions</a>. Make sure Docker is running:</p>
@@ -248,8 +247,8 @@ machine. If not follow <a class="reference external" href="https://docs.docker.c
 </pre></div>
 </div>
 <p>This should show the list of docker commands.</p>
-</section>
-<section id="install-minikube">
+</div>
+<div class="section" id="install-minikube">
 <h3>Install Minikube<a class="headerlink" href="#install-minikube" title="Permalink to this heading">#</a></h3>
 <p>We need a K8s cluster. Normally a K8s cluster is installed on at least three machines running in a datacenter.
 However, for learning purposes we can use a small cluster running entirely on our machine: specifically Minikube.
@@ -272,8 +271,8 @@ LatestVersion:<span class="w"> </span>v1.32.0
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>minikube<span class="w"> </span>delete
 </pre></div>
 </div>
-</section>
-<section id="spin-up-and-explore-a-minikube-cluster">
+</div>
+<div class="section" id="spin-up-and-explore-a-minikube-cluster">
 <h3>Spin up and explore a minikube cluster<a class="headerlink" href="#spin-up-and-explore-a-minikube-cluster" title="Permalink to this heading">#</a></h3>
 <p>If you’ve deleted the cluster, we’ll create a new one:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>minikube<span class="w"> </span>start
@@ -334,11 +333,11 @@ kube-system<span class="w">   </span>kube-dns<span class="w">     </span>Cluster
 Don’t worry if these look cryptic. We’ll cover all these concepts later.</p>
 <p>You can pat yourself on the back. You’ve just spun up a cluster and used <code class="docutils literal notranslate"><span class="pre">kubectl</span></code> to inspect
 how the cluster is set up by default.</p>
-</section>
-</section>
-<section id="application-deployment">
+</div>
+</div>
+<div class="section" id="application-deployment">
 <h2>Application deployment<a class="headerlink" href="#application-deployment" title="Permalink to this heading">#</a></h2>
-<section id="reading-and-writing-yaml">
+<div class="section" id="reading-and-writing-yaml">
 <h3>Reading and writing YAML<a class="headerlink" href="#reading-and-writing-yaml" title="Permalink to this heading">#</a></h3>
 <p>In the K8s world you will see two big movements being mentioned often: <em>Infrastructure as Code</em> and <em>GitOps</em>. This means
 the state of the system can be expressed as code and the changes of that system should be tracked using a code version
@@ -372,8 +371,8 @@ you indent and add the next <code class="docutils literal notranslate"><span cla
 </ul>
 <p>YAML files end with either <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> or <code class="docutils literal notranslate"><span class="pre">.yml</span></code>. It’s easy to make mistakes when writing YAML. Luckily you can validate
 your YAML with an online service like: https://yamlchecker.com.</p>
-</section>
-<section id="namespaces">
+</div>
+<div class="section" id="namespaces">
 <h3>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this heading">#</a></h3>
 <p>Namespaces let you organize and isolate workloads. E.g., if both your prod and dev are running in the same cluster,
 you can separate those two by creating two namespaces. Let’s look at the default ones:</p>
@@ -447,8 +446,8 @@ production<span class="w">        </span>Active<span class="w">   </span>14s
 <span class="l l-Scalar l-Scalar-Plain">namespace &quot;production&quot; deleted</span>
 </pre></div>
 </div>
-</section>
-<section id="deploy-an-application">
+</div>
+<div class="section" id="deploy-an-application">
 <h3>Deploy an application<a class="headerlink" href="#deploy-an-application" title="Permalink to this heading">#</a></h3>
 <p>First, let’s create a simple application. Create a file called <code class="docutils literal notranslate"><span class="pre">app.py</span></code> and paste this code in:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
@@ -495,7 +494,7 @@ so before building the image, we need to make sure it gets pushed to the Minikub
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>pod-info-app<span class="w"> </span>.
 </pre></div>
 </div>
-<section id="deploying-the-app-on-k8s">
+<div class="section" id="deploying-the-app-on-k8s">
 <h4>Deploying the app on K8s<a class="headerlink" href="#deploying-the-app-on-k8s" title="Permalink to this heading">#</a></h4>
 <p>K8s is designed to make your applications highly available. It does that
 by creating multiple replicas of your application, so if one fails, the
@@ -584,9 +583,9 @@ pod-info-deployment-84b8474657-rt9wn<span class="w">   </span><span class="m">1<
 </div>
 <p>As you can see, it automatically created a new pod instead (the second one).</p>
 <p>Great! Now you understand K8s pods and deployments. Yay!</p>
-</section>
-</section>
-<section id="checking-the-health-of-a-pod">
+</div>
+</div>
+<div class="section" id="checking-the-health-of-a-pod">
 <h3>Checking the health of a pod<a class="headerlink" href="#checking-the-health-of-a-pod" title="Permalink to this heading">#</a></h3>
 <p>When a pod gets created, it happens often that it fails creating due to a multitude of reasons:</p>
 <ul class="simple">
@@ -631,8 +630,8 @@ Events:
 <p>This helps you quickly identify where the misconfiguration is. Most issues with pods occur at the beginning of the
 lifecycle, and now you know exactly how to investigate them.</p>
 <p>Now, fix the image in <code class="docutils literal notranslate"><span class="pre">deployment.yaml</span></code> and re-apply.</p>
-</section>
-<section id="check-that-your-application-is-working">
+</div>
+<div class="section" id="check-that-your-application-is-working">
 <h3>Check that your application is working<a class="headerlink" href="#check-that-your-application-is-working" title="Permalink to this heading">#</a></h3>
 <p>Our pod is now exposing an HTTP server on the port 3000. This port is not yet exposed to the outside world.
 It’s only exposed internally in the cluster, so other pods can access it. In order to try that
@@ -705,8 +704,8 @@ POD_NAME:<span class="w"> </span>pod-info-deployment-84b8474657-7wqbv,<span clas
 <p>This got us an <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file, which we displayed. As you can see we get our environment variables printed.
 These match the pod information we got when running <code class="docutils literal notranslate"><span class="pre">kubectl</span> <span class="pre">get</span> <span class="pre">pods</span> <span class="pre">-n</span> <span class="pre">development</span> <span class="pre">-o</span> <span class="pre">wide</span></code>.</p>
 <p>Yay! Our app is working!</p>
-</section>
-<section id="view-your-application-logs">
+</div>
+<div class="section" id="view-your-application-logs">
 <h3>View your application logs<a class="headerlink" href="#view-your-application-logs" title="Permalink to this heading">#</a></h3>
 <p>You can also inspect the health of your application by looking at its logs:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>-n<span class="w"> </span>development<span class="w"> </span>logs<span class="w"> </span>pod-info-deployment-84b8474657-7wqbv
@@ -723,11 +722,11 @@ Press<span class="w"> </span>CTRL+C<span class="w"> </span>to<span class="w"> </
 <p>This command outputs the <code class="docutils literal notranslate"><span class="pre">stdout</span></code> of the application running inside the container. If your app is also writing
 to some file in the container, you can also use <code class="docutils literal notranslate"><span class="pre">kubectl</span> <span class="pre">exec</span> <span class="pre">-it</span> <span class="pre">&lt;pod</span> <span class="pre">name&gt;</span> <span class="pre">--</span> <span class="pre">/bin/sh</span></code> to jump to your
 app pod and explore the filesystem.</p>
-</section>
-</section>
-<section id="complex-application-deployment">
+</div>
+</div>
+<div class="section" id="complex-application-deployment">
 <h2>Complex Application Deployment<a class="headerlink" href="#complex-application-deployment" title="Permalink to this heading">#</a></h2>
-<section id="expose-your-application-to-the-internet-with-a-loadbalancer">
+<div class="section" id="expose-your-application-to-the-internet-with-a-loadbalancer">
 <h3>Expose your application to the internet with a LoadBalancer<a class="headerlink" href="#expose-your-application-to-the-internet-with-a-loadbalancer" title="Permalink to this heading">#</a></h3>
 <p>We have the pods accepting traffic from inside the K8s cluster, but how do we make the
 pods accessible from the internet? The answer is: K8s services.</p>
@@ -802,8 +801,8 @@ POD_NAME:<span class="w"> </span>pod-info-deployment-84b8474657-fm8br,<span clas
 <p>Look at that! It works! To see the load balancer in action, run the command above repeatedly. You should get different
 responses, depending on the pod to which the service sends your traffic to.</p>
 <p>Yay! You’re a service expert. Congrats!</p>
-</section>
-<section id="add-resource-requests-and-limits-to-your-pod">
+</div>
+<div class="section" id="add-resource-requests-and-limits-to-your-pod">
 <h3>Add resource requests and limits to your pod<a class="headerlink" href="#add-resource-requests-and-limits-to-your-pod" title="Permalink to this heading">#</a></h3>
 <p>Well configured containers let K8s know how much memory and CPU to reserve on a worker node. Resources refer to the
 amount of available CPU and memory on the worker node running a pod. If you deploy a pod without specifying the
@@ -848,18 +847,18 @@ values are fine. Let’s redeploy our deployment, inspect the new pods, and desc
 <span class="nn">...</span>
 </pre></div>
 </div>
-</section>
-<section id="cleaning-up">
+</div>
+<div class="section" id="cleaning-up">
 <h3>Cleaning up<a class="headerlink" href="#cleaning-up" title="Permalink to this heading">#</a></h3>
 <p>Now that we’ve reached the end of this tutorial, feel free to delete all the K8s resources and delete the minikube
 cluster if you wish. You can delete by using the yaml files in the command <code class="docutils literal notranslate"><span class="pre">kubectl</span> <span class="pre">delete</span> <span class="pre">-f</span> <span class="pre">&lt;yaml_file&gt;</span></code>.
 Delete <code class="docutils literal notranslate"><span class="pre">busybox.yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">deployment.yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">service.yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">namespace.yaml</span></code>. To delete the minikube
 cluster: <code class="docutils literal notranslate"><span class="pre">minikube</span> <span class="pre">delete</span></code>.</p>
-</section>
-</section>
-<section id="advanced-topics">
+</div>
+</div>
+<div class="section" id="advanced-topics">
 <h2>Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permalink to this heading">#</a></h2>
-<section id="ways-to-manage-k8s-pods">
+<div class="section" id="ways-to-manage-k8s-pods">
 <h3>Ways to manage K8s pods<a class="headerlink" href="#ways-to-manage-k8s-pods" title="Permalink to this heading">#</a></h3>
 <p><strong>Deployments</strong></p>
 <p>The most common way to deploy applications on K8s is by using deployments, which allows you to control the number of
@@ -874,8 +873,8 @@ background, for example to collect metrics about the node and the pods running i
 <p>A job will create one or more pods and run a container inside of them until it has successfully completed its task.
 An example of a job is a script that runs a backup of your database. After it finishes, the pod gets deleted. This is
 used for one-off tasks.</p>
-</section>
-<section id="running-stateful-workloads">
+</div>
+<div class="section" id="running-stateful-workloads">
 <h3>Running stateful workloads<a class="headerlink" href="#running-stateful-workloads" title="Permalink to this heading">#</a></h3>
 <p>Our application above was stateless, i.e., it was fine to restart it at any point and not have to worry about losing
 any data. What if you want to run an application that uses a database? One option is to connect to an external database
@@ -885,9 +884,9 @@ remains even after a pod gets deleted. We usually mount it in the filesystem of 
 a SQL database as a pod, but mount its data directory on a persistent volume. So even if you restart the SQL pod, the
 data is still there. You can use a K8s object called a stateful set, that makes sure that your updated application can
 communicate with the same volume as the previous pod.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
         </article>
       </div>
