@@ -246,6 +246,7 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.cppreference.com/w/cpp/algorithm">All standard algorithms</a></p></li>
 <li><p>Additional motivation (reasons to use algorithms): <a class="reference external" href="https://www.youtube.com/watch?v=W2tWOdzgXHA">Presentation by Sean Parent: C++ Seasoning</a></p></li>
+<li><p>STL algorithms should be preferred over raw loops. If used correctly, they can make your code more readable by providing a common language for you to convey the intention of your code with other programmers.</p></li>
 </ul>
 </div>
 <div class="section" id="iterators">
@@ -253,20 +254,68 @@
 <p>Iterators are a generalisation of pointers and are the glue between algorithms and containers</p>
 <ul class="simple">
 <li><p>They “point” to something, can be dereferenced: *it</p></li>
-<li><p>There are various categories like <code class="docutils literal notranslate"><span class="pre">InputIterator</span></code>, <code class="docutils literal notranslate"><span class="pre">ForwardIterator</span></code>, <code class="docutils literal notranslate"><span class="pre">BidirectionalIterator</span></code>, <code class="docutils literal notranslate"><span class="pre">RandomAccessIterator</span></code>, <code class="docutils literal notranslate"><span class="pre">OutputIterator</span></code>, <code class="docutils literal notranslate"><span class="pre">ContiguousIterator</span></code></p></li>
+<li><p>There are various iterator categories like <code class="docutils literal notranslate"><span class="pre">InputIterator</span></code>, <code class="docutils literal notranslate"><span class="pre">ForwardIterator</span></code>, <code class="docutils literal notranslate"><span class="pre">BidirectionalIterator</span></code>, <code class="docutils literal notranslate"><span class="pre">RandomAccessIterator</span></code>, <code class="docutils literal notranslate"><span class="pre">OutputIterator</span></code>, <code class="docutils literal notranslate"><span class="pre">ContiguousIterator</span></code>.</p>
+<ul>
+<li><p>Refer to the <a class="reference external" href="https://en.cppreference.com/w/cpp/iterator">Iterator library</a> in cppreference for more information.</p></li>
+</ul>
+</li>
 <li><p>Knowing the iterator category of your container is valuable. <code class="docutils literal notranslate"><span class="pre">std::lower_bound</span></code> on a <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> is logarithmic time complexity (<code class="docutils literal notranslate"><span class="pre">RandomAccessIterator</span></code>) whereas the same algo on <code class="docutils literal notranslate"><span class="pre">std::list</span></code> is linear (<code class="docutils literal notranslate"><span class="pre">BidirectionalIterator</span></code>)</p></li>
 <li><p>Refer to <a class="reference external" href="https://learn.microsoft.com/en-us/cpp/standard-library/iterators">this tutorial</a> to learn more.</p></li>
 <li><p>Warning: There are no bounds checks in operations that change iterator positions. You are expected to do this yourself if necessary. No exceptions will be thrown. Dereferencing an iterator which points outside the bounds of the container results in undefined behavior (UB).</p></li>
 </ul>
+<div class="section" id="things-to-know-for-java-developers">
+<h3>Things to know: For Java Developers<a class="headerlink" href="#things-to-know-for-java-developers" title="Permalink to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Do stuff with it</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In Java it is common to use <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>. In C++ <code class="docutils literal notranslate"><span class="pre">!=</span></code> should be used.</p>
+</div>
+<div class="section" id="things-to-know-iterator-invalidation">
+<h3>Things to know: Iterator Invalidation<a class="headerlink" href="#things-to-know-iterator-invalidation" title="Permalink to this heading">#</a></h3>
+<p>Some operations on standard library containers can invalidate iterators and/or references that you are holding on to. Invalidated iterators and references do not point to a valid element in the container.</p>
+<p>Refer to cppreference to understand the rules for each container. For example, for <code class="docutils literal notranslate"><span class="pre">std::vector::erase</span></code> see <a class="reference external" href="https://en.cppreference.com/w/cpp/container/vector">Iterator invalidation</a> section.</p>
+<blockquote>
+<div><p>Invalidates iterators and references at or after the point of the erase, including the end() iterator.</p>
+</div></blockquote>
+</div>
+<div class="section" id="things-to-know-key-value-containers">
+<h3>Things to know: Key-value Containers<a class="headerlink" href="#things-to-know-key-value-containers" title="Permalink to this heading">#</a></h3>
+<p>For key-value (associative) containers like <code class="docutils literal notranslate"><span class="pre">std::map</span></code> and <code class="docutils literal notranslate"><span class="pre">std::unordered_map</span></code>, iterators denote the value type which is a <code class="docutils literal notranslate"><span class="pre">std::pair&lt;const</span> <span class="pre">Key,</span> <span class="pre">T&gt;</span></code></p>
+<p>In C++17, you can use structured bindings to easily get the key and value.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">printFirstElement</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">m</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="o">!</span><span class="n">m</span><span class="p">.</span><span class="n">empty</span><span class="p">());</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">m</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Key = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, Value = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="third-party-libraries">
 <h2>Third-party libraries<a class="headerlink" href="#third-party-libraries" title="Permalink to this heading">#</a></h2>
 <p>Don’t reinvent the wheel. There are many high-quality third-party libraries that we use at IMC. Some examples include:</p>
 <ul class="simple">
+<li><p><a class="reference external" href="https://abseil.io/">Abseil</a> - A collection of C++ libraries, by Google.</p>
+<ul>
+<li><p>Among other things, it provides a very high-performance hash table implementation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">absl::flat_hash_map</span></code> does not have the same semantics as <code class="docutils literal notranslate"><span class="pre">std::unordered_map</span></code>. Chiefly, it does not guarantee pointer stability of elements on rehash. In cases where this is needed, abseil also provides a <code class="docutils literal notranslate"><span class="pre">absl::node_hash_map</span></code> which is a drop-in replacement for <code class="docutils literal notranslate"><span class="pre">std::unordered_map</span></code>.</p></li>
+<li><p>Refer to <a class="reference external" href="https://abseil.io/docs/cpp/guides/container#abseil-containers">Abseil Containers</a> for more information.</p></li>
+</ul>
+</li>
 <li><p><a class="reference external" href="https://github.com/google/googletest">Google Test/Google Mock</a>, will be covered later in pre-work</p></li>
-<li><p><a class="reference external" href="https://abseil.io/">Abseil</a> - A collection of C++ libraries, by Google. Among other things, it provides a very high-performance hash table implementation</p></li>
+<li><p><a class="reference external" href="https://github.com/google/benchmark">Google Benchmark</a> - For micro-benchmarks</p></li>
 <li><p><a class="reference external" href="https://www.boost.org/">Boost</a> - A very large collection of C++ libraries</p></li>
 </ul>
+</div>
+<div class="section" id="exam">
+<h2>Exam<a class="headerlink" href="#exam" title="Permalink to this heading">#</a></h2>
+<p>The <a class="reference internal" href="libraries-exam.html"><span class="std std-doc">Libraries Exam</span></a> can be used to evaluate your understanding of C++ Libraries.</p>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -310,8 +359,14 @@
 <li><a class="reference internal" href="#">C++ Libraries</a><ul>
 <li><a class="reference internal" href="#containers">Containers</a></li>
 <li><a class="reference internal" href="#algorithms">Algorithms</a></li>
-<li><a class="reference internal" href="#iterators">Iterators</a></li>
+<li><a class="reference internal" href="#iterators">Iterators</a><ul>
+<li><a class="reference internal" href="#things-to-know-for-java-developers">Things to know: For Java Developers</a></li>
+<li><a class="reference internal" href="#things-to-know-iterator-invalidation">Things to know: Iterator Invalidation</a></li>
+<li><a class="reference internal" href="#things-to-know-key-value-containers">Things to know: Key-value Containers</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#third-party-libraries">Third-party libraries</a></li>
+<li><a class="reference internal" href="#exam">Exam</a></li>
 </ul>
 </li>
 </ul>

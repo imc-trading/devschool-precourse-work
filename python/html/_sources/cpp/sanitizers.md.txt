@@ -68,3 +68,14 @@ Examples -
 bazel run //engine --features=asan
 bazel run //engine --features=lsan
 ```
+
+[Valgrind](https://valgrind.org/) is yet another tool used to detect certain issues in your application. The difference between valgrind and sanitizers is that valgrind does not need your binary to be compiled with special flags. You can use a normally compiled binary (though it is helpful to have debug symbols in it), and valgrind will instrument your code at runtime (ex replacing malloc with a special instrumented malloc) to detect errors.
+
+## Exam
+
+The [Sanitizers Exam](sanitizers-exam.md) can be used to evaluate your understanding of C++ Sanitizers & Settings.
+
+:::{toctree}
+:hidden:
+sanitizers-exam
+:::

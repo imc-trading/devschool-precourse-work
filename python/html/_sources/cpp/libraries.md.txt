@@ -34,24 +34,70 @@ std::sort(elements.begin(), elements.end(), std::greater<>{});
 
 - [All standard algorithms](https://en.cppreference.com/w/cpp/algorithm)
 - Additional motivation (reasons to use algorithms): [Presentation by Sean Parent: C++ Seasoning](https://www.youtube.com/watch?v=W2tWOdzgXHA)
+- STL algorithms should be preferred over raw loops. If used correctly, they can make your code more readable by providing a common language for you to convey the intention of your code with other programmers.
 
 ## Iterators
 
 Iterators are a generalisation of pointers and are the glue between algorithms and containers
 
 - They "point" to something, can be dereferenced: *it
-- There are various categories like `InputIterator`, `ForwardIterator`, `BidirectionalIterator`, `RandomAccessIterator`, `OutputIterator`, `ContiguousIterator`
+- There are various iterator categories like `InputIterator`, `ForwardIterator`, `BidirectionalIterator`, `RandomAccessIterator`, `OutputIterator`, `ContiguousIterator`.
+    - Refer to the [Iterator library](https://en.cppreference.com/w/cpp/iterator) in cppreference for more information.
 - Knowing the iterator category of your container is valuable. `std::lower_bound` on a `std::vector` is logarithmic time complexity (`RandomAccessIterator`) whereas the same algo on `std::list` is linear (`BidirectionalIterator`)
 - Refer to [this tutorial](https://learn.microsoft.com/en-us/cpp/standard-library/iterators) to learn more.
 - Warning: There are no bounds checks in operations that change iterator positions. You are expected to do this yourself if necessary. No exceptions will be thrown. Dereferencing an iterator which points outside the bounds of the container results in undefined behavior (UB).
+
+#### Things to know: For Java Developers
+
+```cpp
+for (auto it = container.begin(); it != container.end(); ++it)
+{
+    // Do stuff with it
+}
+```
+
+In Java it is common to use `<`. In C++ `!=` should be used.
+
+#### Things to know: Iterator Invalidation
+
+Some operations on standard library containers can invalidate iterators and/or references that you are holding on to. Invalidated iterators and references do not point to a valid element in the container.
+
+Refer to cppreference to understand the rules for each container. For example, for `std::vector::erase` see [Iterator invalidation](https://en.cppreference.com/w/cpp/container/vector) section.
+
+> Invalidates iterators and references at or after the point of the erase, including the end() iterator.
+
+#### Things to know: Key-value Containers
+
+For key-value (associative) containers like `std::map` and `std::unordered_map`, iterators denote the value type which is a `std::pair<const Key, T>`
+
+In C++17, you can use structured bindings to easily get the key and value.
+
+```cpp
+void printFirstElement(const std::map<int, std::string>& m)
+{
+    assert(!m.empty());
+    const auto& [key, value] = *m.begin();
+    std::cout << "Key = " << key << ", Value = " << value << '\n';
+}
+```
 
 ## Third-party libraries
 
 Don't reinvent the wheel. There are many high-quality third-party libraries that we use at IMC. Some examples include:
 
+- [Abseil](https://abseil.io/) - A collection of C++ libraries, by Google. 
+    - Among other things, it provides a very high-performance hash table implementation
+    - `absl::flat_hash_map` does not have the same semantics as `std::unordered_map`. Chiefly, it does not guarantee pointer stability of elements on rehash. In cases where this is needed, abseil also provides a `absl::node_hash_map` which is a drop-in replacement for `std::unordered_map`.
+    - Refer to [Abseil Containers](https://abseil.io/docs/cpp/guides/container#abseil-containers) for more information.
 - [Google Test/Google Mock](https://github.com/google/googletest), will be covered later in pre-work
-- [Abseil](https://abseil.io/) - A collection of C++ libraries, by Google. Among other things, it provides a very high-performance hash table implementation
+- [Google Benchmark](https://github.com/google/benchmark) - For micro-benchmarks
 - [Boost](https://www.boost.org/) - A very large collection of C++ libraries
 
+## Exam
 
+The [Libraries Exam](libraries-exam.md) can be used to evaluate your understanding of C++ Libraries.
 
+:::{toctree}
+:hidden:
+libraries-exam
+:::

@@ -1,0 +1,136 @@
+# Sanitizers & Settings Exam
+
+:::{admonition} Instructions
+Answer the below questions with short (a few sentences) answers. Keep your answers as precise and concise as possible.
+
+Send your answers and your solution to practical exam (either a godbolt link or as a attached cpp file) as an email, with one blank line in between answers to each question, to
+[Dev School Leads](mailto:Development%20School%20Leads%20%3Cdevschoolleads%40imc%2Ecom%3E?subject=Pre%2Dwork%20Git%20theory%20exam%20submission)
+(devschoolleads@imc.com) with the subject "Pre-work C++ Sanitzers exam submission".
+:::
+
+## Theory
+
+1. Why should you prefer to treat warnings as errors?
+2. Should you run sanitizer built binaries in production?
+3. What are some examples of errors that Address Sanitizer (ASan) detects?
+4. What are some examples of errors that Memory Sanitizer (MSan) detects?
+5. What are some examples of errors that Undefined Behavior Sanitizer (UBSan) detects?
+6. What are some examples of errors that Thread Sanitizer (TSan) detects?
+
+## Practical
+
+An application that your team is working on has had multiple crashes in production. Your colleague has identified these 3 snippets of code as the likely cause of the crashes. Can you help them debug the cause of the crash using sanitizers?
+
+For each snippet, provide the following -
+1. The command line argument to enable the sanitizer you used.
+2. The output of the sanitizer which helped you understand the error.
+3. Fixed code as a godbolt link, or as a cpp file.
+
+Snippet 1 ([godbolt link](https://godbolt.org/z/avrdzzfb6)) - 
+
+```cpp
+#include <vector>
+#include <random>
+#include <algorithm>
+
+int& getInt(std::vector<int> vec)
+{
+    auto& i23rd = vec[23];
+    auto& i42nd = vec[42];
+    if (i23rd > i42nd)
+    {
+        i42nd += 1;
+        return i23rd;
+    }
+    else 
+    {
+        i23rd += 1;
+        return i42nd;
+    }
+}
+
+int main()
+{
+    std::vector<int> vec;
+    vec.resize(100);
+
+    std::mt19937 rng;
+    std::generate_n(vec.begin(), 100, std::ref(rng));
+
+    int sum = 0;
+    for (int i = 0; i < vec.size(); ++i)
+    {
+        auto& j = getInt(vec);
+        j += 1;
+        sum += j;
+    }
+
+    return sum;
+}
+```
+
+Snippet 2 ([godbolt link](https://godbolt.org/z/q9TxdvjfT)) - 
+
+```cpp
+#include <vector>
+#include <random>
+#include <algorithm>
+
+int compute_max(std::vector<int> vec)
+{
+    return *std::max_element(vec.begin(), vec.end());
+}
+
+int compute_index_limit(std::vector<int> vec)
+{
+    return vec.size() / 2;
+}
+
+int main()
+{
+    std::vector<int> vec;
+    vec.resize(100);
+
+    std::mt19937 rng;
+    std::uniform_int_distribution<> distr(101, 201);
+    std::generate_n(vec.begin(), 100, [&](){return distr(rng);});
+
+    auto n = compute_max(vec);
+    auto m = compute_index_limit(vec);
+
+    for (int i = 0; i < n; ++i)
+    {
+        vec[i] = m;
+    }
+
+    return m;
+}
+```
+
+Snippet 3 ([godbolt link](https://godbolt.org/z/aqK3z63rb)) - 
+
+```cpp
+#include <iostream>
+
+int factorial(int n)
+{
+    int result = 1;
+    for (int i = 2; i <= n; i++)
+    {
+        result *= i;
+    }
+    return result;
+}
+
+int main()
+{
+    int user_input = 13;
+
+    int answer = factorial(user_input);
+
+    std::cout << "answer = " << answer << std::endl;
+
+    return 0;
+}
+
+```

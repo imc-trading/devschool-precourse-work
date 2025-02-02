@@ -271,6 +271,13 @@
 bazel<span class="w"> </span>run<span class="w"> </span>//engine<span class="w"> </span>--features<span class="o">=</span>lsan
 </pre></div>
 </div>
+<p><a class="reference external" href="https://valgrind.org/">Valgrind</a> is yet another tool used to detect certain issues in your application. The difference between valgrind and sanitizers is that valgrind does not need your binary to be compiled with special flags. You can use a normally compiled binary (though it is helpful to have debug symbols in it), and valgrind will instrument your code at runtime (ex replacing malloc with a special instrumented malloc) to detect errors.</p>
+</div>
+<div class="section" id="exam">
+<h2>Exam<a class="headerlink" href="#exam" title="Permalink to this heading">#</a></h2>
+<p>The <a class="reference internal" href="sanitizers-exam.html"><span class="std std-doc">Sanitizers Exam</span></a> can be used to evaluate your understanding of C++ Sanitizers &amp; Settings.</p>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -314,6 +321,7 @@ bazel<span class="w"> </span>run<span class="w"> </span>//engine<span class="w">
 <li><a class="reference internal" href="#">C++ Sanitizers &amp; Settings</a><ul>
 <li><a class="reference internal" href="#compiler-warnings">Compiler warnings</a></li>
 <li><a class="reference internal" href="#sanitizers">Sanitizers</a></li>
+<li><a class="reference internal" href="#exam">Exam</a></li>
 </ul>
 </li>
 </ul>

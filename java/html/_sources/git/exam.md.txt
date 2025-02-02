@@ -41,7 +41,7 @@ Send your answers as an email, with one blank line in between answers to each qu
 
 ## Practical
 
-:::{admonition} Instrucitons
+:::{admonition} Instructions
 Clone the repository from
 [`https://github.com/imc-trading/devschool-git-exam`](https://github.com/imc-trading/devschool-git-exam) and then
 complete the following steps.

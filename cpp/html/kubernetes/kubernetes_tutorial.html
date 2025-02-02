@@ -156,8 +156,14 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../unix/basics.html">Unix basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cpp/cpp.html">C++</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cpp/libraries.html">C++ Libraries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cpp/sanitizers.html">C++ Sanitizers &amp; Settings</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cpp/libraries.html">C++ Libraries</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cpp/libraries-exam.html">Libraries Exam</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cpp/sanitizers.html">C++ Sanitizers &amp; Settings</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cpp/sanitizers-exam.html">Sanitizers &amp; Settings Exam</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../bazel/bazel.html">Bazel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ide/clion.html">CLion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cpp/testing.html">GoogleTest</a></li>
@@ -434,14 +440,14 @@ production<span class="w">        </span>Active<span class="w">   </span>14s
 <div class="section" id="deploy-an-application">
 <h3>Deploy an application<a class="headerlink" href="#deploy-an-application" title="Permalink to this heading">#</a></h3>
 <p>First, let’s create a simple application. Create a file called <code class="docutils literal notranslate"><span class="pre">app.py</span></code> and paste this code in:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">print_env_variables</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">print_env_variables</span><span class="p">():</span>
     <span class="n">pod_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;POD_NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;Default Pod Name&#39;</span><span class="p">)</span>
     <span class="n">pod_namespace</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;POD_NAMESPACE&#39;</span><span class="p">,</span> <span class="s1">&#39;Default Pod Namespace&#39;</span><span class="p">)</span>
     <span class="n">pod_id</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;POD_ID&#39;</span><span class="p">,</span> <span class="s1">&#39;Default Pod ID&#39;</span><span class="p">)</span>

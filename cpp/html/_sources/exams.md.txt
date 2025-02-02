@@ -7,4 +7,6 @@ git/exam
 docker/exam
 java/exam
 kubernetes/exam
+cpp/libraries-exam
+cpp/sanitizers-exam
 ```
