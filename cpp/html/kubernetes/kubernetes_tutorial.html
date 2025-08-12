@@ -528,7 +528,7 @@ organize your pods into K8s <code class="docutils literal notranslate"><span cla
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POD_ID</span>
 <span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
 <span class="w">                </span><span class="nt">fieldRef</span><span class="p">:</span>
-<span class="w">                  </span><span class="nt">fieldPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">status.podIP</span>
+<span class="w">                  </span><span class="nt">fieldPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metadata.uid</span>
 </pre></div>
 </div>
 <p>The deployment is called <code class="docutils literal notranslate"><span class="pre">pod-info-deployment</span></code> specifying that the pods should be in the
@@ -539,8 +539,8 @@ is a list, so we can have <em>multiple</em> containers in a pod.</p>
 <p>We define a container called <code class="docutils literal notranslate"><span class="pre">pod-info-container</span></code> which will use the latest version of Docker image we’ve just created:
 <code class="docutils literal notranslate"><span class="pre">pod-info-app</span></code>. Moreover, we direct the traffic for the container to port <code class="docutils literal notranslate"><span class="pre">3000</span></code>. <code class="docutils literal notranslate"><span class="pre">imagePullPolicy:</span> <span class="pre">IfNotPresent</span></code> is
 needed to make Minikube use its own Docker registry instead of going to Docker Hub to fetch the Docker image.</p>
-<p>We pass the three environment variables to the Docker container: <code class="docutils literal notranslate"><span class="pre">POD_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">POD_NAMESPACE</span></code>, and <code class="docutils literal notranslate"><span class="pre">POD_IP</span></code>. These will
-take their values from the K8s pod metadata: <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">namespace</span></code>, <code class="docutils literal notranslate"><span class="pre">status.podIP</span></code> respectively.</p>
+<p>We pass the three environment variables to the Docker container: <code class="docutils literal notranslate"><span class="pre">POD_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">POD_NAMESPACE</span></code>, and <code class="docutils literal notranslate"><span class="pre">POD_ID</span></code>. These will
+take their values from the K8s pod metadata: <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">namespace</span></code>, <code class="docutils literal notranslate"><span class="pre">uid</span></code> respectively.</p>
 <p>Save the YAML above in a file called <code class="docutils literal notranslate"><span class="pre">deployment.yaml</span></code>. Make sure you create the <code class="docutils literal notranslate"><span class="pre">development</span></code> namespace as we did above
 and deploy this K8s deployment:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>namespace.yaml
@@ -687,7 +687,7 @@ saving<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;in
 index.html<span class="w">           </span><span class="m">100</span>%<span class="w"> </span><span class="p">|</span>*****************************************************************************************************************************************************************************************************<span class="p">|</span><span class="w">    </span><span class="m">95</span><span class="w">  </span><span class="m">0</span>:00:00<span class="w"> </span>ETA
 <span class="s1">&#39;index.html&#39;</span><span class="w"> </span>saved
 /<span class="w"> </span><span class="c1"># cat index.html </span>
-POD_NAME:<span class="w"> </span>pod-info-deployment-84b8474657-7wqbv,<span class="w"> </span>POD_NAMESPACE:<span class="w"> </span>development,<span class="w"> </span>POD_ID:<span class="w"> </span><span class="m">10</span>.244.0.31
+POD_NAME:<span class="w"> </span>pod-info-deployment-84b8474657-7wqbv,<span class="w"> </span>POD_NAMESPACE:<span class="w"> </span>development,<span class="w"> </span>POD_ID:<span class="w"> </span>dabedb99-e563-4494-b1b7-678f8c6b02ff
 /<span class="w"> </span><span class="c1"># exit</span>
 </pre></div>
 </div>
@@ -785,7 +785,7 @@ curl: (7) Failed to connect to 127.0.0.1 port 80 after 3 ms: Couldn&#39;t connec
 It would work with a port larger than 1024, e.g., 8080. But don’t despair. Go to the <code class="docutils literal notranslate"><span class="pre">minikube</span> <span class="pre">tunnel</span></code> tab. That is
 asking for your admin password. Type it in and try again:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>curl<span class="w"> </span>http://127.0.0.1/
-POD_NAME:<span class="w"> </span>pod-info-deployment-84b8474657-fm8br,<span class="w"> </span>POD_NAMESPACE:<span class="w"> </span>development,<span class="w"> </span>POD_ID:<span class="w"> </span><span class="m">10</span>.244.0.33
+POD_NAME:<span class="w"> </span>pod-info-deployment-84b8474657-fm8br,<span class="w"> </span>POD_NAMESPACE:<span class="w"> </span>development,<span class="w"> </span>POD_ID:<span class="w"> </span>dabedb99-e563-4494-b1b7-678f8c6b02ff
 </pre></div>
 </div>
 <p>Look at that! It works! To see the load balancer in action, run the command above repeatedly. You should get different
