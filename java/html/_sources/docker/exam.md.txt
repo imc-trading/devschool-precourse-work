@@ -8,7 +8,7 @@ Send your answers as an email, with one blank line in between answers to each qu
 
 1. What command(s) do you use to run [MariaDB](https://hub.docker.com/_/mariadb)
    in Docker on your machine and map its port to the port `12345` on your
-   machine? It should contain a database called `prework`.
+   machine? Ensure the container will contain a database called `prework`.
 
 2. What command(s) do you use on your local machine to open a prompt into the
    MariaDB server from step 1? You can use any Mysql client.

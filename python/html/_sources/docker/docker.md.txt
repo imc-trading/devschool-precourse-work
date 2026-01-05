@@ -12,7 +12,7 @@ from local development machines to production servers, thereby increasing produc
 ## Recommended Tutorial
 
 * [Docker - Getting Started](https://docs.docker.com/get-started/)
-  - Parts 1-9
+  - Docker workshop parts 1-9
 
 ## Checklist
 
