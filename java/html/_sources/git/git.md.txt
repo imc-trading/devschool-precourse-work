@@ -111,11 +111,16 @@ You are **not** required to know anything about these.
 * [Think Like (a) Git](https://think-like-a-git.net/sections/graphs-and-git.html)
 * [Confusing git terminology](https://jvns.ca/blog/2023/11/01/confusing-git-terminology/)
 
-## Exam
+```{eval-rst}
+.. only:: not prereading
 
-The [Git Exam](exam.md) can be used to evaluate your understanding of git.
+   Exam
+   ----
 
-:::{toctree}
-:hidden:
-exam
-:::
+   The `Git Exam <exam.md>`__ can be used to evaluate your understanding of git.
+
+   .. toctree::
+      :hidden:
+
+      exam
+```

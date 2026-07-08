@@ -273,7 +273,7 @@ Minikube, your <code class="docutils literal notranslate"><span class="pre">kube
 </pre></div>
 </div>
 <p>Let’s install the chart in our new namespace:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>install<span class="w"> </span>kube-state-metrics<span class="w"> </span>bitnami/kube-state-metrics<span class="w"> </span>-n<span class="w"> </span>metrics
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>helm<span class="w"> </span>install<span class="w"> </span>kube-state-metrics<span class="w"> </span>bitnami/kube-state-metrics<span class="w"> </span>-n<span class="w"> </span>metrics<span class="w"> </span>--set<span class="w"> </span>image.repository<span class="o">=</span>bitnamilegacy/kube-state-metrics<span class="w"> </span>--set<span class="w"> </span>global.security.allowInsecureImages<span class="o">=</span><span class="nb">true</span>
 NAME:<span class="w"> </span>kube-state-metrics
 ...
 To<span class="w"> </span>access<span class="w"> </span>kube-state-metrics<span class="w"> </span>from<span class="w"> </span>outside<span class="w"> </span>the<span class="w"> </span>cluster<span class="w"> </span>execute<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>commands:

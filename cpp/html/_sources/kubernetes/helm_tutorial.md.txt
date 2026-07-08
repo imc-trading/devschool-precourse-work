@@ -68,7 +68,7 @@ $ kubectl create namespace metrics
 Let's install the chart in our new namespace:
 
 ```shell
-$ helm install kube-state-metrics bitnami/kube-state-metrics -n metrics
+$ helm install kube-state-metrics bitnami/kube-state-metrics -n metrics --set image.repository=bitnamilegacy/kube-state-metrics --set global.security.allowInsecureImages=true
 NAME: kube-state-metrics
 ...
 To access kube-state-metrics from outside the cluster execute the following commands:

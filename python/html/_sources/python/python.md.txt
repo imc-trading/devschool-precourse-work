@@ -2,8 +2,14 @@
 
 You will need a solid grasp of the fundamentals of Python before starting Dev
 School. We will work through more advanced features of the language but expect
-you to be able to code to a basic level already. If you can complete the
-attached exercise then you will be at a comfortable level to begin the school.
+you to be able to code to a basic level already.
+
+```{eval-rst}
+.. only:: not prereading
+
+   If you can complete the
+   attached exercise then you will be at a comfortable level to begin the school.
+```
 
 ## Resources
 ### Recommended Exercises
@@ -21,9 +27,14 @@ online. Here is one:
 - [Alternative Tutorial](https://www.learnpython.org/)
 - [Practical Programming concepts in Python](https://dabeaz-course.github.io/practical-python/Notes/Contents.html) (You can skip Chapter 7)
 
-## Exercise
+```{eval-rst}
+.. only:: not prereading
 
-[Exercise](exercise.md)
+   Exercise
+   --------
+
+   `Exercise <exercise.md>`__
+```
 
 ## Checklist
 ### Python Language Basics
@@ -62,7 +73,11 @@ You should be familiar with the syntax for programming in Python,  especially fo
   * Setting up a `venv` or a conda `env`
   * Jupyter notebooks (try installing and running one locally)
 
-:::{toctree}
-:hidden:
-exercise
-:::
+```{eval-rst}
+.. only:: not prereading
+
+   .. toctree::
+      :hidden:
+
+      exercise
+```

@@ -122,15 +122,20 @@ You should be familiar with the following common design patterns.
   * Strategy
   * Command
 
-## Exam
+```{eval-rst}
+.. only:: not prereading
 
-The [Java Exam](exam.md) can be used to evaluate your understanding of Java 
-concepts.
+   Exam
+   ----
 
-This exam is not graded - you should it to identify weaknesses in your
-understanding.
+   The `Java Exam <exam.md>`__ can be used to evaluate your understanding of Java
+   concepts.
 
-:::{toctree}
-:hidden:
-exam
-:::
+   This exam is not graded - you should it to identify weaknesses in your
+   understanding.
+
+   .. toctree::
+      :hidden:
+
+      exam
+```
